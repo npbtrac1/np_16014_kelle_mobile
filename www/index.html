@@ -39,10 +39,26 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+
+    <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
+    <script src="node_modules/@angular/core/core.umd.js"></script>
+    <script src="node_modules/@angular/common/common.umd.js"></script>
+    <script src="node_modules/@angular/compiler/compiler.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser/platform-browser.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js"></script>
+
+    <!-- 2. Load our 'modules' -->
+    <script src='app/app.component.js'></script>
+    <script src='app/main.js'></script>
     <title>Hello World</title>
 </head>
 
 <body>
+    <my-app>Loading...</my-app>
     <div class="app">
         <h1>PhoneGap</h1>
         <div id="deviceready" class="blink">
