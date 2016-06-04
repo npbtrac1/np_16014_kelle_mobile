@@ -1,0 +1,32 @@
+.login-body {
+  .container,.splash-login {
+    height: 100%;
+  }
+}
+.splash-login-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  .splash-login {
+    position: relative;
+    max-width: 530px;
+    margin: auto;
+    display: table-row;
+    .login-button-nav {
+      padding: 20px 20px;
+      background-color: $color-login;
+      border: 0;
+      font-size: 28px;
+      color: #fff;
+    }
+    .splash-login-logo {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .splash-login-button {
+      display: table-cell;
+      vertical-align: bottom;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+html, body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.login-body .container, .login-body .splash-login {
+  height: 100%;
+}
+
+.splash-login-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.splash-login-wrapper .splash-login {
+  position: relative;
+  max-width: 530px;
+  margin: auto;
+  display: table-row;
+}
+.splash-login-wrapper .splash-login .login-button-nav {
+  padding: 20px 20px;
+  background-color: #9a4a47;
+  border: 0;
+  font-size: 28px;
+  color: #fff;
+}
+.splash-login-wrapper .splash-login .splash-login-logo {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.splash-login-wrapper .splash-login .splash-login-button {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+body.login-body {
+  background: url("../img/login-bg-mobile.jpg") center no-repeat;
+  background-size: cover;
+}
+
+#form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+input, .btn-primary {
+  margin-bottom: 15px;
+}
+
+.app {
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

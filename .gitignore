@@ -1,0 +1,8 @@
+# yii console command
+
+
+# phpstorm project files
+.idea
+
+#npm debug
+npm-debug.log

@@ -1,0 +1,21 @@
+@import "functions";
+@import "devices";
+@import "app-global";
+@import "app-login";
+body {
+  &.login-body {
+    background: url('../img/login-bg-mobile.jpg') center no-repeat;
+    background-size: cover;
+  }
+}
+#form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+input,.btn-primary {
+  margin-bottom: 15px;
+}
+.app {
+  display: none;
+}
