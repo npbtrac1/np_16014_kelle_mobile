@@ -12,7 +12,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 App</h1>'
+            template: ''
         })
     ], AppComponent);
     return AppComponent;

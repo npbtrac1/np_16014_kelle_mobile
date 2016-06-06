@@ -7,7 +7,7 @@ img {
   height: auto;
 }
 
-.login-body .container, .login-body .splash-login {
+.login-body .container {
   height: 100%;
 }
 
@@ -16,27 +16,189 @@ img {
   width: 100%;
   height: 100%;
 }
+
 .splash-login-wrapper .splash-login {
   position: relative;
   max-width: 530px;
   margin: auto;
   display: table-row;
 }
+
 .splash-login-wrapper .splash-login .login-button-nav {
-  padding: 20px 20px;
+  padding: 28px 20px;
   background-color: #9a4a47;
   border: 0;
   font-size: 28px;
   color: #fff;
+  width: 100%;
 }
+
+@media only screen and (max-width: 480px) {
+  .splash-login-wrapper .splash-login .login-button-nav {
+    padding: 16px 20px;
+    font-size: 14px;
+  }
+}
+
 .splash-login-wrapper .splash-login .splash-login-logo {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
+
+@media only screen and (max-width: 480px) {
+  .splash-login-wrapper .splash-login .splash-login-logo img {
+    max-width: 197px;
+  }
+}
+
 .splash-login-wrapper .splash-login .splash-login-button {
   display: table-cell;
   vertical-align: bottom;
+  padding: 68px 36px;
+}
+
+@media only screen and (max-width: 480px) {
+  .splash-login-wrapper .splash-login .splash-login-button {
+    padding: 31px 9px;
+  }
+}
+
+.splash-login-wrapper .splash-login-logo-wrapper {
+  height: 65%;
+}
+
+.splash-login-wrapper .splash-login-button-wrapper {
+  height: 35%;
+}
+
+.form-signin-inner {
+  padding: 97px 20px 0 20px;
+}
+
+.form-signin-inner #form-signin {
+  background-color: #fff;
+  padding: 36px 36px 69px 36px;
+  margin: auto;
+  -webkit-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.42);
+  box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.42);
+}
+
+.form-signin-inner #form-signin .form-logo {
+  padding: 72px 26px;
+}
+
+.form-signin-inner #form-signin img {
+  width: 100%;
+  height: auto;
+}
+
+.form-signin-inner #form-signin .form-group {
+  margin-top: 17px;
+  position: relative;
+}
+
+.form-signin-inner #form-signin .form-group input[type=text], .form-signin-inner #form-signin .form-group input[type=password] {
+  height: 65px;
+  background: #f3f3f3;
+  border-radius: 0;
+  font-size: 21px;
+  padding: 0 55px;
+  border: 0;
+}
+
+.form-signin-inner #form-signin .form-group input[type=text]:-webkit-autofill, .form-signin-inner #form-signin .form-group input[type=password]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #f3f3f3 inset;
+}
+
+.form-signin-inner #form-signin .form-group label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 20px;
+  width: 20px;
+  height: 28px;
+}
+
+.form-signin-inner #form-signin .form-group label.label-email {
+  background: url("../img/user-icon.png") center no-repeat;
+}
+
+.form-signin-inner #form-signin .form-group label.label-password {
+  background: url("../img/lock-icon.png") center no-repeat;
+}
+
+.form-signin-inner #form-signin .form-actions button {
+  height: 77px;
+  width: 100%;
+  font-size: 21px;
+  color: #fff;
+  background: #3a3939;
+  border: 0;
+  border-radius: 0;
+}
+
+.form-signin-inner .forgot-password {
+  text-align: right;
+  padding: 20px 0;
+}
+
+.form-signin-inner .forgot-password a {
+  color: #666666;
+  text-transform: capitalize;
+  font-size: 21px;
+}
+
+@media only screen and (max-width: 480px) {
+  .form-signin-inner {
+    padding: 55px 0 0 0;
+  }
+  .form-signin-inner #form-signin {
+    padding: 36px 18px 34px 18px;
+  }
+  .form-signin-inner #form-signin .form-logo {
+    padding: 17px 13px 43px 13px;
+  }
+  .form-signin-inner #form-signin .form-group {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .form-signin-inner #form-signin .form-group input[type=text], .form-signin-inner #form-signin .form-group input[type=password] {
+    height: 37px;
+    background: #f3f3f3;
+    font-size: 14px;
+    padding: 0 25px;
+  }
+  .form-signin-inner #form-signin .form-group label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 4px;
+    width: 20px;
+    height: 28px;
+  }
+  .form-signin-inner #form-signin .form-group label.label-email {
+    background: url("../img/user-icon.png") center no-repeat;
+    background-size: 56%;
+  }
+  .form-signin-inner #form-signin .form-group label.label-password {
+    background: url("../img/lock-icon.png") center no-repeat;
+    background-size: 56%;
+  }
+  .form-signin-inner #form-signin .form-actions button {
+    height: 41px;
+    width: 100%;
+    font-size: 14px;
+  }
+  .form-signin-inner .forgot-password {
+    padding: 14px 0;
+  }
+  .form-signin-inner .forgot-password a {
+    font-size: 14px;
+  }
 }
 
 body.login-body {
@@ -44,18 +206,6 @@ body.login-body {
   background-size: cover;
 }
 
-#form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
-
-input, .btn-primary {
-  margin-bottom: 15px;
-}
-
 .app {
   display: none;
 }
-
-/*# sourceMappingURL=main.css.map */
