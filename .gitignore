@@ -6,3 +6,5 @@
 
 #npm debug
 npm-debug.log
+.DS_Store
+www/cordova.js
