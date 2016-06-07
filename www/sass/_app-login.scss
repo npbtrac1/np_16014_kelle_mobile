@@ -16,9 +16,12 @@
       padding: 28px 20px;
       background-color: $color-login;
       border: 0;
+      text-align: center;
       font-size: 28px;
       color: #fff;
       width: 100%;
+      display: block;
+      text-decoration: none;
       @include respond-to-custom-size(null,$app-breakpoint) {
         padding: 16px 20px;
         font-size: 14px;
@@ -115,6 +118,8 @@
           background: #3a3939;
           border: 0;
           border-radius: 0;
+          text-decoration: none;
+          display: block;
         }
       }
     }

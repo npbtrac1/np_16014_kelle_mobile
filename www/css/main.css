@@ -28,9 +28,12 @@ img {
   padding: 28px 20px;
   background-color: #9a4a47;
   border: 0;
+  text-align: center;
   font-size: 28px;
   color: #fff;
   width: 100%;
+  display: block;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 480px) {
@@ -138,6 +141,8 @@ img {
   background: #3a3939;
   border: 0;
   border-radius: 0;
+  text-decoration: none;
+  display: block;
 }
 
 .form-signin-inner .forgot-password {
