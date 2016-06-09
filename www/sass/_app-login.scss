@@ -146,7 +146,7 @@
     }
     @include respond-to-custom-size(null,$app-breakpoint) {
       padding: 55px 0 0 0 ;
-      #form-signin {
+      #form-sign-in {
         padding: 36px 18px 34px 18px;
         .form-logo {
           padding: 17px 13px 43px 13px;

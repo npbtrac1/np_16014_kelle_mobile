@@ -174,23 +174,23 @@ img {
   .form-signin-inner {
     padding: 55px 0 0 0;
   }
-  .form-signin-inner #form-signin {
+  .form-signin-inner #form-sign-in {
     padding: 36px 18px 34px 18px;
   }
-  .form-signin-inner #form-signin .form-logo {
+  .form-signin-inner #form-sign-in .form-logo {
     padding: 17px 13px 43px 13px;
   }
-  .form-signin-inner #form-signin .form-group {
+  .form-signin-inner #form-sign-in .form-group {
     margin-top: 0;
     margin-bottom: 5px;
   }
-  .form-signin-inner #form-signin .form-group input[type=text], .form-signin-inner #form-signin .form-group input[type=password] {
+  .form-signin-inner #form-sign-in .form-group input[type=text], .form-signin-inner #form-sign-in .form-group input[type=password] {
     height: 37px;
     background: #f3f3f3;
     font-size: 14px;
     padding: 0 25px;
   }
-  .form-signin-inner #form-signin .form-group label {
+  .form-signin-inner #form-sign-in .form-group label {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -199,15 +199,15 @@ img {
     width: 20px;
     height: 28px;
   }
-  .form-signin-inner #form-signin .form-group label.label-email {
+  .form-signin-inner #form-sign-in .form-group label.label-email {
     background: url("../img/user-icon.png") center no-repeat;
     background-size: 56%;
   }
-  .form-signin-inner #form-signin .form-group label.label-password {
+  .form-signin-inner #form-sign-in .form-group label.label-password {
     background: url("../img/lock-icon.png") center no-repeat;
     background-size: 56%;
   }
-  .form-signin-inner #form-signin .form-actions button {
+  .form-signin-inner #form-sign-in .form-actions button {
     height: 41px;
     width: 100%;
     font-size: 14px;
