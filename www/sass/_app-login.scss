@@ -64,7 +64,7 @@
   &-inner {
     padding: 97px 20px 0 20px;
 
-    #form-signin {
+    #form-sign-in {
       background-color: #fff;
       padding: 36px 36px 69px 36px;
       margin: auto;
@@ -106,6 +106,13 @@
           &.label-password {
             background: url("../img/lock-icon.png") center no-repeat;
           }
+          &.error {
+            position: static;
+            color: red;
+            width: 100%;
+            display: block;
+            padding: 5px 0;
+          }
         }
 
       }
@@ -121,6 +128,11 @@
           text-decoration: none;
           display: block;
         }
+      }
+      .alert {
+        margin: 15px 0 0 0;
+        border-radius: 0;
+        border-width: 2px;
       }
     }
     .forgot-password {
