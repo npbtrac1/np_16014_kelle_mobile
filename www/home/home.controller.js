@@ -3,16 +3,17 @@
 
     angular
         .module('app')
-        .controller('HomeController', HomeController);
+        .controller('HomeController', HomeController)
+    ;
 
     HomeController.$inject = ['UserService', '$rootScope'];
     function HomeController(UserService, $rootScope) {
+        $rootScope.bodyLayout = 'login-body';
         var vm = this;
-
+        vm.bodyClass = 'login-body';
         vm.user = null;
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
-
         initController();
 
         function initController() {

@@ -2,12 +2,10 @@
 @import "devices";
 @import "app-global";
 @import "app-login";
-body {
-  &.login-body {
-    background: url('../img/login-bg-mobile.jpg') center no-repeat;
-    background-size: cover;
-  }
-}
+@import "header";
+@import "sidebar";
+@import "app_dashboard";
+
 
 .app {
   display: none;

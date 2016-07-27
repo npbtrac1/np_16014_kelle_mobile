@@ -1,0 +1,112 @@
+.building {
+  padding-top: 40px;
+  background-color: #fff;
+  padding-bottom: 52px;
+  &-heading {
+    float: left;
+    width: 74%;
+    padding-top: 44px;
+  }
+  &-title {
+    font-size: 21px;
+  }
+  &-name {
+    font-size: 50px;
+    color: #b84541;
+    font-weight: 300;
+    padding-top: 8px;
+  }
+  &-image-heading {
+    width: 26%;
+    float: left;
+  }
+}
+.filter {
+  padding-top: 50px;
+  .form-group {
+    margin-bottom: 41px;
+  }
+  .control-label {
+    font-size: 21px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #999999;
+    margin-bottom: 13px;
+  }
+  .form-control {
+    border-radius: 0;
+    height: 70px;
+    border: 1px solid #dfe3e9;
+  }
+}
+.filter-select {
+  background-color: #fff;
+  .form-group {
+    padding: 20px 21px 22px 0;
+    margin-bottom: 0;
+    & + .form-group {
+      border-left: 1px solid #dfe3e9;
+    }
+  }
+
+  .floor-filter {
+    width: 32%;
+    float: left;
+  }
+  .facility-filter {
+    width: 68%;
+    float: left;
+    padding-left: 44px;
+  }
+  .control-label {
+    font-size: 21px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #999999;
+    margin-bottom: 17px;
+  }
+  select {
+    border: 0;
+    border-radius: 0;
+    background: url('../img/dropdow-arrow.png') right 0 center no-repeat;
+    box-shadow: none;
+    padding: 0;
+    font-size: 24px;
+    color: #49494e;
+    margin: 0 -5px;
+    &:focus {
+      outline: none;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+}
+.block {
+  padding-top: 40px;
+  &-list {
+    list-style: none;
+    padding: 0;
+  }
+  &-title {
+    font-size: 26px;
+    color: $main-color;
+  }
+  &-item {
+    margin-bottom: 30px;
+    border: 1px solid #dfe3e9;
+    padding: 20px;
+    background-color: #fff;
+
+  }
+  &-info {
+    font-size: 21px;
+    &-item {
+      label {
+        color: #999999;
+        font-weight: 400;
+        width: 150px;
+      }
+    }
+
+  }
+}

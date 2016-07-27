@@ -1,9 +1,41 @@
 $color-login: #9a4a47;
 $app-breakpoint: 480px;
+$main-color: #b84541;
+$main-bg-color: #edf0f5;
+$gutter-640: 40px;
+$gutter-320: 20px;
 html,body {
   height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: none;
+}
+body {
+  background: $main-bg-color;
 }
 img {
   max-width: 100%;
   height: auto;
+}
+.login-body .view-body {
+  height: 100%;
+}
+.dashboard-body {
+  background: $main-bg-color;
+  text-transform: none;
+}
+.container {
+  padding-left: $gutter-640;
+  padding-right: $gutter-640;
+  @include respond-to-custom-size(null,$app-breakpoint) {
+    padding-left: $gutter-320;
+    padding-right: $gutter-320;
+  }
+}
+.row {
+  margin-left: -$gutter-640;
+  margin-right: -$gutter-640;
+  @include respond-to-custom-size(null,$app-breakpoint) {
+    margin-left: -$gutter-320;
+    margin-right: -$gutter-320;
+  }
 }

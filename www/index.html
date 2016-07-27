@@ -23,12 +23,15 @@
 
 <head>
     <script>document.write('<base href="' + document.location + '" />');</script>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-eval' 'unsafe-inline'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-eval' 'unsafe-inline'"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,700,800,300italic,400italic,700italic,800italic'
+          rel='stylesheet' type='text/css'>
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -38,8 +41,8 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    <link rel="stylesheet" href="css/bootstrap_base.css" >
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="css/bootstrap_base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link href="css/main.css" rel="stylesheet">
     <script src="js/jquery-1.12.4.min.js"></script>
 
@@ -47,34 +50,33 @@
     <title>Kelle Login</title>
 </head>
 
-<body class="login-body">
-    <div class="container" id="splash-login"  ng-hide="showme">
-        <div class="splash-login-wrapper">
-            <div class="splash-login splash-login-logo-wrapper">
-                <div class="splash-login-logo">
-                    <img src="img/kelle-mobile-logo.png" alt="Logo" width="396" height="224">
-                </div>
-            </div>
-            <div class="splash-login splash-login-button-wrapper">
-                <div class="splash-login-button">
-                    <a  href="login.html" class="login-button-nav">Login Here</a>
-                </div>
-            </div>
-        </div>
+<body class="main-body">
+
+<div class="view-body" ng-view>
+
+</div>
+
+<div class="app">
+    <h1>PhoneGap</h1>
+    <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
     </div>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div>
-    </div>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
+</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="js/angular-cookies.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script src="home/home.controller.js"></script>
+<script src="login/login.controller.js"></script>
+<script src="dashboard/dashboard.controller.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
 </body>
 
 </html>

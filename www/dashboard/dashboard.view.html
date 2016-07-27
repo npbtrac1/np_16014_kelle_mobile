@@ -1,0 +1,94 @@
+﻿<header id="main-header">
+    <div class="container">
+        <div class="menu-control">
+            <button class="menu-toggle-btn" ng-click="openSidebar = true">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="menu-title">
+            Dashboard
+        </div>
+    </div>
+</header>
+<div class="sidebar" ng-class="{'active': openSidebar}">
+    <div class="sidebar-logo" ng-click="openSidebar = false">
+        <img src="img/sidebar-logo.png" alt="" width="301" height="85">
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item menu-dashboard active"><a href="#"><span class="menu-icon"></span>Dashboard</a></li>
+        <li class="menu-item menu-logout"><a href="#"><span class="menu-icon"></span>Logout</a></li>
+    </ul>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="building">
+            <div class="container">
+                <div class="building-heading">
+                    <div class="building-title">
+                        BUILDING
+                    </div>
+                    <div class="building-name">
+                        {{building.name}}
+                    </div>
+                </div>
+                <div class="building-image-heading">
+                    <img src="img/bd-heading-image.png" width="146" height="146">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="filter">
+            <div class="container">
+                <div class="form-group block-filter">
+                    <label for="block-filter" class="control-label">Block</label>
+                    <input id="block-filter" type="text" name="block-filter" class="form-control">
+                </div>
+                <div class="form-group block-filter">
+                    <label for="block-status-filter" class="control-label">Show Block Status from</label>
+                    <input id="block-status-filter" type="text" name="block-filter" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="filter-select">
+            <div class="container">
+                <div class="form-group floor-filter">
+                    <label for="floor-filter-input" class="control-label">Floor</label>
+                    <select name="floor-filter" id="floor-filter-input" class="form-control">
+                        <option value="1">12</option>
+                        <option value="1">13</option>
+                        <option value="1">14</option>
+                    </select>
+                </div>
+                <div class="form-group facility-filter">
+                    <label for="facility-filter-input" class="control-label">Facility ID</label>
+                    <select name="floor-filter" id="facility-filter-input" class="form-control">
+                        <option value="">-Select-</option>
+                        <option value="1">facility 2</option>
+                        <option value="1">facility 3</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="container">
+                <ul class="block-list">
+                    <li class="block-item">
+                        <div class="block-info">
+                            <div class="block-title">Block A Lorem</div>
+                            <div class="block-info-item"><label>Floor: </label>12</div>
+                            <div class="block-info-item"><label>Facility Type: </label>Toilet</div>
+                            <div class="block-info-item"><label>Facility ID:</label>Male Toilet</div>
+                        </div>
+                        <div class="block-rating">
+                            <div class="block-rating-star"></div>
+                            <div class="block-rating-number">4.5</div>
+                            <div class="block-rating-label">Ratings</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
