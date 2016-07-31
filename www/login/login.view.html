@@ -2,22 +2,25 @@
     <div class="container" id="main-login">
         <div class="form-signin-wrapper">
             <div class="form-signin-inner">
-                <form id="form-sign-in" action="" autocomplete="off">
+
+                <form id="form-sign-in" name="form" ng-submit="vm.login()" role="form">
                     <div class="form-logo">
                         <img src="img/login-main-logo.png" alt="Logo" width="434" height="265">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
                         <label class="label-email" for="inputEmail"></label>
-                        <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Login ID"
-                               required autofocus autocomplete="off">
+                        <input type="text" name="username" id="inputEmail" class="form-control" ng-model="vm.username" required />
+                        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>
                     </div>
                     <div class="form-group">
                         <label class="label-password" for="inputPassword"></label>
-                        <input type="password" name="password" id="inputPassword" class="form-control"
-                               placeholder="Password" required autocomplete="off">
+                        <input type="password" name="password" id="inputPassword" class="form-control" ng-model="vm.password" required />
+                        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>
                     </div>
                     <div class="form-actions">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-lg btn-primary btn-block">Sign in</button>
+                        <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
                     </div>
                 </form>
                 <div class="forgot-password">
@@ -27,46 +30,3 @@
         </div>
     </div> <!-- /container -->
 </div>
-<script>
-//    var ajaxUrl = 'http://kelle.demo.enpii.com/api/web/v1';
-    var ajaxUrl = 'http://kelle.don/api/web/v1';
-    var siteController = '/users';
-    var loginAction = '/login';
-
-    jQuery(document).ready(function () {
-        loginForm = jQuery('#form-sign-in');
-
-        loginForm.submit(function(e){
-            e.preventDefault();
-            console.log(ajaxUrl + siteController + loginAction);
-            jQuery.ajax({
-                type: "post",
-                url: ajaxUrl + siteController + loginAction,
-                data: {
-                    username: loginForm.find('#inputEmail').val(),
-                    password: loginForm.find('#inputPassword').val()
-                },
-                beforeSend: function () {
-                    loginForm.find('.btn').attr("disabled", true);
-                    loginForm.find('.btn').html('Logging...');
-                },
-                complete: function () {
-                    loginForm.find('.btn').attr("disabled", false);
-                    loginForm.find('.btn').html('Sign in');
-                },
-                success: function (data) {
-                    obj = jQuery.parseJSON( data);
-                    loginForm.find('.alert').remove();
-                    if(obj.status == 200) {
-                        loginForm.find('.form-actions').after("<div class='alert alert-success fade in'>"+ obj.message +"</div>");
-                        window.location.href = "#/dashboard";
-                    } else {
-                        loginForm.find('.form-actions').after("<div class='alert alert-danger fade in'>"+ obj.message +"</div>");
-                    }
-                }
-            });
-        });
-
-    });
-
-</script>

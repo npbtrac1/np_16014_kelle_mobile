@@ -2,9 +2,7 @@
  * Created by lacphan on 6/27/16.
  */
 (function () {
-    var app = angular.module('app',['ngRoute', 'ngCookies']).config(config)
-        // .run(run)
-        ;
+    var app = angular.module('app',['ngRoute', 'ngCookies']).config(config).run(run);
 
     config.$inject = ['$routeProvider', '$locationProvider'];
     function config($routeProvider, $locationProvider) {
@@ -20,7 +18,7 @@
                 templateUrl: 'dashboard/dashboard.view.html',
                 controllerAs: 'vm'
             })
-            
+
             .when('/login', {
                 controller: 'LoginController',
                 templateUrl: 'login/login.view.html',
