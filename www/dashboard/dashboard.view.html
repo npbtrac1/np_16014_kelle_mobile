@@ -18,19 +18,20 @@
     </div>
     <ul class="sidebar-menu">
         <li class="menu-item menu-dashboard active"><a href="#"><span class="menu-icon"></span>Dashboard</a></li>
-        <li class="menu-item menu-logout"><a href="#"><span class="menu-icon"></span>Logout</a></li>
+        <li class="menu-item menu-logout"><a href="#/logout"><span class="menu-icon"></span>Logout</a></li>
     </ul>
 </div>
 <div class="container">
     <div class="row">
-        <div class="building">
+        <div class="building" ng-controller="DashboardController">
             <div class="container">
                 <div class="building-heading">
+
                     <div class="building-title">
                         BUILDING
                     </div>
-                    <div class="building-name">
-                        {{building.name}}
+                    <div id="building-name" class="building-name">
+
                     </div>
                 </div>
                 <div class="building-image-heading">
@@ -43,7 +44,9 @@
             <div class="container">
                 <div class="form-group block-filter">
                     <label for="block-filter" class="control-label">Block</label>
-                    <input id="block-filter" type="text" name="block-filter" class="form-control">
+                    <select id="block-filter" name="block-filter" class="form-control">
+
+                    </select>
                 </div>
                 <div class="form-group block-filter">
                     <label for="block-status-filter" class="control-label">Show Block Status from</label>
@@ -54,41 +57,26 @@
         <div class="filter-select">
             <div class="container">
                 <div class="form-group floor-filter">
-                    <label for="floor-filter-input" class="control-label">Floor</label>
-                    <select name="floor-filter" id="floor-filter-input" class="form-control">
-                        <option value="1">12</option>
-                        <option value="1">13</option>
-                        <option value="1">14</option>
+                    <label for="floor-filter" class="control-label">Floor</label>
+                    <select name="floor-filter" id="floor-filter" class="form-control">
+
                     </select>
                 </div>
                 <div class="form-group facility-filter">
-                    <label for="facility-filter-input" class="control-label">Facility ID</label>
-                    <select name="floor-filter" id="facility-filter-input" class="form-control">
-                        <option value="">-Select-</option>
-                        <option value="1">facility 2</option>
-                        <option value="1">facility 3</option>
+                    <label for="facility-filter" class="control-label">Facility ID</label>
+                    <select name="floor-filter" id="facility-filter" class="form-control">
+
                     </select>
                 </div>
             </div>
         </div>
         <div class="block">
             <div class="container">
-                <ul class="block-list">
-                    <li class="block-item">
-                        <div class="block-info">
-                            <div class="block-title">Block A Lorem</div>
-                            <div class="block-info-item"><label>Floor: </label>12</div>
-                            <div class="block-info-item"><label>Facility Type: </label>Toilet</div>
-                            <div class="block-info-item"><label>Facility ID:</label>Male Toilet</div>
-                        </div>
-                        <div class="block-rating">
-                            <div class="block-rating-star"></div>
-                            <div class="block-rating-number">4.5</div>
-                            <div class="block-rating-label">Ratings</div>
-                        </div>
-                    </li>
+                <ul id="block-list" class="block-list">
+
                 </ul>
             </div>
         </div>
+
     </div>
 </div>

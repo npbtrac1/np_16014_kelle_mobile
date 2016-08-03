@@ -68,12 +68,14 @@
   select {
     border: 0;
     border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background: url('../img/dropdow-arrow.png') right 0 center no-repeat;
     box-shadow: none;
     padding: 0;
     font-size: 24px;
     color: #49494e;
-    margin: 0 -5px;
+    margin: 0;
     &:focus {
       outline: none;
       border: 0;
@@ -100,6 +102,10 @@
   }
   &-info {
     font-size: 21px;
+    @include respond-to-custom-size(480px) {
+      width: 70%;
+      float: left;
+    }
     &-item {
       label {
         color: #999999;
@@ -109,4 +115,49 @@
     }
 
   }
+  &-rating {
+    @include respond-to-custom-size(480px) {
+      width: 30%;
+      float: left;
+      text-align: right;
+    }
+
+    .br-theme-fontawesome-stars {
+      .br-widget {
+        a {
+          font: normal normal normal 20px/1 FontAwesome;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          text-decoration: none;
+          margin-right: 2px;
+          font-size: 28px;
+          &:after {
+            content: "\f006";
+            color: #f1c40f;
+          }
+        }
+        .br-selected, .br-current {
+          &:after {
+            content: "\f005";;
+            color: #f1c40f;
+          }
+        }
+      }
+    }
+
+    &-number {
+      font-size: 47px;
+      color: #b84541;
+    }
+    &-label {
+      font-size: 21px;
+      text-transform: uppercase;
+    }
+  }
+}
+.back-to-dashboard {
+  display: block;
+  width: 41px;
+  height: 33px;
+  background: url("../img/arrow-left.png") center no-repeat;
 }

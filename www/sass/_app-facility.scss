@@ -1,0 +1,151 @@
+.facility-info {
+  ul {
+    padding: 0;
+    margin-bottom: 20px;
+    list-style: none;
+    li {
+      padding: 0 0;
+      &:nth-child(n + 1) {
+        background-color: #fff;
+      }
+      &:nth-child(2n + 1) {
+        background-color: #f5f8fc;
+      }
+    }
+  }
+  .info {
+    &-item {
+      .inner {
+        position: relative;
+        padding: 30px 0 30px 110px;
+        min-height: 90px;
+      }
+    }
+    &-title {
+      font-size: 21px;
+      color: #999999;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    &-content {
+      font-size: 28px;
+      color: #49494e;
+    }
+    &-icon {
+      position: absolute;
+      height: 62px;
+      width: 61px;
+      left: 0;
+      background: url("../img/icon-facility.png") 0 0 no-repeat;
+      top: 33px;
+      &.icon-date {
+        background-position: 0 -133px;
+      }
+      &.icon-key {
+        background-position: 0 -273px;
+      }
+      &.icon-panel {
+        background-position: 0 -398px;
+      }
+      &.icon-file {
+        background-position: 0 -533px;
+      }
+    }
+  }
+}
+.rate-tasks {
+  padding-top: 90px;
+  &-title {
+    font-size: 36px;
+    color: #3a3939;
+    margin-bottom: 25px;
+  }
+  #task-list {
+    padding: 0;
+    list-style: none;
+    .task-item {
+      background-color: #fff;
+      padding: 27px 0;
+      margin-bottom: 40px;
+      .inner {
+
+        .task-item-title {
+          float: left;
+          color: #b84541;
+          font-size: 30px;
+        }
+        .image-control {
+          a {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #d3d7dd;
+            display: inline-block;
+            color: #d3d7dd;
+            font-size: 48px;
+            padding: 39px 48px;
+          }
+        }
+        .task-action {
+          float: right;
+          .br-theme-fontawesome-stars {
+            float: left;
+            margin-right: 5px;
+            margin-top: 7px;
+            .br-widget {
+              a {
+                font: normal normal normal 20px/1 FontAwesome;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                text-decoration: none;
+                margin-right: 2px;
+                font-size: 35px;
+                &:after {
+                  content: "\f006";
+                  color: #f1c40f;
+                }
+              }
+              .br-selected, .br-current {
+                &:after {
+                  content: "\f005";;
+                  color: #f1c40f;
+                }
+              }
+            }
+          }
+          .edit-facility {
+            font-size: 21px;
+            display: block;
+            float: left;
+            background-color: #d3d7dd;
+            color: #393c42;
+            border: 1px solid #c5c9cf;
+            border-radius: 5px;
+            text-decoration: none;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            &.active {
+              background-color: #b84541;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .image-control {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+}
+.request-adhoc {
+  a {
+    text-align: center;
+    background-color: #b84541;
+    display: block;
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    padding: 40px 0;
+  }
+}
