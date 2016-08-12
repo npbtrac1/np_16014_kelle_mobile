@@ -1,0 +1,134 @@
+﻿<header id="main-header">
+    <div class="container">
+        <div class="menu-control">
+            <a class="back-to-dashboard" href back> </a>
+        </div>
+        <div class="menu-title">
+            Rate Task
+        </div>
+    </div>
+</header>
+<div class="sidebar" ng-class="{'active': openSidebar}">
+    <div class="sidebar-logo" ng-click="openSidebar = false">
+        <img src="img/sidebar-logo.png" alt="" width="301" height="85">
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item menu-dashboard active"><a href="#"><span class="menu-icon"></span>Dashboard</a></li>
+        <li class="menu-item menu-logout"><a href="#/logout"><span class="menu-icon"></span>Logout</a></li>
+    </ul>
+</div>
+<div class="container">
+    <form action="" id="single-task-form">
+        <div class="row">
+            <div class="building" ng-controller="DashboardController">
+                <div class="container">
+                    <div class="building-heading">
+                        <div class="building-title">
+                            TASK
+                        </div>
+                        <div id="task-name" class="building-name">
+
+                        </div>
+                    </div>
+                    <div class="building-image-heading">
+                        <img src="img/capa.png" width="146" height="146">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="task-rating">
+                <div class="container">
+                    <div class="task-rating-title">
+                        task RATING
+                    </div>
+                    <div class="rating-action" >
+                        <select id="single-task-rating" class="block-rating-star" data-current-rating="">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="task-images single-task-image">
+                <div class="container">
+                    <div class="task-images-title">
+                        IMAGES
+                    </div>
+                </div>
+                <div class="task-images-list-wrapper">
+                    <ul id="task-image-list" class="task-images-list">
+                        <li class="image-item">
+                            <img src="img/demo-img-task.jpg" alt="">
+                        </li>
+                        <li class="image-item">
+                            <img src="img/demo-img-task.jpg" alt="">
+                        </li>
+                        <li class="image-item">
+                            <img src="img/demo-img-task.jpg" alt="">
+                        </li>
+                        <li class="image-item">
+                            <img src="img/demo-img-task.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="success-message" class="bg-success status-message hidden">
+                <div class="container">
+                    <div class="inner">
+
+                    </div>
+                </div>
+
+            </div>
+            <div id="error-message" class="bg-dange hidden">
+                <div class="container">
+                    <div class="inner">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" id="task-rating-value" name="sing-rating-value" value="">
+        <div class="row">
+            <div class="submit-rating">
+                <button id="submit-rating" type="submit">Submit Rating</button>
+            </div>
+        </div>
+    </form>
+    <div class="modal fade in" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="image-gallery-title">child fn A, British Columbia</h4>
+                </div>
+                <div class="modal-body">
+                    <img id="image-gallery-image" class="img-responsive" src="">
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-control">
+                        <button type="button" class="modal-prev" id="show-previous-image">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" id="show-next-image" class="modal-next" style="display: none;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="col-md-12 a-center" id="#image-gallery-caption">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

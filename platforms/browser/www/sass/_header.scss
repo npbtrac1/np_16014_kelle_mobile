@@ -1,0 +1,49 @@
+#main-header {
+  background-color: $main-color;
+  padding: 36px 0 30px 0;
+  .menu-control {
+    float: left;
+    .menu-toggle-btn {
+      margin-top: 9px;
+      background-color: transparent;
+      border: 0;
+      padding: 0;
+      &:focus {
+        outline: none;
+      }
+      .icon-bar {
+        width: 36px;
+        height: 6px;
+        border-radius: 2px;
+        background-color: #fff;
+        display: block;
+        & + .icon-bar {
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+  .menu-title {
+    text-align: center;
+    color: #fff;
+    font-size: 31px;
+  }
+  @include respond-to-custom-size(null,$app-breakpoint) {
+    padding: 22px 0 12px 0;
+    .menu-control {
+      .menu-toggle-btn {
+        margin-top: 3px;
+        .icon-bar {
+          width: 19px;
+          height: 4px;
+          & + .icon-bar {
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+    .menu-title {
+      font-size: 15.5px;
+    }
+  }
+}
