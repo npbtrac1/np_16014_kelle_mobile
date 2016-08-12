@@ -1,9 +1,7 @@
 ﻿<header id="main-header">
     <div class="container">
         <div class="menu-control">
-            <a class="back-to-dashboard" href="#/dashboard">
-
-            </a>
+            <a class="back-to-dashboard" href back></a>
         </div>
         <div class="menu-title">
             Facility Status
@@ -19,7 +17,7 @@
         <li class="menu-item menu-logout"><a href="#/logout"><span class="menu-icon"></span>Logout</a></li>
     </ul>
 </div>
-<div class="container">
+<div class="container" ng-controller="TaskController">
     <div class="row">
         <div class="building" ng-controller="DashboardController">
             <div class="container">
@@ -99,7 +97,7 @@
 
             </ul>
         </div>
-        <div class="request-adhoc">
+        <div id="request-adhoc" class="request-adhoc">
             <a href="#/request-adhoc">Request for Adhoc</a>
         </div>
     </div>

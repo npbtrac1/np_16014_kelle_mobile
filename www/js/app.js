@@ -28,11 +28,17 @@ app.config(['$routeProvider', '$httpProvider',
         }).when('/task/:id', {
             templateUrl: 'task/task.view.html',
             controller: 'TaskController'
+        }).when('/request-adhoc/:id', {
+            templateUrl: 'request/request.view.html',
+            controller: 'RequestController'
+        }).when('/update-image-task/:id', {
+            templateUrl: 'task/update-image.view.html',
+            controller: 'TaskUpdateImageController'
         }).when('/logout', {
             templateUrl: 'home/home.view.html',
             controller: 'LogoutController'
         }).otherwise({
-            templateUrl: 'partials/404.html'
+            templateUrl: '404.html'
         });
         $httpProvider.interceptors.push('authInterceptor');
     }
@@ -106,4 +112,14 @@ app.directive('login', ['$http', function ($http) {
             return input ? '\u2713' : '\u2718';
         };
     });
+app.directive('back', ['$window', function($window) {
+    return {
+        restrict: 'A',
+        link: function (scope, elem, attrs) {
+            elem.bind('click', function () {
+                $window.history.back();
+            });
+        }
+    };
+}]);
 

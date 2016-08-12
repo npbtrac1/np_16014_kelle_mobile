@@ -1745,9 +1745,9 @@ angular.module('ngAnimate', ['ng'])
           str.split(/\s*,\s*/) :
           [];
         forEach(values, function(value) {
-          maxValue = Math.max(parseFloat(value) || 0, maxValue);
+          maxValueID = Math.max(parseFloat(value) || 0, maxValueID);
         });
-        return maxValue;
+        return maxValueID;
       }
 
       function getCacheKey(element) {

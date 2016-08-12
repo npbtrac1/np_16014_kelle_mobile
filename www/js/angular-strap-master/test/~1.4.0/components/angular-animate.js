@@ -721,9 +721,9 @@ function parseMaxTime(str) {
       value = value.substring(0, value.length - 1);
     }
     value = parseFloat(value) || 0;
-    maxValue = maxValue ? Math.max(value, maxValue) : value;
+    maxValueID = maxValueID ? Math.max(value, maxValueID) : value;
   });
-  return maxValue;
+  return maxValueID;
 }
 
 function truthyTimingValue(val) {

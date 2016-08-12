@@ -18,7 +18,12 @@
       .inner {
         position: relative;
         padding: 30px 0 30px 110px;
-        min-height: 90px;
+        min-height: 132px;
+        @include respond-to-custom-size(null,480px) {
+          position: relative;
+          padding: 12px 0 12px 57px;
+          min-height: 67px;
+        }
       }
     }
     &-title {
@@ -26,10 +31,16 @@
       color: #999999;
       text-transform: uppercase;
       margin-bottom: 4px;
+      @include respond-to-custom-size(null,480px) {
+        font-size: 13px;
+      }
     }
     &-content {
       font-size: 28px;
       color: #49494e;
+      @include respond-to-custom-size(null,480px) {
+        font-size: 14px;
+      }
     }
     &-icon {
       position: absolute;
@@ -38,6 +49,7 @@
       left: 0;
       background: url("../img/icon-facility.png") 0 0 no-repeat;
       top: 33px;
+
       &.icon-date {
         background-position: 0 -133px;
       }
@@ -50,15 +62,46 @@
       &.icon-file {
         background-position: 0 -533px;
       }
+      @include respond-to-custom-size(null,480px) {
+        position: absolute;
+        height: 36px;
+        width: 36px;
+        background-image: url("../img/icon-facility.png");
+        background-size: 30px 294px;
+        background-repeat: no-repeat;
+        top: 15px;
+        left: 0;
+        &.icon-date {
+          background-position: 0 -67px;
+        }
+        &.icon-key {
+          background-position: 0px -133px;
+        }
+        &.icon-panel {
+          background-position: 0 -198px;
+        }
+        &.icon-file {
+          background-position: 0 -266px;
+        }
+      }
     }
   }
 }
 .rate-tasks {
   padding-top: 90px;
+  background-color: #edf0f5;
+  margin-top: 19px;
+  @include respond-to-custom-size(null,480px) {
+    padding-top: 36px;
+  }
   &-title {
     font-size: 36px;
     color: #3a3939;
     margin-bottom: 25px;
+    @include respond-to-custom-size(null,480px) {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
   }
   #task-list {
     padding: 0;
@@ -67,12 +110,20 @@
       background-color: #fff;
       padding: 27px 0;
       margin-bottom: 40px;
+      @include respond-to-custom-size(null,480px) {
+        padding: 10px 0 23px 0;
+        margin-bottom: 20px;
+      }
       .inner {
 
         .task-item-title {
           float: left;
           color: #b84541;
           font-size: 30px;
+          @include respond-to-custom-size(null,480px) {
+            font-size: 14px;
+            margin-top: 5px;
+          }
         }
         .image-control {
           a {
@@ -83,14 +134,27 @@
             color: #d3d7dd;
             font-size: 48px;
             padding: 39px 48px;
+            background-size: cover ;
+            background-position: center;
+            background-repeat: no-repeat;
+            @include respond-to-custom-size(null,480px) {
+              width: 75px;
+              height: 75px;
+              padding: 20px 23px;
+              font-size: 24px;
+            }
           }
         }
         .task-action {
           float: right;
-          .br-theme-fontawesome-stars {
+          .br-theme-fontawesome-stars-o {
             float: left;
             margin-right: 5px;
             margin-top: 7px;
+            @include respond-to-custom-size(null,480px) {
+              margin-right: 14px;
+              margin-top: 7px;
+            }
             .br-widget {
               a {
                 font: normal normal normal 20px/1 FontAwesome;
@@ -99,17 +163,22 @@
                 text-decoration: none;
                 margin-right: 2px;
                 font-size: 35px;
+                @include respond-to-custom-size(null,480px) {
+                  margin-right: 1px;
+                  font-size: 18px;
+                }
                 &:after {
                   content: "\f006";
                   color: #f1c40f;
                 }
-              }
-              .br-selected, .br-current {
-                &:after {
-                  content: "\f005";;
-                  color: #f1c40f;
+                &.br-selected, &.br-current , &.br-active{
+                  &:after {
+                    content: "\f005";;
+                    color: #f1c40f;
+                  }
                 }
               }
+
             }
           }
           .edit-facility {
@@ -123,9 +192,32 @@
             text-decoration: none;
             padding: 10px 30px;
             text-transform: uppercase;
+            font-weight: 600;
+            @include respond-to-custom-size(null,480px) {
+              font-size: 11px;
+              padding: 6px 15px;
+            }
             &.active {
               background-color: #b84541;
               color: #fff;
+            }
+          }
+          .rate-task-btn {
+            font-size: 21px;
+            display: block;
+            float: left;
+            background-color: #b84541;
+            color: #fff;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            text-decoration: none;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+
+            @include respond-to-custom-size(null,480px) {
+              font-size: 11px;
+              padding: 6px 15px;
             }
           }
         }
@@ -135,6 +227,27 @@
   .image-control {
     padding-top: 20px;
     padding-bottom: 20px;
+    overflow: hidden;
+    @include respond-to-custom-size(null,480px) {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    .image-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 -5px;
+      &:before,&:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      li {
+        float: left;
+        width: 25%;
+        padding: 0 5px;
+        margin-bottom: 5px;
+      }
+    }
   }
 
 }
@@ -147,5 +260,9 @@
     color: #fff;
     text-decoration: none;
     padding: 40px 0;
+    @include respond-to-custom-size(null,480px) {
+      font-size: 14px;
+      padding: 20px 0;
+    }
   }
 }
