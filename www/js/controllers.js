@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
+siteUrl = 'http://top3.dev-srv.net/16/kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
