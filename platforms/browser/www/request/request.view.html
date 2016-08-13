@@ -1,0 +1,99 @@
+﻿<header id="main-header">
+    <div class="container">
+        <div class="menu-control">
+            <a class="back-to-dashboard" href=""></a>
+        </div>
+        <div class="menu-title">
+            Send a Request
+        </div>
+    </div>
+</header>
+<div class="container">
+    <form id="request-form" action="">
+        <div class="row">
+            <div class="building" ng-controller="DashboardController">
+                <div class="container">
+                    <div class="building-heading">
+                        <div id="task-name" class="building-name">
+                            Adhoc Request
+                        </div>
+                    </div>
+                    <div class="building-image-heading">
+                        <img src="img/request-ad.png" width="146" height="146">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="container">
+                <div class="request-form">
+
+                    <form id="request-adhoc" class="form-body" action=""
+                          method="post">
+
+                        <div class="form-group field-buildingfacility-building_id required">
+                            <label class="control-label" for="request-building-name">
+                                Building Name
+                            </label>
+                            <input type="text" id="request-building-name" class="form-control"
+                                   name="BuildingFacility[building_id]" value="" disabled="">
+
+                            <div class="help-block"></div>
+                        </div>
+
+                        <div class="form-group field-request-block-name required">
+                            <label class="control-label" for="request-block-name">Block</label>
+                            <input type="text" id="request-block-name" class="form-control"
+                                   name="BuildingFacility[block]" value="" disabled="" maxlength="255">
+
+                            <div class="help-block"></div>
+                        </div>
+
+                        <div class="form-group field-request-facility-id required">
+                            <label class="control-label" for="request-facility-id">Facility ID</label>
+                            <input type="text" id="request-facility-id" class="form-control"
+                                   name="BuildingFacility[facility_id]" value="" disabled="">
+
+                            <div class="help-block"></div>
+                        </div>
+
+                        <div class="form-group field-request-subject required">
+                            <label class="control-label" for="request-subject">Subject</label>
+                            <input type="text" id="request-subject" class="form-control"
+                                   name="SupervisorEmail[subject]" value="Request for Adhoc" maxlength="255">
+
+                            <div class="help-block"></div>
+                        </div>
+
+                        <div class="task-checklist-wrapper">
+                            <div class="form-group field-buildingfacility-tasks">
+                                <label class="control-label" for="building-tasks">Tasks</label>
+                                <input type="hidden" name="BuildingFacility[tasks]" value="">
+                                <div id="building-tasks">
+
+                                </div>
+                                <div class="help-block"></div>
+                            </div>
+
+                            <div class="form-group field-supervisoremail-remarks">
+                                <label class="control-label" for="supervisoremail-remarks">Remarks</label>
+                                <textarea id="supervisoremail-remarks" class="form-control"
+                                          name="SupervisorEmail[remarks]" maxlength="255"></textarea>
+
+                                <div class="help-block"></div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="submit-rating">
+                <button id="request-adhoc-btn" type="submit">Send Request</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>

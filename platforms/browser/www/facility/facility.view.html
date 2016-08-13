@@ -1,0 +1,104 @@
+﻿<header id="main-header">
+    <div class="container">
+        <div class="menu-control">
+            <a class="back-to-dashboard" href back></a>
+        </div>
+        <div class="menu-title">
+            Facility Status
+        </div>
+    </div>
+</header>
+<div class="sidebar" ng-class="{'active': openSidebar}">
+    <div class="sidebar-logo" ng-click="openSidebar = false">
+        <img src="img/sidebar-logo.png" alt="" width="301" height="85">
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item menu-dashboard active"><a href="#"><span class="menu-icon"></span>Dashboard</a></li>
+        <li class="menu-item menu-logout"><a href="#/logout"><span class="menu-icon"></span>Logout</a></li>
+    </ul>
+</div>
+<div class="container" ng-controller="TaskController">
+    <div class="row">
+        <div class="building" ng-controller="DashboardController">
+            <div class="container">
+                <div class="building-heading">
+                    <div class="building-title">
+                        BUILDING
+                    </div>
+                    <div id="building-name" class="building-name">
+
+                    </div>
+                </div>
+                <div class="building-image-heading">
+                    <img src="img/bd-heading-image.png" width="146" height="146">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="facility-info">
+            <ul>
+                <li class="info-item">
+                    <div class="container  wrapper">
+                        <div class="inner">
+                            <div class="info-icon icon-building"></div>
+                            <div class="info-title">Block</div>
+                            <div id="facility-name" class="info-content"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="info-item">
+                    <div class="container  wrapper">
+                        <div class="inner">
+                            <div class="info-icon icon-date"></div>
+                            <div class="info-title">Date</div>
+                            <div id="facility-date" class="info-content">01-April-2016</div>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="info-item">
+                    <div class="container  wrapper">
+                        <div class="inner">
+                            <div class="info-icon icon-key"></div>
+                            <div class="info-title">floor</div>
+                            <div id="facility-floor" class="info-content"></div>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="info-item">
+                    <div class="container wrapper">
+                        <div class="inner">
+                            <div class="info-icon icon-panel"></div>
+                            <div class="info-title">FACILITY TYPE</div>
+                            <div id="facility-type" class="info-content"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="info-item">
+                    <div class="container wrapper">
+                        <div class="inner">
+                            <div class="info-icon icon-file"></div>
+                            <div class="info-title">FACILITY ID</div>
+                            <div id="facility-id" class="info-content"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="rate-tasks">
+            <div class="container">
+                <div class="rate-tasks-title">
+                    Rate Tasks
+                </div>
+            </div>
+
+            <ul id="task-list">
+
+            </ul>
+        </div>
+        <div id="request-adhoc" class="request-adhoc">
+            <a href="#/request-adhoc">Request for Adhoc</a>
+        </div>
+    </div>
+</div>

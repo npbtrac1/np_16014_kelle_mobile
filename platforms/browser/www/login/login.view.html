@@ -1,0 +1,34 @@
+﻿<div class="login-body">
+    <div class="container" id="main-login">
+        <div class="form-signin-wrapper">
+            <div class="form-signin-inner">
+                <form  ng-submit="login()" name="loginForm" id="form-sign-in" method="post" role="form" >
+                    <div class="form-logo">
+                        <img src="img/login-main-logo.png" alt="Logo" width="434" height="265">
+                    </div>
+                    <div  ng-class="{ 'has-success': !error['username'] && submitted,
+                'has-error': error['username'] && submitted }"
+                         class="form-group field-loginform-username required">
+                        <label class="label-email control-label" for="loginform-username"></label>
+                        <input  ng-model="userModel.username" type="text" id="loginform-username" class="form-control">
+                        <p class="help-block help-block-error">{{ error['username'] }}</p>
+                    </div>
+                    <div  id="inputPassword" ng-class="{ 'has-success': !error['password'] && submitted,
+                'has-error': error['password'] && submitted }"
+                         class="form-group field-loginform-password required">
+                        <label class="label-password control-label" for="loginform-password"></label>
+                        <input ng-model="userModel.password" type="password" id="loginform-password" class="form-control">
+                        <p class="help-block help-block-error">{{ error['password'] }}</p>
+                    </div>
+                    <div class="form-group form-actions">
+                        <button type="submit" class="btn btn-lg btn-primary btn-block" name="login-button">Sign in</button>
+                        <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    </div>
+                </form>
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /container -->
+</div>
