@@ -272,8 +272,10 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
             });
             $('a.popup-image').colorbox({rel:'popup-image'});
         });
+        buttonText =  $('#submit-rating').html();
         $('#submit-rating').click(function (e) {
             e.preventDefault();
+            formSubmit = $('#single-task-form');
             jQuery.ajax({
                 url: ajaxUrl + '/buildings/rate-task?id=' + $routeParams.id,
                 type: 'post',
@@ -283,6 +285,12 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
                 },
                 beforeSend: function () {
                     $('.status-message').addClass('hidden');
+                    formSubmit.find('button[type=submit]').attr("disabled", true);
+                    formSubmit.find('button[type=submit]').html('Processing...');
+                },
+                complete: function () {
+                    formSubmit.find('button[type=submit]').attr("disabled", false);
+                    formSubmit.find('button[type=submit]').html(buttonText);
                 },
                 success: function (response) {
                     if (response.status == 200) {
