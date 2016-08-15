@@ -430,8 +430,8 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
             });
             $('#building-tasks').html(tasksHtml);
         });
+        buttonText = $('#request-adhoc-btn').html();
         $('#request-adhoc-btn').click(function (e) {
-
             e.preventDefault();
             fromRequest = $('#request-form');
             formData = fromRequest.serializeArray();
@@ -439,7 +439,8 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
                 name: "access_token",
                 value: $window.sessionStorage.access_token
             });
-            buttonText = $(this).html();
+
+            console.log(buttonText);
             jQuery.ajax({
                 url: ajaxUrl + '/buildings/request-adhoc?id=' + $routeParams.id,
                 type: 'post',
@@ -456,16 +457,13 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
 
                 success: function (response) {
                     obj = jQuery.parseJSON(response);
-                    console.log(obj);
-                    if (response.status == 200) {
-                        fromRequest.trigger("reset");
-                        $('#success-message').removeClass('hidden').find('.inner').html(response.message);
+                    if (obj.status == 200) {
+                        $('#success-message').removeClass('hidden').find('.inner').html(obj.message);
                     } else {
-                        $('#error-message').removeClass('hidden').find('.inner').html(response.message);
+                        $('#error-message').removeClass('hidden').find('.inner').html(obj.message);
                     }
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
-                    console.log(thrownError);
                     $('#error-message').removeClass('hidden').find('.inner').html(thrownError.message);
                 }
             })
