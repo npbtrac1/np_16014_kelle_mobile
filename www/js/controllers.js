@@ -21,15 +21,17 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
 
         $scope.login = function () {
             $scope.submitted = true;
+            $scope.dataLoading = true;
             $scope.error = {};
             $http.post(ajaxUrl + '/user/login', $scope.userModel).success(
                 function (data) {
-                    console.log(data);
+                    $scope.dataLoading = false;
                     $window.sessionStorage.access_token = data.access_token;
                     $window.sessionStorage.building_id = data.building_id;
                     $location.path('/dashboard').replace();
                 }).error(
                 function (data) {
+                    $scope.dataLoading = false;
                     angular.forEach(data, function (error) {
                         $scope.error[error.field] = error.message;
                     });
@@ -379,6 +381,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
 
             $('#dynamic-form-submit').click(function (e) {
                 e.preventDefault();
+                var formSubmit = $('#dynamic-form');
                 var formData = new FormData($(this).parents('form')[0]);
                 $.ajax({
                     url: ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id,
@@ -387,10 +390,20 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                         var myXhr = $.ajaxSettings.xhr();
                         return myXhr;
                     },
+                    beforeSend: function () {
+                        formSubmit.find('button[type=submit]').attr("disabled", true);
+                        formSubmit.find('button[type=submit]').html('Processing...');
+                    },
+                    complete: function () {
+                        formSubmit.find('button[type=submit]').attr("disabled", false);
+                        formSubmit.find('button[type=submit]').html(buttonText);
+                    },
                     success: function (response) {
                         console.log(response);
                         if (response.status == 200) {
                             $window.location.reload();
+                        } else {
+                            $('#error-message').removeClass('hidden').find('.inner').html(response.message);
                         }
                     },
                     data: formData,
@@ -443,13 +456,17 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
 
                 success: function (response) {
                     obj = jQuery.parseJSON(response);
-                    if (obj.status == 200) {
+                    console.log(obj);
+                    if (response.status == 200) {
                         fromRequest.trigger("reset");
-                        fromRequest.find('#message').html(obj.message);
-                        fromRequest.find('#message').show();
+                        $('#success-message').removeClass('hidden').find('.inner').html(response.message);
                     } else {
-
+                        $('#error-message').removeClass('hidden').find('.inner').html(response.message);
                     }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(thrownError);
+                    $('#error-message').removeClass('hidden').find('.inner').html(thrownError.message);
                 }
             })
 
