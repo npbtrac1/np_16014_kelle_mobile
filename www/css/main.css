@@ -288,7 +288,7 @@
 
 @media only screen and (max-width: 480px) { /* line 119, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-item-title { font-size: 14px; margin-top: 5px; } }
 
-/* line 129, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .image-control a { width: 150px; height: 150px; border: 1px solid #d3d7dd; display: inline-block; color: #d3d7dd; font-size: 48px; padding: 39px 48px; background-size: cover; background-position: center; background-repeat: no-repeat; text-align: center; }
+/* line 129, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .image-control a { width: 150px; height: 150px; border: 1px solid #d3d7dd; display: inline-block; color: #d3d7dd; font-size: 48px; padding: 39px 0; background-size: cover; background-position: center; background-repeat: no-repeat; text-align: center; }
 
 @media only screen and (max-width: 480px) { /* line 129, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .image-control a { width: 75px; height: 75px; padding: 20px 20px; font-size: 24px; } }
 

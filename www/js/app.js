@@ -25,13 +25,13 @@ app.config(['$routeProvider', '$httpProvider',
         }).when('/facility/:id', {
             templateUrl: 'facility/facility.view.html',
             controller: 'FacilityController'
-        }).when('/task/:id', {
+        }).when('/task/:id/:facility', {
             templateUrl: 'task/task.view.html',
             controller: 'TaskController'
         }).when('/request-adhoc/:id', {
             templateUrl: 'request/request.view.html',
             controller: 'RequestController'
-        }).when('/update-image-task/:id', {
+        }).when('/update-image-task/:id/:facility', {
             templateUrl: 'task/update-image.view.html',
             controller: 'TaskUpdateImageController'
         }).when('/logout', {

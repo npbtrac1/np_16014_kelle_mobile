@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://demo.enpii.com/16/kelle';
+siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
@@ -172,14 +172,14 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                     '<option value="4"></option> ' +
                     '<option value="5"></option> ' +
                     '</select> ' +
-                    '<a class="edit-facility" href="#/task/' + item.id + '">Edit</a> ' +
-                    '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id + '">Rate</a> ' +
+                    '<a class="edit-facility" href="#/task/' + item.id +  '/' + response.id + '">Edit</a> ' +
+                    '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id +  '/' + response.id + '">Rate</a> ' +
                     '</div> ' +
                     '</div> ' +
                     '<div class="image-control"> ' +
                     '<ul class="image-list">' +
                     images +
-                    '<li><a class="image-button btn-image-update" href="#/update-image-task/' + item.id + '"><i class="fa fa-camera" aria-hidden="true"></i></a> </li>' +
+                    '<li><a class="image-button btn-image-update" href="#/update-image-task/' + item.id + '/' +response.id +'">Edit</a> </li>' +
                     '</ul>' +
                     '</div> ' +
                     '</div> ' +
@@ -238,7 +238,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
 ]);
 app.controller('TaskController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
-        jQuery.get(ajaxUrl + '/buildings/view-task?id=' + $routeParams.id, function (response) {
+        jQuery.get(ajaxUrl + '/buildings/view-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility, function (response) {
             $scope.facility = response;
             taskImages = response.mediaRelations;
 
@@ -277,7 +277,7 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
             e.preventDefault();
             formSubmit = $('#single-task-form');
             jQuery.ajax({
-                url: ajaxUrl + '/buildings/rate-task?id=' + $routeParams.id,
+                url: ajaxUrl + '/buildings/rate-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility,
                 type: 'post',
                 data: {
                     access_token: $window.sessionStorage.access_token,
@@ -332,8 +332,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             return dynamicItem;
         }
 
-        jQuery.get(ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id, function (response) {
-            console.log(response);
+        jQuery.get(ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility, function (response) {
             mediaRelations = response.mediaRelations;
             images = '';
             fileIndex = 0;
@@ -361,11 +360,13 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             $('.add-item').click(function (e) {
                 e.preventDefault();
                 maxValueID++;
-                $(this).closest('tr').before(appendDynamicItem(fileIndex, maxValueID));
-                fileIndex++;
-                $('.attachment-image-input').change(function () {
-                    readURL(this);
-                });
+                if(fileIndex <= 3) {
+                    $(this).closest('tr').before(appendDynamicItem(fileIndex, maxValueID));
+                    fileIndex++;
+                    $('.attachment-image-input').change(function () {
+                        readURL(this);
+                    });
+                }
             });
             $('.delete-form-item').click(function () {
                 $(this).closest('.dynamic-form-item').remove();
@@ -392,7 +393,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 var formSubmit = $('#dynamic-form');
                 var formData = new FormData($(this).parents('form')[0]);
                 $.ajax({
-                    url: ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id,
+                    url: ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility,
                     type: 'POST',
                     xhr: function () {
                         var myXhr = $.ajaxSettings.xhr();
