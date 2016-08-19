@@ -141,8 +141,8 @@
             @include respond-to-custom-size(null,480px) {
               width: 75px;
               height: 75px;
-              padding: 20px 20px;
-              font-size: 24px;
+              padding: 20px 0;
+              font-size: 20px;
 
             }
           }

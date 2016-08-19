@@ -65,7 +65,7 @@
 
   }
   &-inner {
-    padding: 97px 20px 0 20px;
+    padding: 97px 7px 0 7px;
 
     #form-sign-in {
       background-color: #fff;
@@ -78,8 +78,11 @@
         padding: 72px 26px;
       }
       img {
-        width: 100%;
-        height: auto;
+        display: block;
+        margin: auto;
+      }
+      .logo-site-name {
+        margin-top: 52px;
       }
       .form-group {
         margin-top: 17px;
@@ -152,7 +155,13 @@
       #form-sign-in {
         padding: 36px 18px 34px 18px;
         .form-logo {
-          padding: 17px 13px 43px 13px;
+          padding: 17px 0 43px 0;
+          .main-logo {
+            width: 90px;
+          }
+          .logo-site-name {
+            margin-top: 25px;
+          }
         }
         .form-group {
           margin-top: 0;

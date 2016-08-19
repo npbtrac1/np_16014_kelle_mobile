@@ -28,6 +28,7 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                     $scope.dataLoading = false;
                     $window.sessionStorage.access_token = data.access_token;
                     $window.sessionStorage.building_id = data.building_id;
+                    $window.sessionStorage.user_type = data.user_type;
                     $location.path('/dashboard').replace();
                 }).error(
                 function (data) {
@@ -56,6 +57,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
 
             jQuery.get(ajaxUrl + '/buildings/view-building?id=' + building_id, function (response) {
                 $scope.building = response;
+                console.log(response);
                 $('#building-name').html(response.name);
                 blocks = response.building_facilities;
                 blockFilter = '';
@@ -131,10 +133,14 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
 app.controller('FacilityController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
 
+        if($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor')  {
+            isReadOnly = false;
+        } else  {
+            isReadOnly = true;
+        }
         jQuery.get(ajaxUrl + '/buildings/view-facility?id=' + $routeParams.id, function (response) {
             var arrayTaskID = [];
             $scope.facility = response;
-            console.log(response);
 
             $('#building-name').html(response.building.name);
 
@@ -144,6 +150,10 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
             $('#facility-type').html(response.facility.facility_type);
             $('#facility-id').html(response.facility_name);
             $('#request-adhoc a').attr('href', '#/request-adhoc/' + response.id);
+            if(isReadOnly) {
+                $('#request-adhoc a').hide();
+            }
+
 
             tasks = response.tasks;
 
@@ -153,9 +163,17 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                 images = '';
                 jQuery.each(attachments, function (key, image) {
                     if (image.thumbnail != undefined) {
-                        images += '<li><a class="popup-image" href="' + image.thumbnail + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"></a></li>';
+                        images += '<li><a rel="image-row-'+index+' " class="popup-image" href="' + image.full + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"></a></li>';
                     }
                 });
+                if(isReadOnly) {
+                    ratetaskButton = '';
+                    updateImageButton = '';
+                } else {
+                    ratetaskButton = '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id +  '/' + response.id + '">Rate</a> ';
+                    updateImageButton = '<li><a class="image-button btn-image-update" href="#/update-image-task/' + item.id + '/' +response.id +'">Edit</a> </li>';
+                }
+
                 tasksHtml +=
                     '<li class="task-item" id="task-rating-' + item.id + '"> ' +
                     '<div class="inner"> ' +
@@ -173,13 +191,13 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                     '<option value="5"></option> ' +
                     '</select> ' +
                     '<a class="edit-facility" href="#/task/' + item.id +  '/' + response.id + '">Edit</a> ' +
-                    '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id +  '/' + response.id + '">Rate</a> ' +
+                    ratetaskButton +
                     '</div> ' +
                     '</div> ' +
                     '<div class="image-control"> ' +
                     '<ul class="image-list">' +
                     images +
-                    '<li><a class="image-button btn-image-update" href="#/update-image-task/' + item.id + '/' +response.id +'">Edit</a> </li>' +
+                    updateImageButton +
                     '</ul>' +
                     '</div> ' +
                     '</div> ' +
@@ -187,15 +205,22 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                 ;
                 arrayTaskID.push(item.id);
             });
+
             $('#task-list').html(tasksHtml);
-            $('a.popup-image').colorbox({rel:'popup-image'});
+            $('a.popup-image').colorbox({
+                rel: $(this).attr('rel'),
+                maxWidth: '95%',
+                maxHeight: '95%',
+                previous: ' <i class="fa fa-chevron-left"></i>',
+                next: '<i class="fa fa-chevron-right"></i>'
+            });
             $(document).ready(function () {
                 $.each(arrayTaskID, function (index, id) {
                     taskID = $('#task-rating-' + id);
                     taskRating = taskID.find('.block-rating-star');
                     taskRating.barrating({
                         theme: 'fontawesome-stars-o',
-                        readonly: false,
+                        readonly: isReadOnly,
                         deselectable: false,
                         showSelectedRating: false,
                         initialRating: taskRating.data('current-rating'),
@@ -238,6 +263,14 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
 ]);
 app.controller('TaskController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
+        if($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor')  {
+            isReadOnly = false;
+        } else  {
+            isReadOnly = true;
+        }
+        if(isReadOnly) {
+            $('.submit-rating').hide();
+        }
         jQuery.get(ajaxUrl + '/buildings/view-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility, function (response) {
             $scope.facility = response;
             taskImages = response.mediaRelations;
@@ -258,7 +291,7 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
             currentRating = taskRating.attr('data-current-rating',response.latestRating);
             taskRating.barrating({
                 theme: 'fontawesome-stars-o',
-                readonly: false,
+                readonly: isReadOnly,
                 deselectable: false,
                 showSelectedRating: false,
                 initialRating: response.latestRating,
@@ -270,7 +303,13 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
                     }
                 }
             });
-            $('a.popup-image').colorbox({rel:'popup-image'});
+            $('a.popup-image').colorbox({
+                rel: $(this).attr('rel'),
+                maxWidth: '95%',
+                maxHeight: '95%',
+                previous: ' <i class="fa fa-chevron-left"></i>',
+                next: '<i class="fa fa-chevron-right"></i>'
+            });
         });
         buttonText =  $('#submit-rating').html();
         $('#submit-rating').click(function (e) {

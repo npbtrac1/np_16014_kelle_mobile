@@ -4,7 +4,8 @@
             <div class="form-signin-inner">
                 <form  ng-submit="login()" name="loginForm" id="form-sign-in" method="post" role="form" >
                     <div class="form-logo">
-                        <img src="img/login-main-logo.png" alt="Logo" width="434" height="265">
+                        <img class="main-logo" src="img/login-main-logo.png" alt="Logo" width="177" height="177">
+                        <img class="logo-site-name" src="img/site-name.png" alt="Logo" width="434" height="36">
                     </div>
                     <div  ng-class="{ 'has-success': !error['username'] && submitted,
                 'has-error': error['username'] && submitted }"
