@@ -15,6 +15,17 @@
     max-width: 530px;
     margin: auto;
     display: table-row;
+    .splash-intro {
+      font-size: 50px;
+      text-align: center;
+      font-family: 'EdwardianScriptITC',serif;
+      margin-top: 30px;
+      color: #231f20;
+      @include respond-to-custom-size(null,480px) {
+        font-size: 25px;
+        margin-top: 15px;
+      }
+    }
     .login-button-nav {
       padding: 28px 20px;
       background-color: $color-login;
@@ -35,8 +46,9 @@
       text-align: center;
       vertical-align: middle;
       @include respond-to-custom-size(null,$app-breakpoint) {
+        padding-top: 29px;
         img {
-          max-width: 197px;
+          max-width: 235px;
         }
       }
     }
