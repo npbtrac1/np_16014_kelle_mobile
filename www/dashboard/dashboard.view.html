@@ -1,14 +1,16 @@
 ﻿<header id="main-header">
     <div class="container">
-        <div class="menu-control">
-            <button class="menu-toggle-btn" ng-click="openSidebar = true">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="menu-title">
-            Dashboard
+        <div class="header-inner">
+            <div class="menu-control">
+                <button class="menu-toggle-btn" ng-click="openSidebar = true">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="menu-title">
+                Dashboard
+            </div>
         </div>
     </div>
 </header>
@@ -17,11 +19,12 @@
         <img src="img/sidebar-logo.png" alt="" width="301" height="85">
     </div>
     <ul class="sidebar-menu">
-        <li class="menu-item menu-dashboard active"><a href="#"><span class="menu-icon"></span>Dashboard</a></li>
+        <li class="menu-item menu-dashboard active"><a href="#/dashboard"><span class="menu-icon"></span>Dashboard</a>
+        </li>
         <li class="menu-item menu-logout"><a href="#/logout"><span class="menu-icon"></span>Logout</a></li>
     </ul>
 </div>
-<div class="container">
+<div class="container" ng-click="openSidebar = false">
     <div class="row">
         <div class="building" ng-controller="DashboardController">
             <div class="container">

@@ -7,7 +7,7 @@
   }
   &-heading {
     float: left;
-    width: 74%;
+    width: 72%;
     padding-top: 44px;
   }
   &-title {
@@ -20,7 +20,7 @@
     padding-top: 8px;
   }
   &-image-heading {
-    width: 26%;
+    width: 28%;
     float: left;
   }
   @include respond-to-custom-size(null,480px) {
@@ -30,10 +30,10 @@
       padding-top: 21px;
     }
     &-title {
-      font-size: 14px;
+      font-size: 14px + $step-font-size;
     }
     &-name {
-      font-size: 24px;
+      font-size: 24px + $step-font-size;
       padding-top: 4px;
     }
   }
@@ -62,14 +62,14 @@
   @include respond-to-custom-size(null,480px) {
     padding-top: 25px;
     .control-label {
-      font-size: 14px;
+      font-size: 14px + $step-font-size;
       margin-bottom: 5px;
     }
     .form-control {
-      height: 35px;
+      height: 35px + $step-input-height;
     }
     #block-filter {
-      font-size: 14px;
+      font-size: 14px + $step-font-size;
     }
     .form-group {
       margin-bottom: 20px;
@@ -124,7 +124,7 @@
       padding: 8px 21px 8px 0;
     }
     .control-label {
-      font-size: 14px;
+      font-size: 14px + $step-font-size;
       font-weight: 500;
       margin-bottom: 0;
     }
@@ -134,9 +134,9 @@
     select {
       background-size: 13px 8px;
       padding: 0;
-      font-size: 14px;
+      font-size: 14px + $step-font-size;
       margin: 0;
-      height: 25px;
+      height: 25px + $step-input-height;
     }
 
   }
@@ -216,10 +216,10 @@
 
     }
     &-title {
-      font-size: 14px;
+      font-size: 15px + $step-font-size;
     }
     &-info {
-      font-size: 12px;
+      font-size: 14px + $step-font-size;
       width: 67%;
       &-item label {
         width: 47%;
@@ -231,18 +231,18 @@
         .br-widget {
           height: 25px;
           a {
-            font-size: 16px;
+            font-size: 16px + $step-font-size;
           }
 
         }
       }
 
       &-number {
-        font-size: 21px;
+        font-size: 21px + $step-font-size;
         color: #b84541;
       }
       &-label {
-        font-size: 14px;
+        font-size: 14px + $step-font-size;
         text-transform: uppercase;
       }
     }
@@ -253,9 +253,9 @@
   width: 41px;
   height: 33px;
   background: url("../img/arrow-left.png") center no-repeat;
-  @include respond-to-custom-size(null,480px) {
-    width: 20px;
-    height: 17px;
+  @include respond-to-custom-size(null,$app-breakpoint) {
+    width: 26px;
+    height: 22px;
     background-image: url("../img/arrow-left.png");
     background-size: 100% 100%;
   }

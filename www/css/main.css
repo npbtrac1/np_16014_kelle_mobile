@@ -1,22 +1,22 @@
-/* line 7, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ html, body { height: 100%; font-family: 'Open Sans', sans-serif; text-transform: none; }
+/* line 9, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ html, body { height: 100%; font-family: 'Open Sans', sans-serif; text-transform: none; }
 
-/* line 12, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ body { background: #edf0f5; }
+/* line 14, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ body { background: #edf0f5; }
 
-/* line 15, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ img { max-width: 100%; height: auto; }
+/* line 17, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ img { max-width: 100%; height: auto; }
 
-/* line 19, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .login-body .view-body { height: 100%; }
+/* line 21, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .login-body .view-body { height: 100%; }
 
-/* line 22, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .dashboard-body { background: #edf0f5; text-transform: none; }
+/* line 24, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .dashboard-body { background: #edf0f5; text-transform: none; }
 
-/* line 26, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .container { padding-left: 40px; padding-right: 40px; }
+/* line 28, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .container { padding-left: 40px; padding-right: 40px; }
 
-@media only screen and (max-width: 480px) { /* line 26, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .container { padding-left: 20px; padding-right: 20px; } }
+@media only screen and (max-width: 480px) { /* line 28, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .container { padding-left: 20px; padding-right: 20px; } }
 
-/* line 34, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .row { margin-left: -40px; margin-right: -40px; }
+/* line 36, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .row { margin-left: -40px; margin-right: -40px; }
 
-@media only screen and (max-width: 480px) { /* line 34, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .row { margin-left: -20px; margin-right: -20px; } }
+@media only screen and (max-width: 480px) { /* line 36, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .row { margin-left: -20px; margin-right: -20px; } }
 
-/* line 43, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .table .btn { border-radius: 0; }
+/* line 45, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-global.scss */ .table .btn { border-radius: 0; }
 
 /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .login-body { height: 100vh; background: url("../img/login-bg-mobile.jpg") center no-repeat; background-size: cover; }
 
@@ -28,11 +28,11 @@
 
 /* line 18, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .splash-login-wrapper .splash-login .splash-intro { font-size: 50px; text-align: center; font-family: 'EdwardianScriptITC',serif; margin-top: 30px; color: #231f20; }
 
-@media only screen and (max-width: 480px) { /* line 18, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .splash-login-wrapper .splash-login .splash-intro { font-size: 25px; margin-top: 15px; } }
+@media only screen and (max-width: 480px) { /* line 18, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .splash-login-wrapper .splash-login .splash-intro { font-size: 27px; margin-top: 15px; } }
 
 /* line 29, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .splash-login-wrapper .splash-login .login-button-nav { padding: 28px 20px; background-color: #9a4a47; border: 0; text-align: center; font-size: 28px; color: #fff; width: 100%; display: block; text-decoration: none; }
 
-@media only screen and (max-width: 480px) { /* line 29, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .splash-login-wrapper .splash-login .login-button-nav { padding: 16px 20px; font-size: 14px; } }
+@media only screen and (max-width: 480px) { /* line 29, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .splash-login-wrapper .splash-login .login-button-nav { padding: 16px 20px; font-size: 16px; } }
 
 /* line 44, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .splash-login-wrapper .splash-login .splash-login-logo { display: table-cell; text-align: center; vertical-align: middle; }
 
@@ -85,33 +85,35 @@
   /* line 171, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-logo .main-logo { width: 90px; }
   /* line 174, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-logo .logo-site-name { margin-top: 25px; }
   /* line 178, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-group { margin-top: 0; margin-bottom: 5px; }
-  /* line 181, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-group input[type=text], .form-signin-inner #form-sign-in .form-group input[type=password] { height: 37px; background: #f3f3f3; font-size: 14px; padding: 0 25px; }
+  /* line 181, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-group input[type=text], .form-signin-inner #form-sign-in .form-group input[type=password] { height: 37px; background: #f3f3f3; font-size: 15px; padding: 0 25px; }
   /* line 187, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-group label { position: absolute; top: 0; bottom: 0; margin: auto; left: 4px; width: 20px; height: 28px; }
   /* line 195, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-group label.label-email { background: url("../img/user-icon.png") center no-repeat; background-size: 56%; }
   /* line 199, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-group label.label-password { background: url("../img/lock-icon.png") center no-repeat; background-size: 56%; }
-  /* line 207, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-actions button { height: 41px; width: 100%; font-size: 14px; }
+  /* line 207, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner #form-sign-in .form-actions button { height: 41px; width: 100%; font-size: 15px; }
   /* line 214, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner .forgot-password { padding: 14px 0; }
-  /* line 216, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner .forgot-password a { font-size: 14px; } }
+  /* line 216, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-login.scss */ .form-signin-inner .forgot-password a { font-size: 15px; } }
 
 /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header { background-color: #b84541; padding: 36px 0 30px 0; }
 
-/* line 4, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control { float: left; }
+/* line 4, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control { float: left; position: absolute; }
 
-/* line 6, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn { margin-top: 9px; background-color: transparent; border: 0; padding: 0; }
+/* line 7, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn { margin-top: 9px; background-color: transparent; border: 0; padding: 0; }
 
-/* line 11, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn:focus { outline: none; }
+/* line 12, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn:focus { outline: none; }
 
-/* line 14, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar { width: 36px; height: 6px; border-radius: 2px; background-color: #fff; display: block; }
+/* line 15, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar { width: 36px; height: 6px; border-radius: 2px; background-color: #fff; display: block; }
 
-/* line 20, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar + .icon-bar { margin-top: 6px; }
+/* line 21, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar + .icon-bar { margin-top: 6px; }
 
-/* line 26, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-title { text-align: center; color: #fff; font-size: 31px; }
+/* line 27, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .header-inner { position: relative; }
 
-@media only screen and (max-width: 480px) { /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header { padding: 22px 0 12px 0; }
-  /* line 34, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn { margin-top: 3px; }
-  /* line 36, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar { width: 19px; height: 4px; }
-  /* line 39, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar + .icon-bar { margin-top: 2px; }
-  /* line 45, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-title { font-size: 15.5px; } }
+/* line 30, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-title { text-align: center; color: #fff; font-size: 31px; }
+
+@media only screen and (max-width: 480px) { /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header { padding: 18px 0 16px 0; }
+  /* line 38, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn { margin-top: 3px; }
+  /* line 40, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar { width: 26px; height: 5px; }
+  /* line 43, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar + .icon-bar { margin-top: 2px; }
+  /* line 49, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-title { font-size: 16.5px; } }
 
 /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar { height: 100vh; background: #3a3939; position: fixed; top: 0; bottom: 0; left: 0; -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0); width: 363px; -webkit-transition: all 0.3s; transition: all 0.3s; }
 
@@ -140,7 +142,7 @@
 @media only screen and (max-width: 480px) { /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar { width: 183px; }
   /* line 74, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar-logo { padding: 7px 14px 8px 16px; }
   /* line 77, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar .sidebar-menu { list-style: none; padding: 13px 0; }
-  /* line 80, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar .sidebar-menu li { font-size: 14px; }
+  /* line 80, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar .sidebar-menu li { font-size: 15px; }
   /* line 82, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar .sidebar-menu li a { padding: 12px 20px; }
   /* line 87, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar .sidebar-menu .menu-item .menu-icon { background: url("../img/menu-icon.png") 13px 0 no-repeat; background-size: 24px 21px; width: 11px; height: 11px; margin-top: 3px; margin-right: 9px; }
   /* line 96, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar .sidebar-menu .menu-item.menu-dashboard .menu-icon { background-position: -13px 0; }
@@ -153,18 +155,18 @@
 
 @media only screen and (max-width: 480px) { /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building { padding-top: 20px; } }
 
-/* line 8, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-heading { float: left; width: 74%; padding-top: 44px; }
+/* line 8, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-heading { float: left; width: 72%; padding-top: 44px; }
 
 /* line 13, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-title { font-size: 21px; }
 
 /* line 16, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-name { font-size: 50px; color: #b84541; font-weight: 300; padding-top: 8px; }
 
-/* line 22, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-image-heading { width: 26%; float: left; }
+/* line 22, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-image-heading { width: 28%; float: left; }
 
 @media only screen and (max-width: 480px) { /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building { padding-top: 20px; padding-bottom: 20px; }
   /* line 29, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-heading { padding-top: 21px; }
-  /* line 32, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-title { font-size: 14px; }
-  /* line 35, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-name { font-size: 24px; padding-top: 4px; } }
+  /* line 32, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-title { font-size: 15px; }
+  /* line 35, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .building-name { font-size: 25px; padding-top: 4px; } }
 
 /* line 41, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter { padding-top: 50px; }
 
@@ -177,9 +179,9 @@
 /* line 59, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter #block-filter { font-size: 24px; }
 
 @media only screen and (max-width: 480px) { /* line 41, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter { padding-top: 25px; }
-  /* line 64, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter .control-label { font-size: 14px; margin-bottom: 5px; }
-  /* line 68, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter .form-control { height: 35px; }
-  /* line 71, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter #block-filter { font-size: 14px; }
+  /* line 64, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter .control-label { font-size: 15px; margin-bottom: 5px; }
+  /* line 68, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter .form-control { height: 36px; }
+  /* line 71, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter #block-filter { font-size: 15px; }
   /* line 74, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter .form-group { margin-bottom: 20px; } }
 
 /* line 79, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter-select { background-color: #fff; }
@@ -199,9 +201,9 @@
 /* line 116, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter-select select:focus { outline: none; border: 0; box-shadow: none; }
 
 @media only screen and (max-width: 480px) { /* line 123, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter-select .form-group { padding: 8px 21px 8px 0; }
-  /* line 126, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter-select .control-label { font-size: 14px; font-weight: 500; margin-bottom: 0; }
+  /* line 126, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter-select .control-label { font-size: 15px; font-weight: 500; margin-bottom: 0; }
   /* line 131, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter-select .facility-filter { padding-left: 20px; }
-  /* line 134, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter-select select { background-size: 13px 8px; padding: 0; font-size: 14px; margin: 0; height: 25px; } }
+  /* line 134, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .filter-select select { background-size: 13px 8px; padding: 0; font-size: 15px; margin: 0; height: 26px; } }
 
 /* line 144, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block { padding-top: 40px; }
 
@@ -231,17 +233,17 @@
 
 @media only screen and (max-width: 480px) { /* line 144, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block { padding-top: 20px; }
   /* line 214, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-item { padding: 10px; }
-  /* line 218, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-title { font-size: 14px; }
-  /* line 221, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-info { font-size: 12px; width: 67%; }
+  /* line 218, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-title { font-size: 16px; }
+  /* line 221, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-info { font-size: 15px; width: 67%; }
   /* line 224, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-info-item label { width: 47%; }
   /* line 231, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-rating .br-theme-fontawesome-stars-o .br-widget { height: 25px; }
-  /* line 233, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-rating .br-theme-fontawesome-stars-o .br-widget a { font-size: 16px; }
-  /* line 240, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-rating-number { font-size: 21px; color: #b84541; }
-  /* line 244, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-rating-label { font-size: 14px; text-transform: uppercase; } }
+  /* line 233, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-rating .br-theme-fontawesome-stars-o .br-widget a { font-size: 17px; }
+  /* line 240, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-rating-number { font-size: 22px; color: #b84541; }
+  /* line 244, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-rating-label { font-size: 15px; text-transform: uppercase; } }
 
 /* line 251, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .back-to-dashboard { display: block; width: 41px; height: 33px; background: url("../img/arrow-left.png") center no-repeat; }
 
-@media only screen and (max-width: 480px) { /* line 251, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .back-to-dashboard { width: 20px; height: 17px; background-image: url("../img/arrow-left.png"); background-size: 100% 100%; } }
+@media only screen and (max-width: 480px) { /* line 251, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .back-to-dashboard { width: 26px; height: 22px; background-image: url("../img/arrow-left.png"); background-size: 100% 100%; } }
 
 /* line 2, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info ul { padding: 0; margin-bottom: 20px; list-style: none; }
 
@@ -257,11 +259,11 @@
 
 /* line 29, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-title { font-size: 21px; color: #999999; text-transform: uppercase; margin-bottom: 4px; }
 
-@media only screen and (max-width: 480px) { /* line 29, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-title { font-size: 13px; } }
+@media only screen and (max-width: 480px) { /* line 29, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-title { font-size: 15px; } }
 
 /* line 38, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-content { font-size: 28px; color: #49494e; }
 
-@media only screen and (max-width: 480px) { /* line 38, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-content { font-size: 14px; } }
+@media only screen and (max-width: 480px) { /* line 38, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-content { font-size: 15px; } }
 
 /* line 45, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon { position: absolute; height: 62px; width: 61px; left: 0; background: url("../img/icon-facility.png") 0 0 no-repeat; top: 33px; }
 
@@ -273,11 +275,11 @@
 
 /* line 62, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-file { background-position: 0 -533px; }
 
-@media only screen and (max-width: 480px) { /* line 45, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon { position: absolute; height: 36px; width: 36px; background-image: url("../img/icon-facility.png"); background-size: 30px 294px; background-repeat: no-repeat; top: 15px; left: 0; }
-  /* line 74, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-date { background-position: 0 -67px; }
-  /* line 77, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-key { background-position: 0px -133px; }
-  /* line 80, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-panel { background-position: 0 -198px; }
-  /* line 83, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-file { background-position: 0 -266px; } }
+@media only screen and (max-width: 480px) { /* line 45, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon { position: absolute; height: 40px; width: 40px; background-image: url("../img/icon-facility.png"); background-size: 35px 343px; background-repeat: no-repeat; top: 15px; left: 0; }
+  /* line 74, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-date { background-position: 0 -77px; }
+  /* line 77, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-key { background-position: 0px -154px; }
+  /* line 80, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-panel { background-position: 0 -228px; }
+  /* line 83, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info .info-icon.icon-file { background-position: 0 -312px; } }
 
 /* line 90, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks { padding-top: 90px; background-color: #edf0f5; margin-top: 19px; }
 
@@ -285,7 +287,7 @@
 
 /* line 97, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks-title { font-size: 36px; color: #3a3939; margin-bottom: 25px; }
 
-@media only screen and (max-width: 480px) { /* line 97, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks-title { font-size: 19px; margin-bottom: 10px; } }
+@media only screen and (max-width: 480px) { /* line 97, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks-title { font-size: 20px; margin-bottom: 10px; } }
 
 /* line 106, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list { padding: 0; list-style: none; }
 
@@ -295,11 +297,11 @@
 
 /* line 119, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-item-title { float: left; color: #b84541; font-size: 30px; }
 
-@media only screen and (max-width: 480px) { /* line 119, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-item-title { font-size: 14px; margin-top: 5px; } }
+@media only screen and (max-width: 480px) { /* line 119, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-item-title { font-size: 15px; margin-top: 5px; } }
 
 /* line 129, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .image-control a { width: 150px; height: 150px; border: 1px solid #d3d7dd; display: inline-block; color: #d3d7dd; font-size: 48px; padding: 39px 0; background-size: cover; background-position: center; background-repeat: no-repeat; text-align: center; }
 
-@media only screen and (max-width: 480px) { /* line 129, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .image-control a { width: 75px; height: 75px; padding: 20px 0; font-size: 20px; } }
+@media only screen and (max-width: 480px) { /* line 129, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .image-control a { width: 75px; height: 75px; padding: 22px 0; font-size: 21px; } }
 
 /* line 150, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action { float: right; }
 
@@ -309,7 +311,7 @@
 
 /* line 161, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .br-theme-fontawesome-stars-o .br-widget a { font: normal normal normal 20px/1 FontAwesome; text-rendering: auto; -webkit-font-smoothing: antialiased; text-decoration: none; margin-right: 2px; font-size: 35px; }
 
-@media only screen and (max-width: 480px) { /* line 161, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .br-theme-fontawesome-stars-o .br-widget a { margin-right: 1px; font-size: 18px; } }
+@media only screen and (max-width: 480px) { /* line 161, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .br-theme-fontawesome-stars-o .br-widget a { margin-right: 1px; font-size: 19px; } }
 
 /* line 172, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .br-theme-fontawesome-stars-o .br-widget a:after { content: "\f006"; color: #f1c40f; }
 
@@ -317,13 +319,13 @@
 
 /* line 186, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .edit-facility { font-size: 21px; display: block; float: left; background-color: #d3d7dd; color: #393c42; border: 1px solid #c5c9cf; border-radius: 5px; text-decoration: none; padding: 10px 30px; text-transform: uppercase; font-weight: 600; }
 
-@media only screen and (max-width: 480px) { /* line 186, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .edit-facility { font-size: 11px; padding: 6px 15px; } }
+@media only screen and (max-width: 480px) { /* line 186, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .edit-facility { font-size: 13px; padding: 6px 15px; } }
 
 /* line 202, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .edit-facility.active { background-color: #b84541; color: #fff; }
 
 /* line 207, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .rate-task-btn { font-size: 21px; display: block; float: left; background-color: #b84541; color: #fff; border: 1px solid transparent; border-radius: 5px; text-decoration: none; padding: 10px 30px; text-transform: uppercase; font-weight: 600; }
 
-@media only screen and (max-width: 480px) { /* line 207, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .rate-task-btn { font-size: 11px; padding: 6px 15px; } }
+@media only screen and (max-width: 480px) { /* line 207, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks #task-list .task-item .inner .task-action .rate-task-btn { font-size: 13px; padding: 6px 15px; } }
 
 /* line 229, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .rate-tasks .image-control { padding-top: 20px; padding-bottom: 20px; overflow: hidden; }
 
@@ -337,7 +339,7 @@
 
 /* line 257, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .request-adhoc a { text-align: center; background-color: #b84541; display: block; font-size: 28px; color: #fff; text-decoration: none; padding: 40px 0; }
 
-@media only screen and (max-width: 480px) { /* line 257, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .request-adhoc a { font-size: 14px; padding: 20px 0; } }
+@media only screen and (max-width: 480px) { /* line 257, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .request-adhoc a { font-size: 15px; padding: 20px 0; } }
 
 /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating { background: #f5f8fc; padding-bottom: 47px; }
 
@@ -354,10 +356,10 @@
 /* line 27, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating .br-theme-fontawesome-stars-o .br-widget .br-selected:after, .task-rating .br-theme-fontawesome-stars-o .br-widget .br-current:after { color: #f1c40f; }
 
 @media only screen and (max-width: 480px) { /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating { padding-bottom: 20px; }
-  /* line 35, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating-title { font-size: 14px; padding-top: 7px; }
+  /* line 35, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating-title { font-size: 15px; padding-top: 7px; }
   /* line 39, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating .br-theme-fontawesome-stars-o { margin-top: 7px; }
   /* line 41, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating .br-theme-fontawesome-stars-o .br-widget { height: auto; }
-  /* line 43, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating .br-theme-fontawesome-stars-o .br-widget a { margin-right: 9px; font-size: 36px; } }
+  /* line 43, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating .br-theme-fontawesome-stars-o .br-widget a { margin-right: 9px; font-size: 37px; } }
 
 /* line 52, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .single-task-image { min-height: 485px; }
 
@@ -379,7 +381,7 @@
 
 /* line 97, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .submit-rating button { text-align: center; display: block; border: 0; background-color: #b84541; width: 100%; font-size: 28px; color: #fff; text-decoration: none; padding: 40px 0; }
 
-@media only screen and (max-width: 480px) { /* line 97, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .submit-rating button { font-size: 14px; padding: 20px 0; } }
+@media only screen and (max-width: 480px) { /* line 97, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .submit-rating button { font-size: 15px; padding: 20px 0; } }
 
 /* line 113, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .status-message { margin-bottom: 15px; }
 

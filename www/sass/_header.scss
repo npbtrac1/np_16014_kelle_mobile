@@ -3,6 +3,7 @@
   padding: 36px 0 30px 0;
   .menu-control {
     float: left;
+    position: absolute;
     .menu-toggle-btn {
       margin-top: 9px;
       background-color: transparent;
@@ -23,19 +24,22 @@
       }
     }
   }
+  .header-inner {
+    position: relative;
+  }
   .menu-title {
     text-align: center;
     color: #fff;
     font-size: 31px;
   }
   @include respond-to-custom-size(null,$app-breakpoint) {
-    padding: 22px 0 12px 0;
+    padding: 18px 0 16px 0;
     .menu-control {
       .menu-toggle-btn {
         margin-top: 3px;
         .icon-bar {
-          width: 19px;
-          height: 4px;
+          width: 26px;
+          height: 5px;
           & + .icon-bar {
             margin-top: 2px;
           }
@@ -43,7 +47,7 @@
       }
     }
     .menu-title {
-      font-size: 15.5px;
+      font-size: 15.5px + $step-font-size;
     }
   }
 }

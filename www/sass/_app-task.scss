@@ -33,7 +33,7 @@
   @include respond-to-custom-size(null,480px) {
     padding-bottom: 20px;
     &-title {
-      font-size: 14px;
+      font-size: 14px + $step-font-size;
       padding-top: 7px;
     }
     .br-theme-fontawesome-stars-o {
@@ -42,7 +42,7 @@
         height: auto;
         a {
           margin-right: 9px;
-          font-size: 36px;
+          font-size: 36px + $step-font-size;
 
         }
       }
@@ -105,7 +105,7 @@
     text-decoration: none;
     padding: 40px 0;
     @include respond-to-custom-size(null,480px) {
-      font-size: 14px;
+      font-size: 14px + $step-font-size;
       padding: 20px 0;
     }
   }

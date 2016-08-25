@@ -32,14 +32,14 @@
       text-transform: uppercase;
       margin-bottom: 4px;
       @include respond-to-custom-size(null,480px) {
-        font-size: 13px;
+        font-size: 14px + $step-font-size;
       }
     }
     &-content {
       font-size: 28px;
       color: #49494e;
       @include respond-to-custom-size(null,480px) {
-        font-size: 14px;
+        font-size: 14px + $step-font-size;
       }
     }
     &-icon {
@@ -64,24 +64,24 @@
       }
       @include respond-to-custom-size(null,480px) {
         position: absolute;
-        height: 36px;
-        width: 36px;
+        height: 40px;
+        width: 40px;
         background-image: url("../img/icon-facility.png");
-        background-size: 30px 294px;
+        background-size: 35px 343px;
         background-repeat: no-repeat;
         top: 15px;
         left: 0;
         &.icon-date {
-          background-position: 0 -67px;
+          background-position: 0 -77px;
         }
         &.icon-key {
-          background-position: 0px -133px;
+          background-position: 0px -154px;
         }
         &.icon-panel {
-          background-position: 0 -198px;
+          background-position: 0 -228px;
         }
         &.icon-file {
-          background-position: 0 -266px;
+          background-position: 0 -312px;
         }
       }
     }
@@ -91,15 +91,15 @@
   padding-top: 90px;
   background-color: #edf0f5;
   margin-top: 19px;
-  @include respond-to-custom-size(null,480px) {
+  @include respond-to-custom-size(null,$app-breakpoint) {
     padding-top: 36px;
   }
   &-title {
     font-size: 36px;
     color: #3a3939;
     margin-bottom: 25px;
-    @include respond-to-custom-size(null,480px) {
-      font-size: 19px;
+    @include respond-to-custom-size(null,$app-breakpoint) {
+      font-size: 19px + $step-font-size;
       margin-bottom: 10px;
     }
   }
@@ -110,7 +110,7 @@
       background-color: #fff;
       padding: 27px 0;
       margin-bottom: 40px;
-      @include respond-to-custom-size(null,480px) {
+      @include respond-to-custom-size(null,$app-breakpoint) {
         padding: 10px 0 23px 0;
         margin-bottom: 20px;
       }
@@ -121,7 +121,7 @@
           color: #b84541;
           font-size: 30px;
           @include respond-to-custom-size(null,480px) {
-            font-size: 14px;
+            font-size: 14px + $step-font-size;
             margin-top: 5px;
           }
         }
@@ -141,8 +141,8 @@
             @include respond-to-custom-size(null,480px) {
               width: 75px;
               height: 75px;
-              padding: 20px 0;
-              font-size: 20px;
+              padding: 22px 0;
+              font-size: 20px + $step-font-size;
 
             }
           }
@@ -165,9 +165,9 @@
                 text-decoration: none;
                 margin-right: 2px;
                 font-size: 35px;
-                @include respond-to-custom-size(null,480px) {
+                @include respond-to-custom-size(null,$app-breakpoint) {
                   margin-right: 1px;
-                  font-size: 18px;
+                  font-size: 18px + $step-font-size ;
                 }
                 &:after {
                   content: "\f006";
@@ -196,7 +196,7 @@
             text-transform: uppercase;
             font-weight: 600;
             @include respond-to-custom-size(null,480px) {
-              font-size: 11px;
+              font-size: 12px + $step-font-size;
               padding: 6px 15px;
             }
             &.active {
@@ -218,7 +218,7 @@
             font-weight: 600;
 
             @include respond-to-custom-size(null,480px) {
-              font-size: 11px;
+              font-size: 12px + $step-font-size;
               padding: 6px 15px;
             }
           }
@@ -263,7 +263,7 @@
     text-decoration: none;
     padding: 40px 0;
     @include respond-to-custom-size(null,480px) {
-      font-size: 14px;
+      font-size: 14px + $step-font-size;
       padding: 20px 0;
     }
   }
