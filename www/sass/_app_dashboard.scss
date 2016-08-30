@@ -30,11 +30,11 @@
       padding-top: 21px;
     }
     &-title {
-      font-size: 14px + $step-font-size;
+      font-size: 13px + $step-font-size;
     }
     &-name {
-      font-size: 24px + $step-font-size;
-      padding-top: 4px;
+      font-size: 32px + $step-font-size;
+      padding-top: 15px;
     }
   }
 }
@@ -55,6 +55,7 @@
     border-radius: 0;
     height: 70px;
     border: 1px solid #dfe3e9;
+    font-weight: 600;
   }
   #block-status-filter {
     background-image: url("../img/calendar-icon.png");
@@ -67,17 +68,22 @@
   @include respond-to-custom-size(null,480px) {
     padding-top: 25px;
     .control-label {
-      font-size: 14px + $step-font-size;
+      font-size: 13px + $step-font-size;
       margin-bottom: 5px;
     }
     .form-control {
-      height: 35px + $step-input-height;
+      height: 39px + $step-input-height;
+      font-size: 17px + $step-font-size;
     }
     #block-filter {
-      font-size: 14px + $step-font-size;
+      font-size: 17px + $step-font-size;
+      font-weight: 600;
+      background-position: right 11px center;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
     }
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
   }
 }

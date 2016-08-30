@@ -38,16 +38,16 @@
       .menu-toggle-btn {
         margin-top: 3px;
         .icon-bar {
-          width: 26px;
-          height: 5px;
+          width: 22px;
+          height: 3px;
           & + .icon-bar {
-            margin-top: 2px;
+            margin-top: 4px;
           }
         }
       }
     }
     .menu-title {
-      font-size: 15.5px + $step-font-size;
+      font-size: 24.5px + $step-font-size;
     }
   }
 }

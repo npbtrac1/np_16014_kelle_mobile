@@ -127,7 +127,9 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 });
 
             });
-            $('#block-status-filter').datepicker();
+            $('#block-status-filter').datepicker({
+                beforeShow: function(){$('input').blur();}
+            });
             $('#block-filter').change(function () {
                 $('.block-item').hide();
                 $("[data-block-name='"+$(this).val()+"']").show();
