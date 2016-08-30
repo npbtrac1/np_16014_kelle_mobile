@@ -56,6 +56,11 @@
     height: 70px;
     border: 1px solid #dfe3e9;
   }
+  #block-status-filter {
+    background-image: url("../img/calendar-icon.png");
+    background-position: right 22px center;
+    background-repeat: no-repeat;
+  }
   #block-filter {
     font-size: 24px;
   }
@@ -102,6 +107,7 @@
     color: #999999;
     margin-bottom: 17px;
   }
+
   select {
     border: 0;
     border-radius: 0;

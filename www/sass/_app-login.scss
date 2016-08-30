@@ -22,7 +22,7 @@
       margin-top: 30px;
       color: #231f20;
       @include respond-to-custom-size(null,$app-breakpoint) {
-        font-size: 26px +  $step-font-size;
+        font-size: 34px +  $step-font-size;
         margin-top: 15px;
       }
     }
@@ -38,7 +38,7 @@
       text-decoration: none;
       @include respond-to-custom-size(null,$app-breakpoint) {
         padding: 16px 20px;
-        font-size: 15px +  $step-font-size;
+        font-size: 19px +  $step-font-size;
       }
     }
     .splash-login-logo {
@@ -46,9 +46,10 @@
       text-align: center;
       vertical-align: middle;
       @include respond-to-custom-size(null,$app-breakpoint) {
-        padding-top: 29px;
+        padding-top: 34px;
+        vertical-align: top;
         img {
-          max-width: 235px;
+          max-width: 275px;
         }
       }
     }

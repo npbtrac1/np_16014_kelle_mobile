@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://demo.enpii.com/16/kelle';
+siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
@@ -60,16 +60,29 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 console.log(response);
                 $('#building-name').html(response.name);
                 blocks = response.building_facilities;
+
                 blockFilter = '';
+                blockFilterData = response.filterBlocks;
+                jQuery.each(blockFilterData, function (index, item) {
+                    blockFilter += '<option value="#block-' + convertToSlug(item.block) + '">' + item.block + '</option>';
+                });
+
                 floorFilter = '';
+                floorFilterData = response.filterFloors;
+                jQuery.each(floorFilterData, function (index, item) {
+                    floorFilter += '<option value="#floor-' + convertToSlug(item.floor) + '">' + item.floor + '</option>';
+                });
+
                 facilityIdFilter = '';
+                facilityIdFilterData = response.filterFacilities;
+                jQuery.each(facilityIdFilterData, function (index, item) {
+                    facilityIdFilter += '<option value="#facilityID-' + convertToSlug(item.facility_name) + '">' + item.facility_name + '</option>';
+                });
                 blockHtml = '';
                 var arrayBlockID = [];
                 jQuery.each(blocks, function (index, item) {
-                    blockFilter += '<option value="#block-' + convertToSlug(item.block) + '">' + item.block + '</option>';
-                    floorFilter += '<option value="#floor-' + convertToSlug(item.floor) + '">' + item.floor + '</option>';
-                    facilityIdFilter += '<option value="#facilityID-' + convertToSlug(item.facility_name) + '">' + item.facility_name + '</option>';
-                    blockHtml +=
+
+                   blockHtml +=
                         '<li class="block-item" data-block-name="#block-' + convertToSlug(item.block) + '" data-floor="#floor-' + convertToSlug(item.floor) + '" data-facility-id="#facilityID-' + convertToSlug(item.facility_name) + '">' +
                         '<a href="#/facility/' + item.id + '">' +
                         '<div class="block-info">' +
@@ -114,6 +127,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 });
 
             });
+            $('#block-status-filter').datepicker();
             $('#block-filter').change(function () {
                 $('.block-item').hide();
                 $("[data-block-name='"+$(this).val()+"']").show();
