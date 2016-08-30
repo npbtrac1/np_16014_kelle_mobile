@@ -70,15 +70,15 @@
     }
   }
   @include respond-to-custom-size(null,$app-breakpoint) {
-    width: 183px;
+    width: 205px;
     &-logo {
-        padding: 7px 14px 8px 16px;
+        padding: 8px 16px 8px 16px;
     }
     .sidebar-menu {
       list-style: none;
       padding: 13px 0;
       li {
-        font-size: 14px + $step-font-size;
+        font-size: 20px;
         a {
           padding: 12px 20px;
         }
@@ -86,10 +86,10 @@
       .menu-item {
         .menu-icon {
           background: url("../img/menu-icon.png") 13px 0 no-repeat;
-          background-size: 24px 21px;
-          width: 11px;
-          height: 11px;
-          margin-top: 3px;
+          background-size: 27px 25px;
+          width: 13px;
+          height: 13px;
+          margin-top: 6px;
           margin-right: 9px;
         }
         &.menu-dashboard {
@@ -99,7 +99,7 @@
         }
         &.menu-logout {
           .menu-icon {
-            background-position: -13px -11px;
+            background-position: -13px -14px;
           }
         }
         &.active,&:hover {

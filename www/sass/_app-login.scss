@@ -46,7 +46,7 @@
       text-align: center;
       vertical-align: middle;
       @include respond-to-custom-size(null,$app-breakpoint) {
-        padding-top: 34px;
+        padding-top: 47px;
         vertical-align: top;
         img {
           max-width: 275px;
@@ -84,9 +84,9 @@
       background-color: #fff;
       padding: 36px 36px 69px 36px;
       margin: auto;
-      -webkit-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.42);
-      -moz-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.42);
-      box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.42);
+      -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.3);
+      -moz-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.3);
+      box-shadow: 0 1px 1px 1px rgba(0,0,0,0.3);
       .form-logo {
         padding: 72px 26px;
       }
@@ -166,11 +166,11 @@
     @include respond-to-custom-size(null,$app-breakpoint) {
       padding: 55px 0 0 0 ;
       #form-sign-in {
-        padding: 36px 18px 34px 18px;
+        padding: 59px 18px 34px 18px;
         .form-logo {
           padding: 17px 0 43px 0;
           .main-logo {
-            width: 90px;
+            width: 100px;
           }
           .logo-site-name {
             margin-top: 25px;
@@ -182,8 +182,8 @@
           input[type=text], input[type=password]{
             height: 37px;
             background: #f3f3f3;
-            font-size: 14px + $step-font-size;
-            padding: 0 25px;
+            font-size: 15px;
+            padding: 0 32px;
           }
           label {
             position: absolute;
@@ -195,11 +195,11 @@
             height: 28px;
             &.label-email {
               background: url("../img/user-icon.png") center no-repeat;
-              background-size: 56%;
+              background-size: 60%;
             }
             &.label-password {
               background: url("../img/lock-icon.png") center no-repeat;
-              background-size: 56%;
+              background-size: 60%;
             }
           }
 
@@ -208,14 +208,14 @@
           button {
             height: 41px;
             width: 100%;
-            font-size: 14px + $step-font-size;
+            font-size: 16px;
           }
         }
       }
       .forgot-password {
         padding: 14px 0;
         a {
-          font-size: 14px + $step-font-size;
+          font-size: 15px;
         }
       }
     }
