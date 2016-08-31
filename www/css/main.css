@@ -240,7 +240,7 @@
 
 @media only screen and (max-width: 480px) { /* line 163, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block { padding-top: 20px; }
   /* line 234, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-item { padding: 10px; }
-  /* line 238, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-title { font-size: 30px; }
+  /* line 238, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-title { font-size: 24px; }
   /* line 241, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-info { font-size: 14px; width: 67%; }
   /* line 244, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-info-item label { width: 47%; }
   /* line 251, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .block-rating .br-theme-fontawesome-stars-o .br-widget { height: 25px; }
