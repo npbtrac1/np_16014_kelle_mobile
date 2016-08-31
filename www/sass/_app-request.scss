@@ -1,5 +1,6 @@
 .request-form {
   padding-top: 33px;
+  padding-bottom: 119px;
 
   .form-group {
     margin-bottom: 43px;
@@ -7,14 +8,16 @@
       font-size: 21px;
       color: #999999;
       text-transform: uppercase;
-      font-weight: 400;
+      font-weight: 600;
       margin-bottom: 12px;
+
     }
     input.form-control {
       height: 68px;
       font-size: 24px;
       border-radius: 0;
       box-shadow: none;
+      font-weight: 600;
       &[disabled] {
         background-color: #d3d7dd;
       }
@@ -25,15 +28,15 @@
     .form-group {
       margin-bottom: 18px;
       .control-label {
-        font-size: 12px;
+        font-size: 16px;
         color: #999999;
         text-transform: uppercase;
         font-weight: 400;
         margin-bottom: 6px;
       }
       input.form-control {
-        height: 35px;
-        font-size: 14px;
+        height: 37px;
+        font-size: 16px;
         border-radius: 0;
         box-shadow: none;
       }
@@ -70,7 +73,7 @@
       padding: 0;
       padding-left: 66px;
       font-size: 24px;
-      font-weight: 400;
+      font-weight: 600;
       padding-top: 5px;
       &:before {
         content: "";
@@ -112,7 +115,7 @@
         position: relative;
         padding: 0;
         padding-left: 32px;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 400;
         padding-top: 5px;
         &:before {
@@ -143,7 +146,7 @@
           width: 22px;
           height: 22px;
           top: 7px;
-          font-size: 14px;
+          font-size: 18px;
           z-index: 2;
         }
       }

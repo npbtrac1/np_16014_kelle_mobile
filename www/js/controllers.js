@@ -179,7 +179,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                 images = '';
                 jQuery.each(attachments, function (key, image) {
                     if (image.thumbnail != undefined) {
-                        images += '<li><a rel="image-row-'+index+' " class="popup-image" href="' + image.full + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"></a></li>';
+                        images += '<li><a rel="image-row-'+index+' " class="popup-image" href="' + image.full + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"><img src="' + image.thumbnail + '"></a></li>';
                     }
                 });
                 if(isReadOnly) {
@@ -187,7 +187,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                     updateImageButton = '';
                 } else {
                     ratetaskButton = '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id +  '/' + response.id + '">Rate</a> ';
-                    updateImageButton = '<li><a class="image-button btn-image-update" href="#/update-image-task/' + item.id + '/' +response.id +'">Edit</a> </li>';
+                    updateImageButton = '<li><a class="image-button btn-image-update" href="#/update-image-task/' + item.id + '/' +response.id +'"><span>Edit</span><img src="img/transparent-img.png" width="1" height="1"></a> </li>';
                 }
 
                 tasksHtml +=
@@ -295,7 +295,7 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
             jQuery.each(taskImages, function (index, mediaRelation) {
                 if(mediaRelation.attachment) {
                     images += '<li class="image-item"> ' +
-                        '<a data-toggle="modal" data-target="#image-gallery"  data-image-id="'+ mediaRelation.attachment.id +'" class="popup-image" data-image="'+ mediaRelation.attachment.full +'" href="'+ mediaRelation.attachment.full +'" style="background-image: url('+mediaRelation.attachment.thumbnail+')"></a>' +
+                        '<a data-toggle="modal" data-target="#image-gallery"  data-image-id="'+ mediaRelation.attachment.id +'" class="popup-image" data-image="'+ mediaRelation.attachment.full +'" href="'+ mediaRelation.attachment.full +'" style="background-image: url('+mediaRelation.attachment.thumbnail+')"><img src="'+mediaRelation.attachment.thumbnail+'"></a>' +
                         '</li>';
                 }
 

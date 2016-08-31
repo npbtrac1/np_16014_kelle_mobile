@@ -31,6 +31,7 @@
       color: #999999;
       text-transform: uppercase;
       margin-bottom: 4px;
+      font-weight: 600;
       @include respond-to-custom-size(null,480px) {
         font-size: 14px + $step-font-size;
       }
@@ -38,8 +39,9 @@
     &-content {
       font-size: 28px;
       color: #49494e;
+      font-weight: 600;
       @include respond-to-custom-size(null,480px) {
-        font-size: 14px + $step-font-size;
+        font-size: 20px;
       }
     }
     &-icon {
@@ -98,9 +100,10 @@
     font-size: 36px;
     color: #3a3939;
     margin-bottom: 25px;
+    font-weight: 600;
     @include respond-to-custom-size(null,$app-breakpoint) {
-      font-size: 19px + $step-font-size;
-      margin-bottom: 10px;
+      font-size: 24px;
+      margin-bottom: 16px;
     }
   }
   #task-list {
@@ -120,30 +123,41 @@
           float: left;
           color: #b84541;
           font-size: 30px;
-          @include respond-to-custom-size(null,480px) {
-            font-size: 14px + $step-font-size;
+          font-weight: 600;
+          @include respond-to-custom-size(null,$app-breakpoint) {
+            font-size: 20px;
             margin-top: 5px;
           }
         }
         .image-control {
           a {
-            width: 150px;
-            height: 150px;
+            width: 100%;
             border: 1px solid #d3d7dd;
-            display: inline-block;
             color: #d3d7dd;
             font-size: 48px;
-            padding: 39px 0;
             background-size: cover ;
             background-position: center;
             background-repeat: no-repeat;
             text-align: center;
+            display: block;
+            padding: 0;
+            position: relative;
+            span {
+              position: absolute;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              top: 0;
+              text-align: center;
+              vertical-align: middle;
+              padding-top: 30%;
+            }
+            img {
+              width: 100%;
+              height: auto;
+            }
             @include respond-to-custom-size(null,480px) {
-              width: 75px;
-              height: 75px;
-              padding: 22px 0;
               font-size: 20px + $step-font-size;
-
             }
           }
         }
@@ -166,8 +180,8 @@
                 margin-right: 2px;
                 font-size: 35px;
                 @include respond-to-custom-size(null,$app-breakpoint) {
-                  margin-right: 1px;
-                  font-size: 18px + $step-font-size ;
+                  margin-right: 5px;
+                  font-size: 21px;
                 }
                 &:after {
                   content: "\f006";
@@ -196,8 +210,9 @@
             text-transform: uppercase;
             font-weight: 600;
             @include respond-to-custom-size(null,480px) {
-              font-size: 12px + $step-font-size;
-              padding: 6px 15px;
+              font-size: 13px;
+              padding: 5px 15px;
+              border-radius: 3px;
             }
             &.active {
               background-color: #b84541;
@@ -218,8 +233,9 @@
             font-weight: 600;
 
             @include respond-to-custom-size(null,480px) {
-              font-size: 12px + $step-font-size;
-              padding: 6px 15px;
+              font-size: 13px;
+              padding: 5px 15px;
+              border-radius: 3px;
             }
           }
         }
@@ -263,7 +279,7 @@
     text-decoration: none;
     padding: 40px 0;
     @include respond-to-custom-size(null,480px) {
-      font-size: 14px + $step-font-size;
+      font-size: 20px;
       padding: 20px 0;
     }
   }
