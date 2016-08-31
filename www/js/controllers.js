@@ -83,7 +83,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 jQuery.each(blocks, function (index, item) {
 
                    blockHtml +=
-                        '<li class="block-item" data-block-name="#block-' + convertToSlug(item.block) + '" data-floor="#floor-' + convertToSlug(item.floor) + '" data-facility-id="#facilityID-' + convertToSlug(item.facility_name) + '">' +
+                        '<li class="block-item" data-block-name="#block-' + convertToSlug(item.block) + '" data-floor="#floor-' + convertToSlug(item.floor) + '" data-facility-id="#facilityID-' + convertToSlug(item.facility_name) + '" data-created-at="'+item.created_at+'">' +
                         '<a href="#/facility/' + item.id + '">' +
                         '<div class="block-info">' +
                         '<div class="block-title">' + item.block + '</div>' +
@@ -128,7 +128,24 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
 
             });
             $('#block-status-filter').datepicker({
-                beforeShow: function(){$('input').blur();}
+                format: 'dd-MM-yyyy'
+            }).on('show',function () {
+                $(this).blur();
+            }).on('changeDate',function () {
+                $filterOrigin = new Date($(this).val());
+
+                $('.block-item').each(function (e) {
+                    $block = $(this);
+
+                    $filterCompareVal = new Date(($block.attr('data-created-at')));
+                    if($filterOrigin.getDate() <= $filterCompareVal.getDate()) {
+                        $block.show();
+                    } else {
+                        $block.hide();
+                    }
+                });
+
+
             });
             $('#block-filter').change(function () {
                 $('.block-item').hide();
