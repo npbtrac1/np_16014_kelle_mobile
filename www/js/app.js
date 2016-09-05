@@ -11,13 +11,11 @@ var app = angular.module('app', [
 app.config(['$routeProvider', '$httpProvider',
     function ($routeProvider, $httpProvider) {
         $routeProvider.when('/', {
-            controller: 'HomeController',
+            controller: 'MainController',
             templateUrl: 'home/home.view.html',
-            controllerAs: 'vm'
         }).when('/login', {
             controller: 'LoginController',
             templateUrl: 'login/login.view.html',
-            controllerAs: 'vm'
         }).when('/dashboard', {
             controller: 'DashboardController',
             templateUrl: 'dashboard/dashboard.view.html',

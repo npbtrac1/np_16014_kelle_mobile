@@ -1,9 +1,8 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://demo.enpii.com/16/kelle';
+siteUrl = 'http://top3.dev-srv.net/16/kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
-
         $scope.loggedIn = function () {
             return Boolean($window.sessionStorage.access_token);
         };
@@ -11,6 +10,9 @@ app.controller('MainController', ['$scope', '$location', '$window',
             delete $window.sessionStorage.access_token;
             $location.path('/login').replace();
         };
+        if($window.sessionStorage.access_token != undefined) {
+            $location.path('/dashboard');
+        }
     }
 ]);
 /**
@@ -40,6 +42,11 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
             );
         };
     }
+])
+app.controller('HomeController', ['$scope', '$http', '$window', '$location',
+    function ($scope, $http, $window, $location) {
+
+    }
 ]);
 app.controller('DashboardController', ['$scope', '$http', '$window',
     function ($scope, $http, $window) {
@@ -57,7 +64,6 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
 
             jQuery.get(ajaxUrl + '/buildings/view-building?id=' + building_id, function (response) {
                 $scope.building = response;
-                console.log(response);
                 $('#building-name').html(response.name);
                 blocks = response.building_facilities;
 
@@ -196,7 +202,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                 images = '';
                 jQuery.each(attachments, function (key, image) {
                     if (image.thumbnail != undefined) {
-                        images += '<li><a rel="image-row-'+index+' " class="popup-image" href="' + image.full + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"><img src="' + image.thumbnail + '"></a></li>';
+                        images += '<li><a rel="image-row-'+index+' " class="popup-image" href="' + image.medium + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"><img src="' + image.thumbnail + '"></a></li>';
                     }
                 });
                 if(isReadOnly) {
@@ -312,7 +318,7 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
             jQuery.each(taskImages, function (index, mediaRelation) {
                 if(mediaRelation.attachment) {
                     images += '<li class="image-item"> ' +
-                        '<a data-toggle="modal" data-target="#image-gallery"  data-image-id="'+ mediaRelation.attachment.id +'" class="popup-image" data-image="'+ mediaRelation.attachment.full +'" href="'+ mediaRelation.attachment.full +'" style="background-image: url('+mediaRelation.attachment.thumbnail+')"><img src="'+mediaRelation.attachment.thumbnail+'"></a>' +
+                        '<a data-toggle="modal" data-target="#image-gallery"  data-image-id="'+ mediaRelation.attachment.id +'" class="popup-image" data-image="'+ mediaRelation.attachment.medium +'" href="'+ mediaRelation.attachment.medium +'" style="background-image: url('+mediaRelation.attachment.thumbnail+')"><img src="'+mediaRelation.attachment.thumbnail+'"></a>' +
                         '</li>';
                 }
 
@@ -482,7 +488,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                     success: function (response) {
                         console.log(response);
                         if (response.status == 200) {
-                            $window.location.reload();
+                            $window.history.back();
                         } else {
                             $('#error-message').removeClass('hidden').find('.inner').html(response.message);
                         }
