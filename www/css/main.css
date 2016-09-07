@@ -109,15 +109,17 @@
 
 /* line 21, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar + .icon-bar { margin-top: 6px; }
 
-/* line 27, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .header-inner { position: relative; }
+@media only screen and (max-width: 480px) { /* line 4, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control { top: 5px; } }
 
-/* line 30, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-title { text-align: center; color: #fff; font-size: 31px; }
+/* line 30, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .header-inner { position: relative; }
+
+/* line 33, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-title { text-align: center; color: #fff; font-size: 31px; }
 
 @media only screen and (max-width: 480px) { /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header { padding: 18px 0 16px 0; }
-  /* line 38, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn { margin-top: 3px; }
-  /* line 40, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar { width: 22px; height: 3px; }
-  /* line 43, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar + .icon-bar { margin-top: 4px; }
-  /* line 49, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-title { font-size: 24.5px; } }
+  /* line 41, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn { margin-top: 3px; }
+  /* line 43, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar { width: 22px; height: 3px; }
+  /* line 46, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-control .menu-toggle-btn .icon-bar + .icon-bar { margin-top: 4px; }
+  /* line 52, /working/projects/php/enpii/16/kelle-mobile/www/sass/_header.scss */ #main-header .menu-title { font-size: 24.5px; } }
 
 /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_sidebar.scss */ .sidebar { height: 100vh; background: #3a3939; position: fixed; top: 0; bottom: 0; left: 0; -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0); width: 363px; -webkit-transition: all 0.3s; transition: all 0.3s; }
 

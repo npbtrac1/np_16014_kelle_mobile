@@ -30,6 +30,15 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
 
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
     <icon src="icon.png" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />

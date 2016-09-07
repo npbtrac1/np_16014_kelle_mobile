@@ -23,6 +23,9 @@
         }
       }
     }
+    @include respond-to-custom-size(null, $app-breakpoint) {
+      top: 5px;
+    }
   }
   .header-inner {
     position: relative;
