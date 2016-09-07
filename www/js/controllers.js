@@ -63,7 +63,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
         if (building_id !== undefined && building_id != null) {
 
             jQuery.get(ajaxUrl + '/buildings/view-building?id=' + building_id, function (response) {
-                $scope.building = response;
+                console.log(response);
                 $('#building-name').html(response.name);
                 blocks = response.building_facilities;
 
@@ -200,8 +200,10 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
             jQuery.each(tasks, function (index, item) {
                 attachments = item.attachments;
                 images = '';
+                imageCounter = 0;
                 jQuery.each(attachments, function (key, image) {
                     if (image.thumbnail != undefined) {
+                        imageCounter ++;
                         images += '<li><a rel="image-row-'+index+' " class="popup-image" href="' + image.medium + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"><img src="' + image.thumbnail + '"></a></li>';
                     }
                 });
@@ -209,8 +211,11 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                     ratetaskButton = '';
                     updateImageButton = '';
                 } else {
-                    ratetaskButton = '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id +  '/' + response.id + '">Rate</a> ';
-                    updateImageButton = '<li><a class="image-button btn-image-update" href="#/update-image-task/' + item.id + '/' +response.id +'"><span>Edit</span><img src="img/transparent-img.png" width="1" height="1"></a> </li>';
+                    ratetaskButton = '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id +  '&buildingFacilityID=' + response.id + '">Rate</a> ';
+                    updateImageButton = '<li><a class="image-button btn-image-update" href="#/update-image-task/' + item.id + '/' +response.id +'"><span><i class="fa fa-camera" aria-hidden="true"></i></span><img src="img/transparent-img.png" width="1" height="1"></a> </li>';
+                    if(imageCounter >= 4) {
+                        updateImageButton = '';
+                    }
                 }
 
                 tasksHtml +=
@@ -307,8 +312,10 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
         } else  {
             isReadOnly = true;
         }
+
         if(isReadOnly) {
             $('.submit-rating').hide();
+
         }
         jQuery.get(ajaxUrl + '/buildings/view-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility, function (response) {
             $scope.facility = response;
@@ -323,8 +330,12 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
                 }
 
             });
+            updateImageButton = '';
+            if(!isReadOnly) {
+                updateImageButton = '<li class="image-item"><a class="image-button btn-image-update" href="#/update-image-task/' + $routeParams.id + '/' + $routeParams.facility +'"><span><i class="fa fa-camera" aria-hidden="true"></i></span><img src="img/transparent-img.png" width="1" height="1"></a> </li>';
+            }
             $('#task-name').html(response.name);
-            $('#task-image-list').html(images);
+            $('#task-image-list').html(images + updateImageButton);
             $('#task-rating-value').val(response.latestRating);
             taskRating = $('#single-task-rating');
             currentRating = taskRating.attr('data-current-rating',response.latestRating);
@@ -372,7 +383,7 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
                 },
                 success: function (response) {
                     if (response.status == 200) {
-                        $('#success-message').removeClass('hidden').find('.inner').html(response.message);
+                        $window.history.back();
                     } else {
                         $('#error-message').removeClass('hidden').find('.inner').html(response.message);
                     }
@@ -445,9 +456,20 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                         readURL(this);
                     });
                 }
+                if(fileIndex >= 4) {
+                    $('.add-item').hide();
+                }
+
             });
+            if(fileIndex >= 4) {
+                $('.add-item').hide();
+            }
             $('.delete-form-item').click(function () {
                 $(this).closest('.dynamic-form-item').remove();
+                fileIndex--;
+                if(fileIndex <= 3) {
+                    $('.add-item').show();
+                }
             });
 
             $('.attachment-image-input').change(function () {
@@ -486,7 +508,6 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                         formSubmit.find('button[type=submit]').html(buttonText);
                     },
                     success: function (response) {
-                        console.log(response);
                         if (response.status == 200) {
                             $window.history.back();
                         } else {

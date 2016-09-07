@@ -93,6 +93,7 @@
   padding-top: 90px;
   background-color: #edf0f5;
   margin-top: 19px;
+  padding-bottom: 119px;
   @include respond-to-custom-size(null,$app-breakpoint) {
     padding-top: 36px;
   }

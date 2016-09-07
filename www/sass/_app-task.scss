@@ -89,7 +89,34 @@
         width: 100%;
         height: auto;
       }
+      .btn-image-update {
+        width: 100%;
+        border: 1px solid #d3d7dd;
+        color: #d3d7dd;
+        font-size: 48px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        display: block;
+        padding: 0;
+        position: relative;
+        span {
+          position: absolute;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          top: 0;
+          text-align: center;
+          vertical-align: middle;
+          padding-top: 30%;
+        }
+        @include respond-to-custom-size(null,480px) {
+          font-size: 20px + $step-font-size;
+        }
+      }
     }
+
   }
   @include respond-to-custom-size(null,480px) {
     &-title {
