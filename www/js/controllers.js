@@ -415,9 +415,10 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 '<input type="hidden" id="taskrelationmedia-' + index + '-deleteimg" name="TaskRelationMedia[' + index + '][deleteImg]">' +
                 '<input type="hidden" name="TaskRelationMedia[' + index + '][attachment]" value="">' +
                 '<div class="btn btn-default btn-file">Choose Image<input class="attachment-image-input" type="file" name="TaskRelationMedia[' + index + '][attachment]" value="' + id + '"></div>' +
-                '<button class="btn btn-default btn-danger delete-form-item">Delete</button>' +
+                '<button type="button" class="btn btn-default btn-danger delete-form-item">Delete</button>' +
                 '</td>' +
                 '</tr>';
+
             return dynamicItem;
         }
 
@@ -459,6 +460,13 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 if(fileIndex >= 4) {
                     $('.add-item').hide();
                 }
+                $('.delete-form-item').click(function () {
+                    $(this).closest('.dynamic-form-item').remove();
+                    fileIndex--;
+                    if(fileIndex <= 3) {
+                        $('.add-item').show();
+                    }
+                });
 
             });
             if(fileIndex >= 4) {

@@ -112,7 +112,7 @@
           padding-top: 30%;
         }
         @include respond-to-custom-size(null,480px) {
-          font-size: 20px + $step-font-size;
+          font-size: 24px;
         }
       }
     }
