@@ -437,13 +437,15 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 '<input type="hidden" id="taskrelationmedia-' + index + '-media_id" name="TaskRelationMedia[' + index + '][media_id]" value="' + mediaId + '">' +
                 '<input type="hidden" id="taskrelationmedia-' + index + '-deleteimg" name="TaskRelationMedia[' + index + '][deleteImg]">' +
                 '<input type="hidden" name="TaskRelationMedia[' + index + '][attachment]" value="">' +
-                '<div class="btn btn-default btn-file ">Choose Image<input  accept="image/*;capture=camera"  class="attachment-image-input" type="file" name="TaskRelationMedia[' + index + '][attachment]" value="' + id + '"></div>' +
-                '<button type="button" class="btn btn-default btn-danger btn-capture">Delete</button>' +
+                '<div class="btn btn-default btn-file ">Choose Image<input  accept="image/*;capture=camera"  class="attachment-image-input get-photo" type="file" name="TaskRelationMedia[' + index + '][attachment]" value="' + id + '"></div>' +
+                '<button type="button" class="btn btn-default btn-file  get-photo">Choose Image</button>' +
                 '</td>' +
                 '</tr>';
 
             return dynamicItem;
         }
+
+
 
         jQuery.get(ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility, function (response) {
             mediaRelations = response.mediaRelations;
@@ -502,11 +504,15 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             });
 
             $('.attachment-image-input').change(gotPic);
-            $('.btn-capture').click(function () {
-                getImage();
-                getImageFromLib();
+            $('.get-photo').click(function (event) {
+                event.preventDefault();
+                openPhotoNav(event);
             });
 
+            function openPhotoNav(input) {
+                $('#photo-nav').modal('show');
+
+            }
             function readURL(input) {
 
                 if (input.files && input.files[0]) {
