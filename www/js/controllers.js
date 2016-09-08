@@ -502,7 +502,10 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             });
 
             $('.attachment-image-input').change(gotPic);
-            $('.btn-capture').click(getImage);
+            $('.btn-capture').click(function () {
+                getImage();
+                getImageFromLib();
+            });
 
             function readURL(input) {
 
@@ -536,6 +539,17 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                     },{
                         quality: 50,
                         destinationType: navigator.camera.PictureSourceType.DATA_URL
+                    }
+                );
+            }
+            function getImageFromLib() {
+                // Retrieve image file location from specified source
+                navigator.camera.getPicture(uploadPhoto, function(message) {
+                        console.log('get picture failed');
+                    },{
+                        quality: 50,
+                        destinationType: navigator.camera.DestinationType.FILE_URI,
+                        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
                     }
                 );
             }
