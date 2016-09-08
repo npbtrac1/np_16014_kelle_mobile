@@ -158,7 +158,7 @@
 
     // A button will call this function
     //
-    function getPhoto(source) {
+    function getPhoto() {
         // Retrieve image file location from specified source
         navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
             destinationType: navigator.camera.DestinationType.FILE_URI,
