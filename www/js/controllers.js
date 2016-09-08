@@ -488,12 +488,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
         // A button will call this function
         //
 
-        function getPhoto(source) {
-            // Retrieve image file location from specified source
-            navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                destinationType: destinationType.FILE_URI,
-                sourceType: source });
-        }
+
         function onFail(message) {
             console.log('Failed because: ' + message);
         }
@@ -580,7 +575,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             });
 
             $('.attachment-image-input').change(gotPic);
-            $('.btn-capture').click(getPhoto());
+            $('.btn-capture').click(getPhoto);
 
             function readURL(input) {
 
@@ -607,7 +602,11 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 }
             }
 
-
+            function getPhoto(source) {
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                    destinationType: destinationType.FILE_URI,
+                    sourceType: source });
+            }
 
             $('#dynamic-form-submit').click(function (e) {
                 e.preventDefault();
