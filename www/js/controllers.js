@@ -437,7 +437,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 '<input type="hidden" id="taskrelationmedia-' + index + '-media_id" name="TaskRelationMedia[' + index + '][media_id]" value="' + mediaId + '">' +
                 '<input type="hidden" id="taskrelationmedia-' + index + '-deleteimg" name="TaskRelationMedia[' + index + '][deleteImg]">' +
                 '<input type="hidden" name="TaskRelationMedia[' + index + '][attachment]" value="">' +
-                '<div class="btn btn-default btn-file">Choose Image<input  capture="camera" accept="image/*"  class="attachment-image-input" type="file" name="TaskRelationMedia[' + index + '][attachment]" value="' + id + '"></div>' +
+                '<div class="btn btn-default btn-file">Choose Image<input  accept="image/*;capture=camera"  class="attachment-image-input" type="file" name="TaskRelationMedia[' + index + '][attachment]" value="' + id + '"></div>' +
                 '<button type="button" class="btn btn-default btn-danger btn-capture">Delete</button>' +
                 '<button type="button" class="btn btn-default btn-danger" onclick="getPhoto()">Delete</button>' +
                 '<button type="button" class="btn btn-default btn-danger">Delete</button>' +
