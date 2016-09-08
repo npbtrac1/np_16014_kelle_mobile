@@ -418,7 +418,7 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
 ]);
 app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
-       
+
         function appendDynamicItem(index, itemID, itemMediaID, thumbnail) {
             image = '';
             id = itemID != undefined ? itemID : '';
@@ -535,8 +535,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                         console.log('get picture failed');
                     },{
                         quality: 50,
-                        destinationType: navigator.camera.DestinationType.FILE_URI,
-                        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                        destinationType: navigator.camera.PictureSourceType.DATA_URL
                     }
                 );
             }
