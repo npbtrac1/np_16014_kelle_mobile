@@ -438,7 +438,9 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 '<input type="hidden" id="taskrelationmedia-' + index + '-deleteimg" name="TaskRelationMedia[' + index + '][deleteImg]">' +
                 '<input type="hidden" name="TaskRelationMedia[' + index + '][attachment]" value="">' +
                 '<div class="btn btn-default btn-file">Choose Image<input  capture="camera" accept="image/*"  class="attachment-image-input" type="file" name="TaskRelationMedia[' + index + '][attachment]" value="' + id + '"></div>' +
-                '<button type="button" class="btn btn-default btn-danger delete-form-item">Delete</button>' +
+                '<button type="button" class="btn btn-default btn-danger btn-capture">Delete</button>' +
+                '<button type="button" class="btn btn-default btn-danger" onclick="getPhoto()">Delete</button>' +
+                '<button type="button" class="btn btn-default btn-danger">Delete</button>' +
                 '</td>' +
                 '</tr>';
 
@@ -502,6 +504,8 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             });
 
             $('.attachment-image-input').change(gotPic);
+            $('.btn-capture').click(capturePhoto());
+
             function readURL(input) {
 
                 if (input.files && input.files[0]) {
@@ -524,6 +528,86 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                     reader.readAsDataURL(event.target.files[0]);
 
                 }
+            }
+
+            var pictureSource;   // picture source
+            var destinationType; // sets the format of returned value
+
+            document.addEventListener("deviceready",onDeviceReady,false);
+
+            function onDeviceReady() {
+                pictureSource=navigator.camera.PictureSourceType;
+                destinationType=navigator.camera.DestinationType;
+            }
+            function onPhotoDataSuccess(imageData) {
+                // Uncomment to view the base64 encoded image data
+                //alert(imageData);
+
+                // Get image handle
+                //
+                var smallImage = document.getElementById('smallImage');
+                // Unhide image elements
+                //
+                smallImage.style.display = 'block';
+
+                // Show the captured photo
+                // The inline CSS rules are used to resize the image
+                //
+                smallImage.src = "data:image/jpeg;base64," + imageData;
+            }
+
+// Called when a photo is successfully retrieved
+//
+            function onPhotoURISuccess(imageURI) {
+                alert("inside large image")
+                // Uncomment to view the image file URI
+                // console.log(imageURI);
+
+                // Get image handle
+                //
+                var largeImage = document.getElementById('largeImage');
+
+                // Unhide image elements
+                //
+                largeImage.style.display = 'block';
+
+                // Show the captured photo
+                // The inline CSS rules are used to resize the image
+                //
+                largeImage.src = imageURI;
+            }
+
+// A button will call this function
+//
+            function capturePhoto() {
+                // Take picture using device camera and retrieve image as base64-encoded string
+                navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+                    destinationType: Camera.DestinationType.DATA_URL });
+            }
+
+// A button will call this function
+//
+            function capturePhotoEdit() {
+                // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+                navigator.camera.getPicture(onPhotoDataSuccess, onFail,
+                    { quality: 20, allowEdit: true,
+                        destinationType: Camera.DestinationType.DATA_URL });
+            }
+
+// A button will call this function
+//
+            function getPhoto(source) {
+                // Retrieve image file location from specified source
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                    destinationType: Camera.DestinationType.FILE_URI,
+                    sourceType: source });
+            }
+
+
+// Called if something bad happens.
+//
+            function onFail(message) {
+                alert('Failed because: ' + message);
             }
 
 
