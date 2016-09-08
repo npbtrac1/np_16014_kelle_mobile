@@ -8,8 +8,8 @@ var app = angular.module('app', [
     'controllers'       //Our module frontend/web/js/controllers.js
 ]);
 
-app.config(['$routeProvider', '$httpProvider',
-    function ($routeProvider, $httpProvider) {
+app.config(['$routeProvider', '$httpProvider','$provide',
+    function ($routeProvider, $httpProvider,$provide) {
         $routeProvider.when('/', {
             controller: 'MainController',
             templateUrl: 'home/home.view.html',
@@ -19,7 +19,6 @@ app.config(['$routeProvider', '$httpProvider',
         }).when('/dashboard', {
             controller: 'DashboardController',
             templateUrl: 'dashboard/dashboard.view.html',
-            controllerAs: 'vm'
         }).when('/facility/:id', {
             templateUrl: 'facility/facility.view.html',
             controller: 'FacilityController'
@@ -39,8 +38,17 @@ app.config(['$routeProvider', '$httpProvider',
             templateUrl: '404.html'
         });
         $httpProvider.interceptors.push('authInterceptor');
+        $provide.decorator('$controller', function($delegate) {
+            return function(constructor, locals, later, indent) {
+                if (typeof constructor === 'string' && !locals.$scope.controllerName) {
+                    locals.$scope.controllerName =  constructor;
+                }
+                return $delegate(constructor, locals, later, indent);
+            };
+        });
     }
 ]);
+
 app.factory('authInterceptor', function ($q, $window, $location) {
     return {
         request: function (config) {
@@ -120,4 +128,3 @@ app.directive('back', ['$window', function($window) {
         }
     };
 }]);
-
