@@ -104,27 +104,7 @@
     // Called when a photo is successfully retrieved
     //
     function onPhotoDataSuccess(imageData) {
-        // Uncomment to view the base64-encoded image data
-        // console.log(imageData);
-
-        // Get image handle
-        //
-        var smallImage = document.getElementById('smallImage');
-
-        // Unhide image elements
-        //
-
-        // Show the captured photo
-        // The in-line CSS rules are used to resize the image
-        //
-        console.log(imageData);
-        window.resolveLocalFileSystemURI(imageData,
-                function( fileEntry){
-                    console.log("file entry: " + fileEntry);
-                    console.log("got image file entry: " + fileEntry.fullPath);
-                },
-                function(){}
-        );
+        return imageData;
     }
 
     // Called when a photo is successfully retrieved
