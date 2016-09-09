@@ -188,8 +188,6 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
         } else  {
             isReadOnly = true;
         }
-        console.log($scope.controllerName);
-        console.log(localStorage.scrollToFacility);
         if(localStorage.scrollToFacility != undefined && $scope.controllerName == 'FacilityController') {
 
             $('html, body').animate({
@@ -437,15 +435,13 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 '<input type="hidden" id="taskrelationmedia-' + index + '-media_id" name="TaskRelationMedia[' + index + '][media_id]" value="' + mediaId + '">' +
                 '<input type="hidden" id="taskrelationmedia-' + index + '-deleteimg" name="TaskRelationMedia[' + index + '][deleteImg]">' +
                 '<input type="hidden" name="TaskRelationMedia[' + index + '][attachment]" value="">' +
-                '<div class="btn btn-default btn-file ">Choose Image<input  accept="image/*;capture=camera"  class="attachment-image-input get-photo" type="file" name="TaskRelationMedia[' + index + '][attachment]" value="' + id + '"></div>' +
-                '<button type="button" class="btn btn-default btn-file  get-photo">Choose Image</button>' +
+                '<div class="btn btn-default btn-file">Choose Image<input  capture="camera" accept="image/*"  class="attachment-image-input" type="file" name="TaskRelationMedia[' + index + '][attachment]" value="' + id + '"></div>' +
+                '<button type="button" class="btn btn-default btn-danger delete-form-item">Delete</button>' +
                 '</td>' +
                 '</tr>';
 
             return dynamicItem;
         }
-
-
 
         jQuery.get(ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility, function (response) {
             mediaRelations = response.mediaRelations;
@@ -504,15 +500,6 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             });
 
             $('.attachment-image-input').change(gotPic);
-            $('.get-photo').click(function (event) {
-                event.preventDefault();
-                openPhotoNav(event);
-            });
-
-            function openPhotoNav(input) {
-                $('#photo-nav').modal('show');
-
-            }
             function readURL(input) {
 
                 if (input.files && input.files[0]) {
@@ -524,7 +511,6 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                     reader.readAsDataURL(input.files[0]);
                 }
             }
-
             function gotPic(event) {
 
                 if(event.target.files.length == 1 && event.target.files[0].type.indexOf("image/") == 0) {
@@ -538,27 +524,6 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                 }
             }
 
-            function getImage() {
-                // Retrieve image file location from specified source
-                navigator.camera.getPicture(uploadPhoto, function(message) {
-                        console.log('get picture failed');
-                    },{
-                        quality: 50,
-                        destinationType: navigator.camera.PictureSourceType.DATA_URL
-                    }
-                );
-            }
-            function getImageFromLib() {
-                // Retrieve image file location from specified source
-                navigator.camera.getPicture(uploadPhoto, function(message) {
-                        console.log('get picture failed');
-                    },{
-                        quality: 50,
-                        destinationType: navigator.camera.DestinationType.FILE_URI,
-                        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-                    }
-                );
-            }
 
             $('#dynamic-form-submit').click(function (e) {
                 e.preventDefault();
