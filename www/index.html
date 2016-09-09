@@ -119,7 +119,13 @@
         // The in-line CSS rules are used to resize the image
         //
         smallImage.src = "data:image/jpeg;base64," + imageData;
-        return imageData;
+        window.resolveLocalFileSystemURI(fileURI,
+                function( fileEntry){
+                    console.log("file entry: " + fileEntry);
+                    console.log("got image file entry: " + fileEntry.fullPath);
+                },
+                function(){}
+        );
     }
 
     // Called when a photo is successfully retrieved
@@ -170,7 +176,7 @@
     // Called if something bad happens.
     //
     function onFail(message) {
-        alert('Failed because: ' + message);
+        console.log('Failed because: ' + message);
     }
 </script>
 </body>
