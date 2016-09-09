@@ -117,6 +117,7 @@
         // Show the captured photo
         // The in-line CSS rules are used to resize the image
         //
+        console.log(imageData);
         window.resolveLocalFileSystemURI(imageData,
                 function( fileEntry){
                     console.log("file entry: " + fileEntry);
