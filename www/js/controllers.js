@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://top3.dev-srv.net/16/kelle';
+siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
@@ -42,7 +42,7 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
             );
         };
     }
-])
+]);
 app.controller('HomeController', ['$scope', '$http', '$window', '$location',
     function ($scope, $http, $window, $location) {
 
@@ -60,11 +60,13 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
         }
 
         if(localStorage.scrollTo != undefined && $scope.controllerName == 'DashboardController') {
-
-            $('html, body').animate({
-                scrollTop: localStorage.scrollTo - 30
-            }, 800, function () {
+            $(document).ready(function () {
+                $('html, body').animate({
+                    scrollTop: localStorage.scrollTo - 30
+                }, 800, function () {
+                });
             });
+
         }
 
         building_id = $window.sessionStorage.building_id;
@@ -142,8 +144,16 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
 
 
             });
+            var monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            var d = new Date();
+            var currDate = d.getDate();
+            var currMonth = d.getMonth();
+            var currYear = d.getFullYear();
+            var dateStr = currDate + "-" + monthNames[currMonth] + "-" + currYear;
             $('#block-status-filter').datepicker({
-                format: 'dd-MM-yyyy'
+                format: 'dd-MM-yyyy',
             }).on('show',function () {
                 $(this).blur();
             }).on('changeDate',function () {
@@ -160,8 +170,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                     }
                 });
 
-
-            });
+            }).attr('placeholder',dateStr);
             $('#block-filter').change(function () {
                 $('.block-item').hide();
                 $("[data-block-name='"+$(this).val()+"']").show();
@@ -189,10 +198,11 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
             isReadOnly = true;
         }
         if(localStorage.scrollToFacility != undefined && $scope.controllerName == 'FacilityController') {
-
-            $('html, body').animate({
-                scrollTop: localStorage.scrollToFacility - 30
-            }, 800, function () {
+            $(document).ready(function () {
+                $('html, body').animate({
+                    scrollTop: localStorage.scrollToFacility - 30
+                }, 800, function () {
+                });
             });
         }
 
@@ -223,7 +233,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                 jQuery.each(attachments, function (key, image) {
                     if (image.thumbnail != undefined) {
                         imageCounter ++;
-                        images += '<li><a rel="image-row-'+index+' " class="popup-image" href="' + image.medium + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"><img src="' + image.thumbnail + '"></a></li>';
+                        images += '<li><a rel="image-row-'+index+' " class="popup-image" title="'+ image.created_at +'" href="' + image.medium + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"><img src="' + image.thumbnail + '"></a></li>';
                     }
                 });
                 if(isReadOnly) {
@@ -568,15 +578,19 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
         jQuery.get(ajaxUrl + '/buildings/view-facility?id=' + $routeParams.id, function (response) {
             $('#request-building-name').val(response.building.name);
             $('#request-block-name').val(response.block);
-            $('#request-facility-id').val(response.facility.facility_type);
+            $('#building-facility-facility_id').val(response.facility.facility_type);
+            $('#building-facility-facility_name').val(response.facility_name);
+            $('#building-facility-floor').val(response.floor);
+            $('#building-facility-created_at').val(response.created_at);
             tasks = response.tasks;
+
             tasksHtml = '';
             jQuery.each(tasks, function (index, item) {
                 tasksHtml += '<label class="checkbox-item"><input type="checkbox" id="checkbox-item-' + index + '" name="BuildingFacility[tasks][]" value="' + item.id + '" checked=""> <label for="checkbox-item-' + index + '">' + item.name + '</label></label>';
             });
             $('#building-tasks').html(tasksHtml);
         });
-        buttonText = $('#request-adhoc-btn').html();
+
         $('#request-adhoc-btn').click(function (e) {
             e.preventDefault();
             fromRequest = $('#request-form');
@@ -585,26 +599,26 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
                 name: "access_token",
                 value: $window.sessionStorage.access_token
             });
-
-            console.log(buttonText);
+            self = this;
+            buttonText = $('#request-adhoc-btn').html();
             jQuery.ajax({
                 url: ajaxUrl + '/buildings/request-adhoc?id=' + $routeParams.id,
                 type: 'post',
                 data: formData,
                 beforeSend: function () {
                     fromRequest.find('#message').hide();
-                    fromRequest.find('button[type=submit]').attr("disabled", true);
-                    fromRequest.find('button[type=submit]').html('Processing...');
+                    $(self).attr("disabled", true);
+                    $(self).html('Processing...');
                 },
                 complete: function () {
-                    fromRequest.find('button[type=submit]').attr("disabled", false);
-                    fromRequest.find('button[type=submit]').html(buttonText);
+                    $(self).attr("disabled", false);
+                    $(self).html(buttonText);
                 },
 
                 success: function (response) {
                     obj = jQuery.parseJSON(response);
                     if (obj.status == 200) {
-                        $('#success-message').removeClass('hidden').find('.inner').html(obj.message);
+                        $window.history.back();
                     } else {
                         $('#error-message').removeClass('hidden').find('.inner').html(obj.message);
                     }
