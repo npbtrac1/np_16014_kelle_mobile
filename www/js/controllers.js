@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://top3.dev-srv.net/16/kelle';
+siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
@@ -10,7 +10,7 @@ app.controller('MainController', ['$scope', '$location', '$window',
             delete $window.sessionStorage.access_token;
             $location.path('/login').replace();
         };
-        if($window.sessionStorage.access_token != undefined) {
+        if ($window.sessionStorage.access_token != undefined) {
             $location.path('/dashboard');
         }
     }
@@ -59,7 +59,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 ;
         }
 
-        if(localStorage.scrollTo != undefined && $scope.controllerName == 'DashboardController') {
+        if (localStorage.scrollTo != undefined && $scope.controllerName == 'DashboardController') {
             $(document).ready(function () {
                 $('html, body').animate({
                     scrollTop: localStorage.scrollTo - 30
@@ -96,8 +96,8 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 blockHtml = '';
                 var arrayBlockID = [];
                 jQuery.each(blocks, function (index, item) {
-                   blockHtml +=
-                        '<li class="block-item" data-block-name="#block-' + convertToSlug(item.block) + '" data-floor="#floor-' + convertToSlug(item.floor) + '" data-facility-id="#facilityID-' + convertToSlug(item.facility_name) + '" data-created-at="'+item.created_at+'">' +
+                    blockHtml +=
+                        '<li class="block-item" data-block-name="#block-' + convertToSlug(item.block) + '" data-floor="#floor-' + convertToSlug(item.floor) + '" data-facility-id="#facilityID-' + convertToSlug(item.facility_name) + '" data-created-at="' + item.created_at + '">' +
                         '<a class="scroll-to-anchor" href="#/facility/' + item.id + '">' +
                         '<div class="block-info">' +
                         '<div class="block-title">' + item.block + '</div>' +
@@ -126,7 +126,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 $('#block-filter').html(blockFilter);
                 $('#floor-filter').html(floorFilter);
                 $('#facility-filter').html(facilityIdFilter);
-                $('#block-list').html(blockHtml).delegate('.scroll-to-anchor','click',function () {
+                $('#block-list').html(blockHtml).delegate('.scroll-to-anchor', 'click', function () {
                     localStorage.scrollTo = $(this).offset().top;
                 });
 
@@ -142,7 +142,6 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 });
 
 
-
             });
             var monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
@@ -154,34 +153,34 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
             var dateStr = currDate + "-" + monthNames[currMonth] + "-" + currYear;
             $('#block-status-filter').datepicker({
                 format: 'dd-MM-yyyy',
-            }).on('show',function () {
+            }).on('show', function () {
                 $(this).blur();
-            }).on('changeDate',function () {
+            }).on('changeDate', function () {
                 $filterOrigin = new Date($(this).val());
 
                 $('.block-item').each(function (e) {
                     $block = $(this);
 
                     $filterCompareVal = new Date(($block.attr('data-created-at')));
-                    if($filterOrigin.getDate() <= $filterCompareVal.getDate()) {
+                    if ($filterOrigin.getDate() <= $filterCompareVal.getDate()) {
                         $block.show();
                     } else {
                         $block.hide();
                     }
                 });
 
-            }).attr('placeholder',dateStr);
+            }).attr('placeholder', dateStr);
             $('#block-filter').change(function () {
                 $('.block-item').hide();
-                $("[data-block-name='"+$(this).val()+"']").show();
+                $("[data-block-name='" + $(this).val() + "']").show();
             });
             $('#floor-filter').change(function () {
                 $('.block-item').hide();
-                $("[data-floor='"+$(this).val()+"']").show();
+                $("[data-floor='" + $(this).val() + "']").show();
             });
             $('#facility-filter').change(function () {
                 $('.block-item').hide();
-                $("[data-facility-id='"+$(this).val()+"']").show();
+                $("[data-facility-id='" + $(this).val() + "']").show();
             });
 
 
@@ -192,12 +191,12 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
 app.controller('FacilityController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
 
-        if($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor')  {
+        if ($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor') {
             isReadOnly = false;
-        } else  {
+        } else {
             isReadOnly = true;
         }
-        if(localStorage.scrollToFacility != undefined && $scope.controllerName == 'FacilityController') {
+        if (localStorage.scrollToFacility != undefined && $scope.controllerName == 'FacilityController') {
             $(document).ready(function () {
                 $('html, body').animate({
                     scrollTop: localStorage.scrollToFacility - 30
@@ -218,7 +217,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
             $('#facility-type').html(response.facility.facility_type);
             $('#facility-id').html(response.facility_name);
             $('#request-adhoc a').attr('href', '#/request-adhoc/' + response.id);
-            if(isReadOnly) {
+            if (isReadOnly) {
                 $('#request-adhoc a').hide();
             }
 
@@ -232,17 +231,17 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                 imageCounter = 0;
                 jQuery.each(attachments, function (key, image) {
                     if (image.thumbnail != undefined) {
-                        imageCounter ++;
-                        images += '<li><a rel="image-row-'+index+' " class="popup-image" title="'+ image.created_at +'" href="' + image.medium + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"><img src="' + image.thumbnail + '"></a></li>';
+                        imageCounter++;
+                        images += '<li><a rel="image-row-' + index + ' " class="popup-image" title="' + image.created_at + '" href="' + image.medium + '" class="image-thumbnail"  style="background-image: url(' + image.thumbnail + ')"><img src="' + image.thumbnail + '"></a></li>';
                     }
                 });
-                if(isReadOnly) {
+                if (isReadOnly) {
                     ratetaskButton = '';
                     updateImageButton = '';
                 } else {
-                    ratetaskButton = '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id +  '&buildingFacilityID=' + response.id + '">Rate</a> ';
-                    updateImageButton = '<li><a class="scroll-to-anchor image-button btn-image-update" href="#/update-image-task/' + item.id + '/' +response.id +'"><span><i class="fa fa-camera" aria-hidden="true"></i></span><img src="img/transparent-img.png" width="1" height="1"></a> </li>';
-                    if(imageCounter >= 4) {
+                    ratetaskButton = '<a class="rate-task-btn hidden" data-value="' + item.rating + '" href="/buildings/rate-task?id=' + item.id + '&buildingFacilityID=' + response.id + '">Rate</a> ';
+                    updateImageButton = '<li><a class="scroll-to-anchor image-button btn-image-update" href="#/update-image-task/' + item.id + '/' + response.id + '"><span><i class="fa fa-camera" aria-hidden="true"></i></span><img src="img/transparent-img.png" width="1" height="1"></a> </li>';
+                    if (imageCounter >= 4) {
                         updateImageButton = '';
                     }
                 }
@@ -263,7 +262,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                     '<option value="4"></option> ' +
                     '<option value="5"></option> ' +
                     '</select> ' +
-                    '<a class="scroll-to-anchor edit-facility" href="#/task/' + item.id +  '/' + response.id + '">Edit</a> ' +
+                    '<a class="scroll-to-anchor edit-facility" href="#/task/' + item.id + '/' + response.id + '">Edit</a> ' +
                     ratetaskButton +
                     '</div> ' +
                     '</div> ' +
@@ -279,7 +278,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
                 arrayTaskID.push(item.id);
             });
 
-            $('#task-list').html(tasksHtml).delegate('.scroll-to-anchor','click',function () {
+            $('#task-list').html(tasksHtml).delegate('.scroll-to-anchor', 'click', function () {
                 localStorage.scrollToFacility = $(this).offset().top;
             });
             $('a.popup-image').colorbox({
@@ -338,13 +337,13 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
 ]);
 app.controller('TaskController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
-        if($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor')  {
+        if ($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor') {
             isReadOnly = false;
-        } else  {
+        } else {
             isReadOnly = true;
         }
 
-        if(isReadOnly) {
+        if (isReadOnly) {
             $('.submit-rating').hide();
 
         }
@@ -354,22 +353,22 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
 
             images = '';
             jQuery.each(taskImages, function (index, mediaRelation) {
-                if(mediaRelation.attachment) {
+                if (mediaRelation.attachment) {
                     images += '<li class="image-item"> ' +
-                        '<a data-toggle="modal" data-target="#image-gallery"  data-image-id="'+ mediaRelation.attachment.id +'" class="popup-image" data-image="'+ mediaRelation.attachment.medium +'" href="'+ mediaRelation.attachment.medium +'" style="background-image: url('+mediaRelation.attachment.thumbnail+')"><img src="'+mediaRelation.attachment.thumbnail+'"></a>' +
+                        '<a data-toggle="modal" data-target="#image-gallery"  data-image-id="' + mediaRelation.attachment.id + '" class="popup-image" data-image="' + mediaRelation.attachment.medium + '" href="' + mediaRelation.attachment.medium + '" style="background-image: url(' + mediaRelation.attachment.thumbnail + ')"><img src="' + mediaRelation.attachment.thumbnail + '"></a>' +
                         '</li>';
                 }
 
             });
             updateImageButton = '';
-            if(!isReadOnly) {
-                updateImageButton = '<li class="image-item"><a class="image-button btn-image-update" href="#/update-image-task/' + $routeParams.id + '/' + $routeParams.facility +'"><span><i class="fa fa-camera" aria-hidden="true"></i></span><img src="img/transparent-img.png" width="1" height="1"></a> </li>';
+            if (!isReadOnly) {
+                updateImageButton = '<li class="image-item"><a class="image-button btn-image-update" href="#/update-image-task/' + $routeParams.id + '/' + $routeParams.facility + '"><span><i class="fa fa-camera" aria-hidden="true"></i></span><img src="img/transparent-img.png" width="1" height="1"></a> </li>';
             }
             $('#task-name').html(response.name);
             $('#task-image-list').html(images + updateImageButton);
             $('#task-rating-value').val(response.latestRating);
             taskRating = $('#single-task-rating');
-            currentRating = taskRating.attr('data-current-rating',response.latestRating);
+            currentRating = taskRating.attr('data-current-rating', response.latestRating);
             taskRating.barrating({
                 theme: 'fontawesome-stars-o',
                 readonly: isReadOnly,
@@ -392,7 +391,7 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
                 next: '<i class="fa fa-chevron-right"></i>'
             });
         });
-        buttonText =  $('#submit-rating').html();
+        buttonText = $('#submit-rating').html();
         $('#submit-rating').click(function (e) {
             e.preventDefault();
             formSubmit = $('#single-task-form');
@@ -427,8 +426,11 @@ app.controller('TaskController', ['$scope', '$location', '$window', '$routeParam
 app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
 
-        function appendDynamicItem(index, itemID, itemMediaID, thumbnail) {
+        function appendDynamicItem(index, itemID, itemMediaID, thumbnail, isNewRecord ) {
             image = '';
+            if(isNewRecord == undefined) {
+                isNewRecord = false;
+            }
             id = itemID != undefined ? itemID : '';
             if (thumbnail != undefined) {
                 image = '<img src="' + thumbnail + '" class="image-thumbnail">'
@@ -481,30 +483,37 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             $('.add-item').click(function (e) {
                 e.preventDefault();
                 maxValueID++;
-                if(fileIndex <= 3) {
+                if (fileIndex <= 3) {
                     $(this).closest('tr').before(appendDynamicItem(fileIndex, maxValueID));
                     fileIndex++;
                     $('.attachment-image-input').change(gotPic);
                 }
-                if(fileIndex >= 4) {
+                if (fileIndex >= 4) {
                     $('.add-item').hide();
                 }
                 $('.delete-form-item').click(function () {
                     $(this).closest('.dynamic-form-item').remove();
                     fileIndex--;
-                    if(fileIndex <= 3) {
+                    if (fileIndex <= 3) {
                         $('.add-item').show();
                     }
                 });
+                jQuery("input[type=file]").each(function () {
+                    jQuery(this).rules("add", {
+                        extension: "png|jpg|jpeg",
+                        accept: "image/*",
+                        filesize: 2097152
+                    });
+                });
 
             });
-            if(fileIndex >= 4) {
+            if (fileIndex >= 4) {
                 $('.add-item').hide();
             }
             $('.delete-form-item').click(function () {
                 $(this).closest('.dynamic-form-item').remove();
                 fileIndex--;
-                if(fileIndex <= 3) {
+                if (fileIndex <= 3) {
                     $('.add-item').show();
                 }
             });
@@ -521,9 +530,10 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                     reader.readAsDataURL(input.files[0]);
                 }
             }
+
             function gotPic(event) {
 
-                if(event.target.files.length == 1 && event.target.files[0].type.indexOf("image/") == 0) {
+                if (event.target.files.length == 1 && event.target.files[0].type.indexOf("image/") == 0) {
 
                     var reader = new FileReader();
                     reader.onload = function (e) {
@@ -535,40 +545,56 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
             }
 
 
-            $('#dynamic-form-submit').click(function (e) {
-                e.preventDefault();
-                buttonText = $(this).html();
-                var formSubmit = $('#dynamic-form');
-                var formData = new FormData($(this).parents('form')[0]);
-                $.ajax({
-                    url: ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility,
-                    type: 'POST',
-                    xhr: function () {
-                        var myXhr = $.ajaxSettings.xhr();
-                        return myXhr;
-                    },
-                    beforeSend: function () {
-                        formSubmit.find('button[type=submit]').attr("disabled", true);
-                        formSubmit.find('button[type=submit]').html('Processing...');
-                    },
-                    complete: function () {
-                        formSubmit.find('button[type=submit]').attr("disabled", false);
-                        formSubmit.find('button[type=submit]').html(buttonText);
-                    },
-                    success: function (response) {
-                        if (response.status == 200) {
-                            $window.history.back();
-                        } else {
-                            $('#error-message').removeClass('hidden').find('.inner').html(response.message);
-                        }
-                    },
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false
+            $.validator.addMethod('filesize', function (value, element, param) {
+                return this.optional(element) || (element.files[0].size <= param)
+            }, 'Limit 2MB');
+            dynamicForm = jQuery('#dynamic-form');
+            dynamicForm.validate();
+            jQuery("input[type=file]").each(function () {
+                jQuery(this).rules("add", {
+                    extension: "png|jpg|jpeg",
+                    accept: "image/*",
+                    filesize: 2097152
                 });
+            });
+
+            $('#dynamic-form-submit').click(function (e) {
+                if (dynamicForm.valid()) {
+                    e.preventDefault();
+                    buttonText = $(this).html();
+                    var formSubmit = $('#dynamic-form');
+                    var formData = new FormData($(this).parents('form')[0]);
+                    $.ajax({
+                        url: ajaxUrl + '/buildings/update-image-task?id=' + $routeParams.id + '&buildingFacilityID=' + $routeParams.facility,
+                        type: 'POST',
+                        xhr: function () {
+                            var myXhr = $.ajaxSettings.xhr();
+                            return myXhr;
+                        },
+                        beforeSend: function () {
+                            formSubmit.find('button[type=submit]').attr("disabled", true);
+                            formSubmit.find('button[type=submit]').html('Processing...');
+                        },
+                        complete: function () {
+                            formSubmit.find('button[type=submit]').attr("disabled", false);
+                            formSubmit.find('button[type=submit]').html(buttonText);
+                        },
+                        success: function (response) {
+                            if (response.status == 200) {
+                                $window.history.back();
+                            } else {
+                                $('#error-message').removeClass('hidden').find('.inner').html(response.message);
+                            }
+                        },
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    });
+                }
                 return false;
             });
+
         });
     }
 ]);
@@ -576,12 +602,14 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
     function ($scope, $location, $window, $routeParams) {
 
         jQuery.get(ajaxUrl + '/buildings/view-facility?id=' + $routeParams.id, function (response) {
+            console.log(response);
             $('#request-building-name').val(response.building.name);
             $('#request-block-name').val(response.block);
             $('#building-facility-facility_id').val(response.facility.facility_type);
             $('#building-facility-facility_name').val(response.facility_name);
             $('#building-facility-floor').val(response.floor);
             $('#building-facility-created_at').val(response.created_at);
+            $('#timestamp').html(response.timestamp);
             tasks = response.tasks;
 
             tasksHtml = '';

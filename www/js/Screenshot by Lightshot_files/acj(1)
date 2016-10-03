@@ -1,0 +1,28 @@
+OX_7436478562({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://uk-ads.openx.net/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://eu-u.openx.net/w/1.0/pd?plm=5&ph=50ab0170-10fc-4aec-b816-8e01043433e7",
+    "adunits" : [
+      {
+        "auid":"538602624",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"300",
+            "height":"250",
+            "html":"<script type='text/javascript'>document.write('<script src=\"http'+('about:' == window.location.protocol ? ('https:' == window.top.location.protocol ? 's' : '') : ('https:' == window.location.protocol ? 's' : ''))+'://clickioadve.com/universal_backup/?area_id=604092&dw=1\">\\x3c/script>');</script>",
+            "target":"_blank",
+            "ts":"1fHJpZD03YzdiNGFlYi1mZmRkLTRjYmEtYjEwMC1hNmEyOGY2NDcyOTV8cnQ9MTQ3NTIxMDU4MXxhdWlkPTUzODYwMjYyNHxhdW09RE1JRC5XRUJ8YXVwZj1kaXNwbGF5fHNpZD01MzcyNzg4NTN8cHViPTUzNzExOTAxMXxwYz1HQlB8cmFpZD1iNzE3MjRlMC1lYzFjLTRlNGEtYjQ3Ni1hZjNiYjcyYmQ0Y2F8dXI9MEJWRDZ5WDNHOQ",
+            "type":"html",
+            "ad_url":"<script type='text/javascript'>document.write('<script src=\"http'+('about:' == window.location.protocol ? ('https:' == window.top.location.protocol ? 's' : '') : ('https:' == window.location.protocol ? 's' : ''))+'://clickioadve.com/universal_backup/?area_id=604092&dw=1\">\\x3c/script>');</script>"
+          }
+        ]
+      }
+    ]
+  }
+});

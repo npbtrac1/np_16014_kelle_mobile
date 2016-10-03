@@ -1,0 +1,12 @@
+__lxG204125__45016646.parser([{
+    id:"604094",
+    type:"js",
+    div_name:"lx_604094",
+    isTablet:"0",source:'<!--/* OpenX Asynchronous JavaScript tag */-->\n\n\n<div id="538602620_INSERT_SLOT_ID_HERE" style="width:728px;height:90px;margin:0;padding:0">\n  <noscript><iframe id="4355a6bce8" name="4355a6bce8" src="//uk-ads.openx.net/w/1.0/afr?auid=538602620&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="728" height="90"><a href="//uk-ads.openx.net/w/1.0/rc?cs=4355a6bce8&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="//uk-ads.openx.net/w/1.0/ai?auid=538602620&cs=4355a6bce8&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>\n</div>\n<script type="text/javascript">\n  var OX_ads = OX_ads || [];\n  OX_ads.push({\n     slot_id: "538602620_INSERT_SLOT_ID_HERE",\n     auid: "538602620"\n  });\n</script>\n\n<script type="text/javascript" src="//uk-ads.openx.net/w/1.0/jstag"></script>\n'
+},{
+    id:"604092",
+    type:"js",
+    div_name:"lx_604092",
+    isTablet:"0",source:'<!--/* OpenX Asynchronous JavaScript tag */-->\n\n\n<div id="538602624_INSERT_SLOT_ID_HERE" style="width:300px;height:250px;margin:0;padding:0">\n  <noscript><iframe id="a015e9c339" name="a015e9c339" src="//uk-ads.openx.net/w/1.0/afr?auid=538602624&cb=INSERT_RANDOM_NUMBER_HERE" frameborder="0" scrolling="no" width="300" height="250"><a href="//uk-ads.openx.net/w/1.0/rc?cs=a015e9c339&cb=INSERT_RANDOM_NUMBER_HERE" ><img src="//uk-ads.openx.net/w/1.0/ai?auid=538602624&cs=a015e9c339&cb=INSERT_RANDOM_NUMBER_HERE" border="0" alt=""></a></iframe></noscript>\n</div>\n<script type="text/javascript">\n  var OX_ads = OX_ads || [];\n  OX_ads.push({\n     slot_id: "538602624_INSERT_SLOT_ID_HERE",\n     auid: "538602624"\n  });\n</script>\n\n<script type="text/javascript" src="//uk-ads.openx.net/w/1.0/jstag"></script>\n'
+},{type: 'counters', urls: ['https://clickiocdn.com/npm_show/?area_id=604094&sds_id=148061&ubckp=0&retarget_adv_net_id=0&psds_id=0&pfloor=0.000000&first=1&dcpm_type=0&order_id=1','https://clickiocdn.com/npm_show/?area_id=604092&sds_id=148067&ubckp=0&retarget_adv_net_id=0&psds_id=0&pfloor=0.000000&first=1&dcpm_type=0&order_id=1']}, {type: 'params', site: {},
+blocks:{"604094": {"type":"js_npm","ch_dmn":"clickioadve.com"}, "604092": {"type":"js_npm","ch_dmn":"clickioadve.com"}}}, {type: 'cfg', isMobile: 0}]);

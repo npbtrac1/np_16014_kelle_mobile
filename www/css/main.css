@@ -354,6 +354,8 @@
 
 @media only screen and (max-width: 480px) { /* line 274, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .request-adhoc a { font-size: 20px; padding: 20px 0; } }
 
+/* line 288, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .timestamp { font-size: 21px; color: #999999; }
+
 /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #single-task-form { padding-bottom: 119px; }
 
 /* line 4, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .task-rating { background: #f5f8fc; padding-bottom: 47px; }
@@ -412,41 +414,47 @@
 
 /* line 163, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .btn-file { position: relative; border: 1px solid #b84541; }
 
-/* line 166, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .btn-file input[type=file] { position: absolute; top: 0; right: 0; min-width: 100%; min-height: 100%; text-align: right; opacity: 0; background: none repeat scroll 0 0 transparent; cursor: inherit; display: block; }
+/* line 166, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .btn-file input[type=file] { position: absolute; top: 0; right: 0; min-width: 100%; min-height: 100%; text-align: right; opacity: 0; background: none repeat scroll 0 0 transparent; cursor: inherit; display: block; width: 100%; }
 
-/* line 179, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .btn { margin-bottom: 5px; }
+/* line 180, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .btn { margin-bottom: 5px; }
 
-/* line 183, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .dynamic-form-item td { border: 1px solid #ddd; padding: 10px; }
+/* line 184, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .dynamic-form-item td { border: 1px solid #ddd; padding: 10px; }
 
-/* line 188, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .delete-form-item { background-color: #b84541; border: 1px solid #b84541; }
+/* line 189, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .delete-form-item { background-color: #b84541; border: 1px solid #b84541; }
 
-/* line 192, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .form-update-image { background-color: #fff; }
+/* line 193, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .form-update-image { background-color: #fff; }
 
-/* line 195, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .add-item { display: block; width: 100%; padding: 3px 0; font-size: 20px; margin-top: 15px; }
+/* line 196, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .add-item { display: block; width: 100%; padding: 3px 0; font-size: 20px; margin-top: 15px; }
 
-/* line 202, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .image-preview { border-radius: 5px; border: 1px solid #ddd; padding: 5px; width: 100%; margin-bottom: 5px; }
+/* line 203, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .image-preview { border-radius: 5px; border: 1px solid #ddd; padding: 5px; width: 100%; margin-bottom: 5px; }
 
-/* line 208, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .image-preview img { max-width: 100px; width: 320px; height: auto; }
+/* line 209, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .image-preview img { max-width: 100px; width: 320px; height: auto; }
 
-/* line 215, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxTopLeft, #cboxWrapper #cboxTopCenter, #cboxWrapper #cboxTopRight, #cboxWrapper #cboxMiddleLeft, #cboxWrapper #cboxMiddleRight, #cboxWrapper #cboxBottomLeft, #cboxWrapper #cboxBottomCenter, #cboxWrapper #cboxBottomRight { display: none; }
+/* line 216, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxTopLeft, #cboxWrapper #cboxTopCenter, #cboxWrapper #cboxTopRight, #cboxWrapper #cboxMiddleLeft, #cboxWrapper #cboxMiddleRight, #cboxWrapper #cboxBottomLeft, #cboxWrapper #cboxBottomCenter, #cboxWrapper #cboxBottomRight { display: none; }
 
-/* line 218, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxPrevious, #cboxWrapper #cboxNext { position: absolute; top: 0; bottom: 0; margin: auto; width: 42px; height: 59px; padding: 10px; border-radius: 4px !important; background-image: none; background-color: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; font-size: 14px; border: 0; text-indent: 0; }
+/* line 219, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxPrevious, #cboxWrapper #cboxNext { position: absolute; top: 0; bottom: 0; margin: auto; width: 42px; height: 59px; padding: 10px; border-radius: 4px !important; background-image: none; background-color: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; font-size: 14px; border: 0; text-indent: 0; }
 
-/* line 234, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxPrevious:focus, #cboxWrapper #cboxNext:focus { outline: none; }
+/* line 235, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxPrevious:focus, #cboxWrapper #cboxNext:focus { outline: none; }
 
-/* line 238, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxPrevious { left: 5px; }
+/* line 239, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxPrevious { left: 5px; }
 
-/* line 241, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxNext { left: auto; right: 5px; }
+/* line 242, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxNext { left: auto; right: 5px; }
 
-/* line 245, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxClose { display: none; }
+/* line 246, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxClose { display: none; }
 
-/* line 248, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxCurrent { text-align: right; text-transform: uppercase; right: 5px; left: auto; }
+/* line 249, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxCurrent { text-align: right; text-transform: uppercase; right: 0; left: auto; padding: 5px 10px; }
 
-/* line 254, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxContent { float: none !important; margin: auto; }
+/* line 256, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxContent { float: none !important; margin: auto; }
 
-/* line 259, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxLoadedContent { border: 5px solid #fff; margin-bottom: 34px; }
+/* line 260, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxWrapper #cboxTitle { position: absolute; bottom: 4px; left: 0; text-align: center; width: auto; color: #949494; padding: 5px 10px; }
 
-/* line 263, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #dynamic-form { padding-bottom: 109px; }
+/* line 270, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #cboxLoadedContent { border: 5px solid #fff; margin-bottom: 34px; }
+
+/* line 274, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ #dynamic-form { padding-bottom: 109px; }
+
+/* line 277, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .btn-file { position: relative; }
+
+/* line 279, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-task.scss */ .btn-file .error { position: absolute; top: 100%; font-weight: 400; color: red; display: block; left: 0; }
 
 /* line 1, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-request.scss */ .request-form { padding-top: 33px; padding-bottom: 119px; }
 

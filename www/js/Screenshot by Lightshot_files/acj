@@ -1,0 +1,28 @@
+OX_4211044413({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://uk-ads.openx.net/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://eu-u.openx.net/w/1.0/pd?plm=5&ph=50ab0170-10fc-4aec-b816-8e01043433e7",
+    "adunits" : [
+      {
+        "auid":"538602620",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"728",
+            "height":"90",
+            "html":"<!--/* OpenX Asynchronous JavaScript tag */-->\n\n\n<div id=\"538602619_INSERT_SLOT_ID_HERE\" style=\"width:728px;height:90px;margin:0;padding:0\">\n  <noscript><iframe id=\"995043e089\" name=\"995043e089\" src=\"//uk-ads.openx.net/w/1.0/afr?auid=538602619&cb=INSERT_RANDOM_NUMBER_HERE\" frameborder=\"0\" scrolling=\"no\" width=\"728\" height=\"90\"><a href=\"//uk-ads.openx.net/w/1.0/rc?cs=995043e089&cb=INSERT_RANDOM_NUMBER_HERE\" ><img src=\"//uk-ads.openx.net/w/1.0/ai?auid=538602619&cs=995043e089&cb=INSERT_RANDOM_NUMBER_HERE\" border=\"0\" alt=\"\"></a></iframe></noscript>\n</div>\n<script type=\"text/javascript\">\n  var OX_ads = OX_ads || [];\n  OX_ads.push({\n     slot_id: \"538602619_INSERT_SLOT_ID_HERE\",\n     auid: \"538602619\"\n  });\n</script>\n\n<script type=\"text/javascript\" src=\"//uk-ads.openx.net/w/1.0/jstag\"></script>\n",
+            "target":"_blank",
+            "ts":"1fHJpZD1kNTA1MWI1OC1jNDA2LTQ1MmMtYTFkYS0xZjcyNThiZTM4NjB8cnQ9MTQ3NTIxMDU4MHxhdWlkPTUzODYwMjYyMHxhdW09RE1JRC5XRUJ8YXVwZj1kaXNwbGF5fHNpZD01MzcyNzg4NTN8cHViPTUzNzExOTAxMXxwYz1HQlB8cmFpZD0wY2FhYmU2NC0wNmEzLTQzMGEtOTIxNy0xOWQ4ZTQ4OTU5M2N8dXI9c1hINUpNd3N4eQ",
+            "type":"html",
+            "ad_url":"<!--/* OpenX Asynchronous JavaScript tag */-->\n\n\n<div id=\"538602619_INSERT_SLOT_ID_HERE\" style=\"width:728px;height:90px;margin:0;padding:0\">\n  <noscript><iframe id=\"995043e089\" name=\"995043e089\" src=\"//uk-ads.openx.net/w/1.0/afr?auid=538602619&cb=INSERT_RANDOM_NUMBER_HERE\" frameborder=\"0\" scrolling=\"no\" width=\"728\" height=\"90\"><a href=\"//uk-ads.openx.net/w/1.0/rc?cs=995043e089&cb=INSERT_RANDOM_NUMBER_HERE\" ><img src=\"//uk-ads.openx.net/w/1.0/ai?auid=538602619&cs=995043e089&cb=INSERT_RANDOM_NUMBER_HERE\" border=\"0\" alt=\"\"></a></iframe></noscript>\n</div>\n<script type=\"text/javascript\">\n  var OX_ads = OX_ads || [];\n  OX_ads.push({\n     slot_id: \"538602619_INSERT_SLOT_ID_HERE\",\n     auid: \"538602619\"\n  });\n</script>\n\n<script type=\"text/javascript\" src=\"//uk-ads.openx.net/w/1.0/jstag\"></script>\n"
+          }
+        ]
+      }
+    ]
+  }
+});

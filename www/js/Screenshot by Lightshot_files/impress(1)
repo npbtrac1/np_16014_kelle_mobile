@@ -1,0 +1,1 @@
+document.write("<script type='text\/javascript' src='https:\/\/www.googletagservices.com\/tag\/js\/gpt.js'>\r\n\r\ngoogletag.pubads().definePassback('175505488\/Mediawayss_RON_728x90', [[728,90]]).setTargeting('SITE',['prnt.sc']).display();\r\n\r\n<\/script>");
