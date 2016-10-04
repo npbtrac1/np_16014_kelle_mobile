@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
+siteUrl = 'http://top3.dev-srv.net/16/kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
@@ -438,7 +438,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
 
             mediaId = itemMediaID != undefined ? itemMediaID : '';
 
-            dynamicItem = '<tr class="dynamic-form-item">' +
+            dynamicItem = '<tr class="form-options-item dynamic-form-item">' +
                 '<td>' +
                 '<div class="image-preview">' + image + '</div>' +
                 '</td>' +
@@ -471,54 +471,12 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                     fileIndex++;
                 }
             });
-            images += '<tr> ' +
-                '<td colspan="2" class="text-center v-middle "> ' +
-                '<button type="button" class="add-item btn btn-success btn-sm"><span class="fa fa-plus"></span> New</button> ' +
-                '</td> ' +
-                '</tr>';
 
             $('#task-title').html(response.name);
             $('#task-image-list').html(images);
 
-            $('.add-item').click(function (e) {
-                e.preventDefault();
-                maxValueID++;
-                if (fileIndex <= 3) {
-                    $(this).closest('tr').before(appendDynamicItem(fileIndex, maxValueID));
-                    fileIndex++;
-                    $('.attachment-image-input').change(gotPic);
-                }
-                if (fileIndex >= 4) {
-                    $('.add-item').hide();
-                }
-                $('.delete-form-item').click(function () {
-                    $(this).closest('.dynamic-form-item').remove();
-                    fileIndex--;
-                    if (fileIndex <= 3) {
-                        $('.add-item').show();
-                    }
-                });
-                jQuery("input[type=file]").each(function () {
-                    jQuery(this).rules("add", {
-                        extension: "png|jpg|jpeg",
-                        accept: "image/*",
-                        filesize: 2097152
-                    });
-                });
 
-            });
-            if (fileIndex >= 4) {
-                $('.add-item').hide();
-            }
-            $('.delete-form-item').click(function () {
-                $(this).closest('.dynamic-form-item').remove();
-                fileIndex--;
-                if (fileIndex <= 3) {
-                    $('.add-item').show();
-                }
-            });
 
-            $('.attachment-image-input').change(gotPic);
             function readURL(input) {
 
                 if (input.files && input.files[0]) {
@@ -557,6 +515,30 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                     filesize: 2097152
                 });
             });
+
+            dynamicForm.on("click", ".add-item", function(e) {
+                e.preventDefault();
+                jQuery(".dynamicform_wrapper").triggerHandler("beforeInsert", [jQuery(this)]);
+                jQuery(".dynamicform_wrapper").yiiDynamicForm("addItem", dynamicFormOptions, e, jQuery(this));
+
+            });
+            dynamicForm.yiiActiveForm([{"id":"task-name","name":"name","container":".field-task-name","input":"#task-name","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Name cannot be blank."});yii.validation.string(value, messages, {"message":"Name must be a string.","max":255,"tooLong":"Name should contain at most 255 characters.","skipOnEmpty":1});}}], []);
+
+            dynamicForm.on("click", ".delete-form-item", function(e) {
+                e.preventDefault();
+                jQuery(".dynamicform_wrapper").yiiDynamicForm("deleteItem", dynamicFormOptions, e, jQuery(this));
+            });
+            $(".dynamicform_wrapper").on("afterInsert", function(e, item) {
+                $('.attachment-image-input').change(gotPic);
+                jQuery("input[type=file]").each(function () {
+                    jQuery(this).rules("add", {
+                        extension: "png|jpg|jpeg",
+                        accept: "image/*",
+                        filesize: 2097152
+                    });
+                });
+            });
+            $('.attachment-image-input').change(gotPic);
 
             $('#dynamic-form-submit').click(function (e) {
                 if (dynamicForm.valid()) {

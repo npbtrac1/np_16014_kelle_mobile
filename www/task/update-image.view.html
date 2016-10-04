@@ -20,58 +20,67 @@
     </ul>
 </div>
 <div class="container">
+    <div class="row">
+        <div class="building">
+            <div class="container">
+                <div class="building-heading">
+                    <div class="building-title">
+                        TASK
+                    </div>
+                    <div id="task-title" class="building-name">
 
+                    </div>
+
+                </div>
+                <div class="building-image-heading">
+                    <img src="img/capa.png" width="146" height="146">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var dynamicFormOptions = {
+            "widgetContainer":"dynamicform_wrapper",
+            "widgetBody":".form-options-body",
+            "widgetItem":".form-options-item",
+            "limit":4,
+            "insertButton":".add-item",
+            "deleteButton":".delete-item",
+            "insertPosition":"bottom",
+            "formId":"dynamic-form",
+            "min":0,
+            "fields":[
+                {"id":"taskrelationmedia-{}-name","name":"TaskRelationMedia[{}][name]"},
+                {"id":"taskrelationmedia-{}-img","name":"TaskRelationMedia[{}][img]"}
+            ],
+            "template":"<tr class=\"form-options-item dynamic-form-item\"><td><div class=\"image-preview\"></div></td><td><input type=\"hidden\" id=\"taskrelationmedia-0-id\" name=\"TaskRelationMedia[0][id]\" value=\"\"><input type=\"hidden\" id=\"taskrelationmedia-0-media_id\" name=\"TaskRelationMedia[0][media_id]\" value=\"\"><input type=\"hidden\" id=\"taskrelationmedia-0-deleteimg\" name=\"TaskRelationMedia[0][deleteImg]\"><input type=\"hidden\" name=\"TaskRelationMedia[0][attachment]\" value=\"\"><div class=\"btn btn-default btn-file\">Choose Image<input  capture=\"camera\" type=\"file\" id=\"taskrelationmedia-0-attachment\" class=\"attachment-image-input optionvalue-img file-loading\" name=\"TaskRelationMedia[0][attachment]\" value=\"\" accept=\"image/*\"></div><button type=\"button\" class=\"btn btn-default btn-danger delete-form-item delete-item\">Delete</button></td></tr>"};
+
+    </script>
     <form id="dynamic-form" action="" enctype="multipart/form-data">
+        <div class="dynamicform_wrapper" data-dynamicform="dynamicFormOptions">
 
-        <div class="row">
-            <div class="building">
-                <div class="container">
-                    <div class="building-heading">
-                        <div class="building-title">
-                            TASK
-                        </div>
-                        <div id="task-title" class="building-name">
+            <input type="hidden" id="task-name" class="form-control" name="Task[name]" value="" maxlength="">
+            <div class="row">
+                <div class="facility-form form-update-image">
+                    <div class="container">
+                        <table class="table">
+                            <tbody id="task-image-list" class="form-options-body ui-sortable">
 
-                        </div>
-
-                    </div>
-                    <div class="building-image-heading">
-                        <img src="img/capa.png" width="146" height="146">
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-        <input type="hidden" id="task-name" class="form-control" name="Task[name]" value="" maxlength="">
-        <div class="row">
-            <div class="facility-form form-update-image">
-                <div class="container">
-                    <table id="task-image-list" class="table">
-
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div id="success-message" class="bg-success status-message hidden">
-                <div class="container">
-                    <div class="inner">
-
-                    </div>
-                </div>
-
-            </div>
-            <div id="error-message" class="bg-dange hidden">
-                <div class="container">
-                    <div class="inner">
-
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2" class="text-center v-middle "><button type="button" class="add-item btn btn-success btn-sm"><span class="fa fa-plus"></span> New</button> </td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="submit-rating fixed-btn">
-                <button id="dynamic-form-submit" type="submit">Update</button>
+            <div class="row">
+                <div class="submit-rating fixed-btn">
+                    <button id="dynamic-form-submit" type="submit">Update</button>
+                </div>
             </div>
         </div>
     </form>
@@ -81,8 +90,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <button  class="btn btn-default" onclick="capturePhoto();">Capture Photo</button>
-                <button  class="btn btn-default" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+                <button class="btn btn-default" onclick="capturePhoto();">Capture Photo</button>
+                <button class="btn btn-default" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library
+                </button>
+                <br>
             </div>
         </div>
     </div>
