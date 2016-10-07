@@ -95,7 +95,7 @@
         var push = PushNotification.init({ "android": {"senderID": "632908270656"}});
         push.on('registration', function(data) {
             console.log(data.registrationId);
-            document.getElementById("gcm_id").innerHTML = data.registrationId;
+            
         });
 
         push.on('notification', function(data) {
