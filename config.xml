@@ -54,6 +54,9 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
     <feature name="http://api.phonegap.com/1.0/device" />
 
     <icon src="icon.png" />

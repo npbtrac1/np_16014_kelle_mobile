@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://top3.dev-srv.net/16/kelle';
+siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
@@ -73,8 +73,16 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
         if (building_id !== undefined && building_id != null) {
 
             jQuery.get(ajaxUrl + '/buildings/view-building?id=' + building_id, function (response) {
+
                 $('#building-name').html(response.name);
                 blocks = response.building_facilities;
+
+                attachments = response.attachments;
+                attachmentHtml = '';
+                jQuery.each(attachments, function (index, item) {
+                    attachmentHtml += '<a href='+ item.url + '>' + item.title + '</a>';
+                });
+
 
                 blockFilter = '';
                 blockFilterData = response.filterBlocks;
@@ -126,6 +134,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                 $('#block-filter').html(blockFilter);
                 $('#floor-filter').html(floorFilter);
                 $('#facility-filter').html(facilityIdFilter);
+                $('#building-attachments').html(attachmentHtml);
                 $('#block-list').html(blockHtml).delegate('.scroll-to-anchor', 'click', function () {
                     localStorage.scrollTo = $(this).offset().top;
                 });

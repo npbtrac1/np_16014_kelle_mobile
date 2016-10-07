@@ -281,3 +281,11 @@
     background-size: 100% 100%;
   }
 }
+#building-attachments {
+  a ,a:hover{
+    display: block;
+    font-size: 20px;
+    color: #49494e;
+    text-decoration: underline;
+  }
+}

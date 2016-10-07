@@ -70,7 +70,7 @@ app.service('rest', function ($http, $location, $routeParams) {
 
     return {
 
-        baseUrl: 'http://kelle.don/api/web/v1/',
+        baseUrl: 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle',
         path: undefined,
 
         models: function () {

@@ -254,6 +254,8 @@
 
 @media only screen and (max-width: 480px) { /* line 272, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ .back-to-dashboard { width: 26px; height: 22px; background-image: url("../img/arrow-left.png"); background-size: 100% 100%; } }
 
+/* line 285, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app_dashboard.scss */ #building-attachments a, #building-attachments a:hover { display: block; font-size: 20px; color: #49494e; text-decoration: underline; }
+
 /* line 2, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info ul { padding: 0; margin-bottom: 20px; list-style: none; }
 
 /* line 6, /working/projects/php/enpii/16/kelle-mobile/www/sass/_app-facility.scss */ .facility-info ul li { padding: 0 0; }
