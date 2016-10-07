@@ -65,6 +65,7 @@
         <p class="event received">Device is Ready</p>
     </div>
 </div>
+<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
 <script type="text/javascript" src="js/angular-strap.min.js"></script>
 <script type="text/javascript" src="js/angular-strap.tpl.min.js"></script>
@@ -86,10 +87,25 @@
 <script src="home/home.controller.js"></script>
 <script src="login/login.controller.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
     app.initialize();
+    document.addEventListener("deviceready",onDeviceReady,false);
+    function onDeviceReady(){
+        var push = PushNotification.init({ "android": {"senderID": "632908270656"}});
+        push.on('registration', function(data) {
+            console.log(data.registrationId);
+            document.getElementById("gcm_id").innerHTML = data.registrationId;
+        });
+
+        push.on('notification', function(data) {
+            alert(data.title+" Message: " +data.message);
+        });
+
+        push.on('error', function(e) {
+            alert(e);
+        });
+    }
 </script>
 </body>
 

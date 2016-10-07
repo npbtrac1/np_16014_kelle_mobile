@@ -28,8 +28,10 @@
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
-
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+    <plugin name="phonegap-plugin-push" spec="1.6.0">
+        <param name="SENDER_ID" value="632908270656" />
+    </plugin>
     <feature name="Camera">
         <param name="ios-package" value="CDVCamera" />
     </feature>
