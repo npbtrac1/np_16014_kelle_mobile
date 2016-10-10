@@ -1,0 +1,28 @@
+<header id="main-header">
+    <div class="container">
+        <div class="header-inner">
+            <div class="menu-control">
+                <a class="back-to-dashboard" href back></a>
+            </div>
+            <div class="menu-title">
+                Notifications
+            </div>
+        </div>
+    </div>
+</header>
+<div ng-include="'view/layout/sidebar.view.html'"></div>
+<div class="container" ng-click="openSidebar = false">
+    <div class="row">
+        <div class="building notification-wrapper">
+            <div class="container">
+                <h2 id="notification-title"></h2>
+                <div id="notification-content" class="notification-content">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div ng-include="'view/layout/footer.view.html'"></div>

@@ -19,6 +19,7 @@
         position: relative;
         padding: 30px 0 30px 110px;
         min-height: 132px;
+        display: block;
         @include respond-to-custom-size(null,480px) {
           position: relative;
           padding: 12px 0 12px 57px;

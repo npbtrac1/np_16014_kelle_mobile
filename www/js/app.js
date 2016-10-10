@@ -12,27 +12,33 @@ app.config(['$routeProvider', '$httpProvider','$provide',
     function ($routeProvider, $httpProvider,$provide) {
         $routeProvider.when('/', {
             controller: 'MainController',
-            templateUrl: 'home/home.view.html',
+            templateUrl: 'view/home/home.view.html',
         }).when('/login', {
             controller: 'LoginController',
-            templateUrl: 'login/login.view.html',
+            templateUrl: 'view/login/login.view.html',
         }).when('/dashboard', {
             controller: 'DashboardController',
-            templateUrl: 'dashboard/dashboard.view.html',
+            templateUrl: 'view/dashboard/dashboard.view.html',
         }).when('/facility/:id', {
-            templateUrl: 'facility/facility.view.html',
+            templateUrl: 'view/facility/facility.view.html',
             controller: 'FacilityController'
         }).when('/task/:id/:facility', {
-            templateUrl: 'task/task.view.html',
+            templateUrl: 'view/task/task.view.html',
             controller: 'TaskController'
         }).when('/request-adhoc/:id', {
-            templateUrl: 'request/request.view.html',
+            templateUrl: 'view/request/request.view.html',
             controller: 'RequestController'
         }).when('/update-image-task/:id/:facility', {
-            templateUrl: 'task/update-image.view.html',
+            templateUrl: 'view/task/update-image.view.html',
             controller: 'TaskUpdateImageController'
+        }).when('/notification', {
+            templateUrl: 'view/notification/index.html',
+            controller: 'NotificationController'
+        }).when('/view-notification/:id', {
+            templateUrl: 'view/notification/view.html',
+            controller: 'NotificationViewController'
         }).when('/logout', {
-            templateUrl: 'home/home.view.html',
+            templateUrl: 'view/home/home.view.html',
             controller: 'LogoutController'
         }).otherwise({
             templateUrl: '404.html'
