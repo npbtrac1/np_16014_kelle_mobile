@@ -94,7 +94,7 @@
 
         push.on('notification', function(data) {
             alert(data.title);
-            $window.location.href = '/#/notifications';
+            window.location.href = '/#/notifications';
         });
 
         push.on('error', function(e) {
