@@ -27,7 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener('pause', enyo.bind(this, this.paused), false);
+
     },
     // deviceready Event Handler
     //
@@ -40,6 +40,6 @@ var app = {
     receivedEvent: function(id) {},
     paused: function()
     {
-        window.localStorage.setItem("laststate", enyo.json.stringify(this.getState()));
+
     }
 };
