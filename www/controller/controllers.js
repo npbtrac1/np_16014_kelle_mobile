@@ -36,15 +36,12 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                     $window.sessionStorage.building_id = data.building_id;
                     $window.sessionStorage.user_type = data.user_type;
                     jQuery.ajax({
-                        type: "POST",
                         url: ajaxUrl + '/user/update-app-id',
+                        type: 'post',
                         data: {
-                            'access_token':$window.sessionStorage.access_token,
-                            'register_id':registerId
-                        },
-                        cache: false,
-                        contentType: false,
-                        processData: false
+                            access_token: $window.sessionStorage.access_token,
+                            register_id: registerId
+                        }
                     });
                     $location.path('/dashboard').replace();
                 }).error(
@@ -661,7 +658,7 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
                 error: function (xhr, ajaxOptions, thrownError) {
                     $('#error-message').removeClass('hidden').find('.inner').html(thrownError.message);
                 }
-            })
+            });
 
         });
 
