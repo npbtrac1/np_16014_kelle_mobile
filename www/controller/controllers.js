@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
+siteUrl = 'http://top3.dev-srv.net/16/kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
@@ -70,7 +70,11 @@ app.controller('HomeController', ['$scope', '$http', '$window', '$location',
 ]);
 app.controller('DashboardController', ['$scope', '$http', '$window',
     function ($scope, $http, $window) {
-
+        if ($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor') {
+            isReadOnly = false;
+        } else {
+            isReadOnly = true;
+        }
         function convertToSlug(Text) {
             return Text
                 .toLowerCase()
@@ -88,12 +92,8 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
             });
 
         }
-        if ($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor') {
-            isReadOnly = false;
-        } else {
-            isReadOnly = true;
-        }
-        if(isReadOnly) {
+
+        if($window.sessionStorage.user_type == 'client') {
             jQuery('.menu-notification').hide();
         }
         building_id = $window.sessionStorage.building_id;
@@ -166,6 +166,7 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                     localStorage.scrollTo = $(this).offset().top;
                 });
 
+
                 $.each(arrayBlockID, function (index, value) {
                     blockID = $('#' + value);
                     blockID.barrating({
@@ -176,7 +177,9 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
                         initialRating: blockID.data('current-rating')
                     });
                 });
-
+                if(isReadOnly) {
+                    $('.menu-notification').hide();
+                }
 
             });
             var monthNames = ["January", "February", "March", "April", "May", "June",

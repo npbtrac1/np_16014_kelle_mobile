@@ -76,7 +76,7 @@ app.service('rest', function ($http, $location, $routeParams) {
 
     return {
 
-        baseUrl: 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle',
+        baseUrl: 'http://top3.dev-srv.net/16/kelle/',
         path: undefined,
 
         models: function () {
