@@ -25,6 +25,10 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
         push.on('registration', function(data) {
             registerId = data.registrationId;
         });
+        push.on('notification', function(data) {
+            alert(data.title);
+            window.location.href = '#/notification';
+        });
 
         push.on('notification', function(data) {
             alert(data.title);
