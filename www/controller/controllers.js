@@ -35,13 +35,6 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                     $window.sessionStorage.access_token = data.access_token;
                     $window.sessionStorage.building_id = data.building_id;
                     $window.sessionStorage.user_type = data.user_type;
-                    $location.path('/dashboard').replace();
-                }).error(
-                function (data) {
-                    $scope.dataLoading = false;
-                    angular.forEach(data, function (error) {
-                        $scope.error[error.field] = error.message;
-                    });
                     jQuery.ajax({
                         type: "POST",
                         url: ajaxUrl + 'user/update-app-id',
@@ -54,6 +47,14 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                         contentType: false,
                         processData: false
                     });
+                    $location.path('/dashboard').replace();
+                }).error(
+                function (data) {
+                    $scope.dataLoading = false;
+                    angular.forEach(data, function (error) {
+                        $scope.error[error.field] = error.message;
+                    });
+
                 }
             );
         };
