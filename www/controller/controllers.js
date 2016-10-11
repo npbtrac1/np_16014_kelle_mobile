@@ -53,6 +53,7 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                     push.on('error', function(e) {
                         alert(e);
                     });
+                    console.log(registerId);
                     jQuery.ajax({
                         url: ajaxUrl + '/user/update-app-id',
                         type: 'post',
