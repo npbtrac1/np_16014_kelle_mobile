@@ -77,21 +77,24 @@
 <script type="text/javascript" src="js/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="js/colorbox-master/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="js/jquery-bar-rating-master/jquery.barrating.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="controller/controllers.js"></script>
-<script src="app-services/authentication.service.js"></script>
-<script src="app-services/flash.service.js"></script>
-<script src="app-services/user.service.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
     app.initialize();
     document.addEventListener("deviceready",onDeviceReady,false);
+    var registerId = '';
     function onDeviceReady(){
-        var push = PushNotification.init({ "android": {"senderID": "632908270656"}});
-        push.on('registration', function(data) {
-            console.log(data.registrationId);
+        var push = PushNotification.init({
+            "android": {"senderID": "632908270656"},
+            "ios": {
+                "alert": "true",
+                "badge": "true",
+                "sound": "true",
+                "clearBadge": "true"
+            },
+            "windows": {}
         });
-
+        push.on('registration', function(data) {
+            registerId = data.registrationId;
+        });
         push.on('notification', function(data) {
             alert(data.title);
             window.location.href = '#/notification';
@@ -102,6 +105,13 @@
         });
     }
 </script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="controller/controllers.js"></script>
+<script src="app-services/authentication.service.js"></script>
+<script src="app-services/flash.service.js"></script>
+<script src="app-services/user.service.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
 </body>
 
 </html>

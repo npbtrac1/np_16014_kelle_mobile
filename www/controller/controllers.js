@@ -20,11 +20,6 @@ app.controller('MainController', ['$scope', '$location', '$window',
  */
 app.controller('LoginController', ['$scope', '$http', '$window', '$location',
     function ($scope, $http, $window, $location) {
-        var push = PushNotification.init({ "android": {"senderID": "632908270656"}});
-        var registerId = '';
-        push.on('registration', function(data) {
-            registerId = data.registrationId;
-        });
         $scope.login = function () {
             $scope.submitted = true;
             $scope.dataLoading = true;
@@ -35,6 +30,9 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                     $window.sessionStorage.access_token = data.access_token;
                     $window.sessionStorage.building_id = data.building_id;
                     $window.sessionStorage.user_type = data.user_type;
+                    /**
+                     * registerId in index.html
+                     */
                     jQuery.ajax({
                         url: ajaxUrl + '/user/update-app-id',
                         type: 'post',
