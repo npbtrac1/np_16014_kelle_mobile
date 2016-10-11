@@ -8,8 +8,8 @@ var app = angular.module('app', [
     'controllers'       //Our module frontend/web/js/controllers.js
 ]);
 
-app.config(['$routeProvider', '$httpProvider','$provide',
-    function ($routeProvider, $httpProvider,$provide) {
+app.config(['$routeProvider', '$httpProvider', '$provide',
+    function ($routeProvider, $httpProvider, $provide) {
         $routeProvider.when('/', {
             controller: 'MainController',
             templateUrl: 'view/home/home.view.html',
@@ -44,10 +44,10 @@ app.config(['$routeProvider', '$httpProvider','$provide',
             templateUrl: '404.html'
         });
         $httpProvider.interceptors.push('authInterceptor');
-        $provide.decorator('$controller', function($delegate) {
-            return function(constructor, locals, later, indent) {
+        $provide.decorator('$controller', function ($delegate) {
+            return function (constructor, locals, later, indent) {
                 if (typeof constructor === 'string' && !locals.$scope.controllerName) {
-                    locals.$scope.controllerName =  constructor;
+                    locals.$scope.controllerName = constructor;
                 }
                 return $delegate(constructor, locals, later, indent);
             };
@@ -110,21 +110,21 @@ app.service('rest', function ($http, $location, $routeParams) {
 });
 
 app.directive('login', ['$http', function ($http) {
-        return {
-            transclude: true,
-            link: function (scope, element, attrs) {
-                scope.isGuest = window.sessionStorage._auth == undefined;
-            },
+    return {
+        transclude: true,
+        link: function (scope, element, attrs) {
+            scope.isGuest = window.sessionStorage._auth == undefined;
+        },
 
-            template: '<a href="login" ng-if="isGuest">Login</a>'
-        }
-    }])
+        template: '<a href="login" ng-if="isGuest">Login</a>'
+    }
+}])
     .filter('checkmark', function () {
         return function (input) {
             return input ? '\u2713' : '\u2718';
         };
     });
-app.directive('back', ['$window', function($window) {
+app.directive('back', ['$window', function ($window) {
     return {
         restrict: 'A',
         link: function (scope, elem, attrs) {
@@ -133,18 +133,4 @@ app.directive('back', ['$window', function($window) {
             });
         }
     };
-}]);
-app.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
-    $rootScope.$on('$routeChangeStart', function (event) {
-
-        if (!Auth.isLoggedIn()) {
-            console.log('DENY');
-            event.preventDefault();
-            $location.path('/login');
-        }
-        else {
-            console.log('ALLOW');
-            $location.path('/home');
-        }
-    });
 }]);

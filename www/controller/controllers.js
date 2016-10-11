@@ -43,6 +43,9 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                             register_id: registerId
                         }
                     });
+                    if($window.localStorage.isGoBack != undefined) {
+                        $window.history.back();
+                    }
                     $location.path('/dashboard').replace();
                 }).error(
                 function (data) {
@@ -355,6 +358,7 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
 ]);
 app.controller('TaskController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
+
         if ($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor') {
             isReadOnly = false;
         } else {
@@ -663,6 +667,10 @@ app.controller('RequestController', ['$scope', '$location', '$window', '$routePa
 ]);
 app.controller('NotificationController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
+        if($window.sessionStorage.access_token == undefined) {
+            $window.localStorage.isGoBack = true;
+            $location.path("login");
+        }
         jQuery.ajax({
             url: ajaxUrl + '/buildings/list-notifications',
             type: 'post',
@@ -700,6 +708,7 @@ app.controller('NotificationController', ['$scope', '$location', '$window', '$ro
 ]);
 app.controller('NotificationViewController', ['$scope', '$location', '$window', '$routeParams',
     function ($scope, $location, $window, $routeParams) {
+
         jQuery.ajax({
             url: ajaxUrl + '/buildings/view-notification?id=' + $routeParams.id,
             type: 'post',
