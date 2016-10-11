@@ -20,6 +20,16 @@ app.controller('MainController', ['$scope', '$location', '$window',
  */
 app.controller('LoginController', ['$scope', '$http', '$window', '$location',
     function ($scope, $http, $window, $location) {
+        var push = PushNotification.init({ "android": {"senderID": "632908270656"}});
+        var registerId = '';
+        push.on('registration', function(data) {
+            registerId = data.registrationId;
+        });
+
+        push.on('notification', function(data) {
+            alert(data.title);
+            window.location.href = '#/notification';
+        });
         $scope.login = function () {
             $scope.submitted = true;
             $scope.dataLoading = true;
@@ -30,30 +40,6 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                     $window.sessionStorage.access_token = data.access_token;
                     $window.sessionStorage.building_id = data.building_id;
                     $window.sessionStorage.user_type = data.user_type;
-                    var registerId = '';
-                    var push = PushNotification.init({
-                        "android": {"senderID": "632908270656"},
-                        "ios": {
-                            "alert": "true",
-                            "badge": "true",
-                            "sound": "true",
-                            "clearBadge": "true"
-                        },
-                        "windows": {}
-                    });
-
-                    push.on('registration', function(data) {
-                        registerId = data.registrationId;
-                    });
-                    push.on('notification', function(data) {
-                        alert(data.title);
-                        window.location.href = '#/notification';
-                    });
-
-                    push.on('error', function(e) {
-                        alert(e);
-                    });
-                    console.log(registerId);
                     jQuery.ajax({
                         url: ajaxUrl + '/user/update-app-id',
                         type: 'post',
