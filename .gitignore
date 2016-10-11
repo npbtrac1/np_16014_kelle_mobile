@@ -8,6 +8,7 @@
 npm-debug.log
 .DS_Store
 www/cordova.js
+www/cordova_plugin.js
 .js.map
 
 config.codekit

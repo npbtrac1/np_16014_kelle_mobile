@@ -134,3 +134,17 @@ app.directive('back', ['$window', function($window) {
         }
     };
 }]);
+app.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
+    $rootScope.$on('$routeChangeStart', function (event) {
+
+        if (!Auth.isLoggedIn()) {
+            console.log('DENY');
+            event.preventDefault();
+            $location.path('/login');
+        }
+        else {
+            console.log('ALLOW');
+            $location.path('/home');
+        }
+    });
+}]);

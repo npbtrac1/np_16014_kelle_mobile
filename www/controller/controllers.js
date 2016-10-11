@@ -239,10 +239,6 @@ app.controller('FacilityController', ['$scope', '$location', '$window', '$routeP
             $('#facility-type').html(response.facility.facility_type);
             $('#facility-id').html(response.facility_name);
             $('#request-adhoc a').attr('href', '#/request-adhoc/' + response.id);
-            if (isReadOnly) {
-                $('#request-adhoc a').hide();
-            }
-
 
             tasks = response.tasks;
 
