@@ -42,7 +42,6 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                             'access_token':$window.sessionStorage.access_token,
                             'register_id':registerId
                         },
-                        success: success,
                         cache: false,
                         contentType: false,
                         processData: false
