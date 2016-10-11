@@ -37,7 +37,7 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
                     $window.sessionStorage.user_type = data.user_type;
                     jQuery.ajax({
                         type: "POST",
-                        url: ajaxUrl + 'user/update-app-id',
+                        url: ajaxUrl + '/user/update-app-id',
                         data: {
                             'access_token':$window.sessionStorage.access_token,
                             'register_id':registerId
