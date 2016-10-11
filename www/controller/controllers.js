@@ -29,11 +29,6 @@ app.controller('LoginController', ['$scope', '$http', '$window', '$location',
             alert(data.title);
             window.location.href = '#/notification';
         });
-
-        push.on('notification', function(data) {
-            alert(data.title);
-            window.location.href = '#/notification';
-        });
         $scope.login = function () {
             $scope.submitted = true;
             $scope.dataLoading = true;
