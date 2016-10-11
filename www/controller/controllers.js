@@ -88,7 +88,14 @@ app.controller('DashboardController', ['$scope', '$http', '$window',
             });
 
         }
-
+        if ($window.sessionStorage.user_type == 'admin' || $window.sessionStorage.user_type == 'supervisor') {
+            isReadOnly = false;
+        } else {
+            isReadOnly = true;
+        }
+        if(isReadOnly) {
+            jQuery('.menu-notification').hide();
+        }
         building_id = $window.sessionStorage.building_id;
         if (building_id !== undefined && building_id != null) {
 
