@@ -76,7 +76,7 @@ app.service('rest', function ($http, $location, $routeParams) {
 
     return {
 
-        baseUrl: 'http://top3.dev-srv.net/16/kelle/',
+        baseUrl: 'http://top3.demo.dev-srv.net/kelle',
         path: undefined,
 
         models: function () {
