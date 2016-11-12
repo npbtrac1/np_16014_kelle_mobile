@@ -1,5 +1,5 @@
 var controllers = angular.module('controllers', []);
-siteUrl = 'http://lph-local.dev-srv.net/php/enpii/16/np_16014_kelle';
+siteUrl = 'http://top3-local.dev-srv.net/kelle';
 ajaxUrl = siteUrl + '/api/web/v1';
 app.controller('MainController', ['$scope', '$location', '$window',
     function ($scope, $location, $window) {
@@ -541,14 +541,14 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
 
             $.validator.addMethod('filesize', function (value, element, param) {
                 return this.optional(element) || (element.files[0].size <= param)
-            }, 'Limit 2MB');
+            }, 'Limit 8MB');
             dynamicForm = jQuery('#dynamic-form');
             dynamicForm.validate();
             jQuery("input[type=file]").each(function () {
                 jQuery(this).rules("add", {
                     extension: "png|jpg|jpeg",
                     accept: "image/*",
-                    filesize: 2097152
+                    filesize: 8388608
                 });
             });
 
@@ -570,7 +570,7 @@ app.controller('TaskUpdateImageController', ['$scope', '$location', '$window', '
                     jQuery(this).rules("add", {
                         extension: "png|jpg|jpeg",
                         accept: "image/*",
-                        filesize: 2097152
+                        filesize: 8388608
                     });
                 });
             });

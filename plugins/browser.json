@@ -1,0 +1,77 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "632908270656",
+            "PACKAGE_NAME": "kelle.app"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "kelle.app"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "kelle.app"
+        }
+    }
+}
